@@ -1,24 +1,23 @@
-# README
+# Reactive - Coffee README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+- DB Schema
 
-* Ruby version
+[DB-Designer Page](https://dbdesigner.page.link/H4oAA5PXJoeVHj8w9)
 
-* System dependencies
+- Wireframes
+[Link](https://www.figma.com/file/RbdjFNpElvuWHeMOC6t3Ol/Untitled?node-id=0%3A1)
 
-* Configuration
 
-* Database creation
+- Project IV brainstorm [doc](https://docs.google.com/document/d/1xaDv3LKVff2i85TWstaBp6ud39p9JpvOxY54DPJYTbs/edit?usp=sharing)
 
-* Database initialization
+## Used resources
+- To seed data: [Faker](https://github.com/faker-ruby/faker/blob/master/doc/default/coffee.md)
+- Inspired by [Facebook](https://www.starbucks.com/menu)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Useful resources for the development
+- https://dba.stackexchange.com/questions/1285/how-do-i-list-all-databases-and-tables-using-psql
+- https://stackoverflow.com/questions/8627156/adding-default-true-to-boolean-in-existing-rails-column
+- https://stackoverflow.com/questions/2831059/how-to-drop-columns-using-rails-migration
+- https://stackoverflow.com/questions/4834809/adding-a-column-to-an-existing-table-in-a-rails-migration/4834906
+- https://git.generalassemb.ly/EC-SEI-JULY6/w11_d04_LEC-Rails-React/blob/main/commands.md
