@@ -31,3 +31,19 @@ Migrating to CreateUsers (20200918202904)
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6924149688181871145)[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-09-20 21:38:11 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.9ms | Allocations: 474)
+Completed 200 OK in 16ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 2654)
+
+
+Started GET "/" for ::1 at 2020-09-20 22:38:37 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.8ms | Allocations: 309)
+Completed 200 OK in 16ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 1619)
+
+
