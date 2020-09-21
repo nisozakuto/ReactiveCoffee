@@ -198,3 +198,172 @@ Processing by CoffeesController#index as */*
 Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 1.1ms | Allocations: 3023)
 
 
+Started GET "/coffees" for ::1 at 2020-09-21 00:17:29 -0400
+Processing by CoffeesController#index as */*
+  Parameters: {"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee", "coffee"=>{"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee"}}
+  [1m[36mCoffee Load (0.8ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.8ms | Allocations: 3014)
+
+
+Started GET "/" for ::1 at 2020-09-21 00:17:34 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 264)
+
+
+Started GET "/coffees" for ::1 at 2020-09-21 00:17:39 -0400
+Processing by CoffeesController#index as HTML
+  [1m[36mCoffee Load (0.4ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 2954)
+
+
+Started GET "/" for ::1 at 2020-09-21 00:19:58 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.8ms | Allocations: 309)
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 1619)
+
+
+Started GET "/" for ::1 at 2020-09-21 00:20:09 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 15.9ms | Allocations: 189)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 755)
+
+
+Started GET "/" for ::1 at 2020-09-21 00:20:11 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 8)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 266)
+
+
+Started GET "/" for ::1 at 2020-09-21 00:21:09 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.8ms | Allocations: 309)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 1619)
+
+
+Started GET "/coffees" for ::1 at 2020-09-21 00:23:08 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoffeesController#index as */*
+  Parameters: {"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee", "coffee"=>{"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee"}}
+  [1m[36mCoffee Load (0.5ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 4.6ms | Allocations: 6914)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 00:25:12 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.4ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 7.2ms | ActiveRecord: 3.6ms | Allocations: 7752)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 00:25:16 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.3ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 2974)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 00:26:13 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.4ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 3.8ms | Allocations: 7752)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 00:26:58 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.4ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 3.3ms | Allocations: 7752)
+
+
+Started GET "/coffees" for ::1 at 2020-09-21 00:29:18 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (3.4ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 3.4ms | Allocations: 2974)
+
+
+Started GET "/coffees" for ::1 at 2020-09-21 00:29:23 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.3ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 2974)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 00:29:40 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (1.5ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 1.5ms | Allocations: 2974)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 00:30:00 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.6ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.6ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 00:30:05 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.4ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 00:30:15 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (11.7ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 2.6ms | ActiveRecord: 11.7ms | Allocations: 2974)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 00:30:23 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.3ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 00:30:31 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (1.5ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 1.5ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 00:30:33 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.3ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 00:30:35 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.3ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 00:30:36 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.8ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.8ms | Allocations: 2956)
+
+
