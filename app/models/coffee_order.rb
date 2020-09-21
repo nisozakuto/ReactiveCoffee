@@ -1,2 +1,4 @@
 class CoffeeOrder < ApplicationRecord
+   
+
 end
