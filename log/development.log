@@ -47,3 +47,154 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 16ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 1619)
 
 
+Started GET "/" for ::1 at 2020-09-20 23:13:51 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 12.2ms | Allocations: 190)
+Completed 200 OK in 18ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 916)
+
+
+Started GET "/coffees" for ::1 at 2020-09-20 23:13:57 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (3.0ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 19ms (Views: 2.0ms | ActiveRecord: 5.2ms | Allocations: 2863)
+
+
+Started POST "/coffees" for ::1 at 2020-09-20 23:16:23 -0400
+Processing by CoffeesController#create as */*
+  Parameters: {"coffee"=>{"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 114)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 1)):
+  
+app/controllers/coffees_controller.rb:28:in `coffee_params'
+app/controllers/coffees_controller.rb:13:in `create'
+Started POST "/coffees" for ::1 at 2020-09-20 23:16:35 -0400
+Processing by CoffeesController#create as */*
+  Parameters: {"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee", "coffee"=>{"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.8ms | Allocations: 109)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 1)):
+  
+app/controllers/coffees_controller.rb:28:in `coffee_params'
+app/controllers/coffees_controller.rb:13:in `create'
+Started GET "/coffees" for ::1 at 2020-09-20 23:16:53 -0400
+Processing by CoffeesController#index as */*
+  Parameters: {"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee", "coffee"=>{"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee"}}
+  [1m[36mCoffee Load (0.2ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 895)
+
+
+  [1m[36mCoffee Load (0.5ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCoffee Load (1.1ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCoffee Load (0.6ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCoffee Load (0.6ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCoffee Load (0.6ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCoffee Load (0.6ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCoffee Load (0.5ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCoffee Load (0.4ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCoffee Load (0.5ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-09-20 23:24:27 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.4ms | Allocations: 309)
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 1619)
+
+
+Started GET "/coffees" for ::1 at 2020-09-20 23:24:31 -0400
+Processing by CoffeesController#index as */*
+  Parameters: {"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee", "coffee"=>{"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee"}}
+  [1m[36mCoffee Load (0.3ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 1.8ms | Allocations: 1036)
+
+
+Started GET "/" for ::1 at 2020-09-20 23:24:40 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 16.0ms | Allocations: 189)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 755)
+
+
+Started POST "/coffees" for ::1 at 2020-09-20 23:24:46 -0400
+Processing by CoffeesController#create as */*
+  Parameters: {"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee", "coffee"=>{"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee"}}
+[31mUnpermitted parameter: :name[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/coffees_controller.rb:13:in `create'
+  [1m[36mCoffee Create (1.5ms)[0m  [1m[32mINSERT INTO "coffees" ("flavor", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["flavor", "espresso"], ["category", "Hot Coffee"], ["created_at", "2020-09-21 03:24:46.376054"], ["updated_at", "2020-09-21 03:24:46.376054"]]
+  ↳ app/controllers/coffees_controller.rb:13:in `create'
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/coffees_controller.rb:13:in `create'
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 9.9ms | Allocations: 6605)
+
+
+Started GET "/coffees" for ::1 at 2020-09-20 23:24:51 -0400
+Processing by CoffeesController#index as */*
+  Parameters: {"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee", "coffee"=>{"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee"}}
+  [1m[36mCoffee Load (0.3ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1047)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoffee Create (0.4ms)[0m  [1m[32mINSERT INTO "coffees" ("name", "flavor", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Latte"], ["flavor", "Espresso"], ["category", "Hot Coffee"], ["created_at", "2020-09-21 03:34:58.775426"], ["updated_at", "2020-09-21 03:34:58.775426"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoffee Create (0.2ms)[0m  [1m[32mINSERT INTO "coffees" ("name", "flavor", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Caffe Americano"], ["flavor", "Espresso"], ["category", "Hot Coffee"], ["created_at", "2020-09-21 03:34:58.779090"], ["updated_at", "2020-09-21 03:34:58.779090"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoffee Create (0.4ms)[0m  [1m[32mINSERT INTO "coffees" ("name", "flavor", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Blonde Roast"], ["flavor", "Brewed"], ["category", "Hot Coffee"], ["created_at", "2020-09-21 03:34:58.781887"], ["updated_at", "2020-09-21 03:34:58.781887"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoffee Create (0.2ms)[0m  [1m[32mINSERT INTO "coffees" ("name", "flavor", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Caffè Misto"], ["flavor", "Brewed"], ["category", "Hot Coffee"], ["created_at", "2020-09-21 03:34:58.785399"], ["updated_at", "2020-09-21 03:34:58.785399"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoffee Create (0.2ms)[0m  [1m[32mINSERT INTO "coffees" ("name", "flavor", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Cappuccinos"], ["flavor", "Cappuccinos"], ["category", "Hot Coffee"], ["created_at", "2020-09-21 03:34:58.788097"], ["updated_at", "2020-09-21 03:34:58.788097"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoffee Create (0.2ms)[0m  [1m[32mINSERT INTO "coffees" ("name", "flavor", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Espresso Shots"], ["flavor", "Espresso"], ["category", "Hot Coffee"], ["created_at", "2020-09-21 03:34:58.790606"], ["updated_at", "2020-09-21 03:34:58.790606"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoffee Create (0.2ms)[0m  [1m[32mINSERT INTO "coffees" ("name", "flavor", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Flat Whites"], ["flavor", "Ristretto"], ["category", "Hot Coffee"], ["created_at", "2020-09-21 03:34:58.793471"], ["updated_at", "2020-09-21 03:34:58.793471"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoffee Create (0.2ms)[0m  [1m[32mINSERT INTO "coffees" ("name", "flavor", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Caramel Macchiato"], ["flavor", "Espresso"], ["category", "Hot Coffee"], ["created_at", "2020-09-21 03:34:58.796201"], ["updated_at", "2020-09-21 03:34:58.796201"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoffee Create (0.2ms)[0m  [1m[32mINSERT INTO "coffees" ("name", "flavor", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mochas"], ["flavor", "Espresso"], ["category", "Hot Coffee"], ["created_at", "2020-09-21 03:34:58.798861"], ["updated_at", "2020-09-21 03:34:58.798861"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoffee Create (0.2ms)[0m  [1m[32mINSERT INTO "coffees" ("name", "flavor", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pumpkin Cream Cold Brew"], ["flavor", "Pumpkin"], ["category", "Cold Coffee"], ["created_at", "2020-09-21 03:34:58.801664"], ["updated_at", "2020-09-21 03:34:58.801664"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoffee Create (0.2ms)[0m  [1m[32mINSERT INTO "coffees" ("name", "flavor", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pumpkin Cream Nitro Cold Brew"], ["flavor", "Nitro Cold Brew"], ["category", "Cold Coffee"], ["created_at", "2020-09-21 03:34:58.804265"], ["updated_at", "2020-09-21 03:34:58.804265"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoffee Create (0.2ms)[0m  [1m[32mINSERT INTO "coffees" ("name", "flavor", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Iced Caffè Americano"], ["flavor", "Espresso"], ["category", "Cold Coffee"], ["created_at", "2020-09-21 03:34:58.806895"], ["updated_at", "2020-09-21 03:34:58.806895"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoffee Create (0.2ms)[0m  [1m[32mINSERT INTO "coffees" ("name", "flavor", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Iced Coffees"], ["flavor", "Brewed"], ["category", "Cold Coffee"], ["created_at", "2020-09-21 03:34:58.809784"], ["updated_at", "2020-09-21 03:34:58.809784"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoffee Create (0.2ms)[0m  [1m[32mINSERT INTO "coffees" ("name", "flavor", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Iced Flat Whites"], ["flavor", "Nitro"], ["category", "Cold Coffee"], ["created_at", "2020-09-21 03:34:58.812547"], ["updated_at", "2020-09-21 03:34:58.812547"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoffee Create (0.3ms)[0m  [1m[32mINSERT INTO "coffees" ("name", "flavor", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Iced Caramel Macchiato"], ["flavor", "Caramel"], ["category", "Cold Coffee"], ["created_at", "2020-09-21 03:34:58.815450"], ["updated_at", "2020-09-21 03:34:58.815450"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/coffees" for ::1 at 2020-09-20 23:35:02 -0400
+Processing by CoffeesController#index as */*
+  Parameters: {"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee", "coffee"=>{"name"=>"Latte", "flavor"=>"espresso", "category"=>"Hot Coffee"}}
+  [1m[36mCoffee Load (1.1ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 1.1ms | Allocations: 3023)
+
+
