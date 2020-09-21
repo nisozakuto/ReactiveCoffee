@@ -12,5 +12,10 @@ Rails.application.routes.draw do
       resources :coffees
     end
   end
+
+  get "/login" => "sessions#create"
+  delete "/logout" => "sessions#destroy"
+  get "/profile" => "user#profile"
+  resources :users, only: [:show, :create, :update]
   
 end
