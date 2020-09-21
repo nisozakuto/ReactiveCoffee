@@ -26,3 +26,6 @@ Coffee.create(name:"Iced Coffees", flavor:"Brewed",category:"Cold Coffee")
 Coffee.create(name:"Iced Flat Whites", flavor:"Nitro",category:"Cold Coffee")
 Coffee.create(name:"Iced Caramel Macchiato", flavor:"Caramel",category:"Cold Coffee")
 
+#ORDERS
+Order.create("coffees_order_id":1)
+

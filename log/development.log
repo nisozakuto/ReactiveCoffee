@@ -593,3 +593,978 @@ Processing by CoffeesController#index as */*
 Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 3.1ms | Allocations: 3014)
 
 
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:13:40 -0400
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:13:40 -0400
+Processing by CoffeesController#index as */*
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (5.1ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 5.1ms | Allocations: 3427)
+
+
+  [1m[36mCoffee Load (21.3ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 26ms (Views: 4.4ms | ActiveRecord: 21.3ms | Allocations: 6035)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:38:31 -0400
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:38:31 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoffeesController#index as */*
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.6ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+  [1m[36mCoffee Load (1.9ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 25ms (Views: 9.7ms | ActiveRecord: 6.5ms | Allocations: 10280)
+
+
+Completed 200 OK in 24ms (Views: 4.4ms | ActiveRecord: 13.3ms | Allocations: 11381)
+
+
+Started GET "/orders" for 127.0.0.1 at 2020-09-21 11:38:36 -0400
+Processing by OrdersController#index as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 174)
+
+
+  
+SyntaxError (/Users/nisozakuta/Documents/GA/GAProjects/UnitIVProject/ReactiveCoffee/app/models/order.rb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+...   has_many :coffees, through :coffee_orders
+...                              ^):
+  
+app/models/order.rb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+app/models/order.rb:2: syntax error, unexpected tSYMBEG, expecting do or '{' or '('
+app/controllers/orders_controller.rb:3:in `index'
+Started GET "/orders" for 127.0.0.1 at 2020-09-21 11:39:02 -0400
+Processing by OrdersController#index as */*
+  [1m[36mOrder Load (3.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 2.2ms | ActiveRecord: 5.2ms | Allocations: 2784)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:43:56 -0400
+Processing by CoffeesController#index as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 168)
+
+
+  
+SyntaxError (/Users/nisozakuta/Documents/GA/GAProjects/UnitIVProject/ReactiveCoffee/app/models/coffee.rb:3: syntax error, unexpected end):
+  
+app/models/coffee.rb:3: syntax error, unexpected end
+app/models/coffee.rb:3: syntax error, unexpected end
+app/controllers/coffees_controller.rb:3:in `index'
+Started GET "/category" for 127.0.0.1 at 2020-09-21 12:03:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/category"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/category/1" for 127.0.0.1 at 2020-09-21 12:03:06 -0400
+  
+ActionController::RoutingError (uninitialized constant CategoryController):
+  
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:92:in `rescue in controller_class_for'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:03:16 -0400
+Processing by CoffeesController#index as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 168)
+
+
+  
+SyntaxError (/Users/nisozakuta/Documents/GA/GAProjects/UnitIVProject/ReactiveCoffee/app/models/coffee.rb:3: syntax error, unexpected end):
+  
+app/models/coffee.rb:3: syntax error, unexpected end
+app/models/coffee.rb:3: syntax error, unexpected end
+app/controllers/coffees_controller.rb:3:in `index'
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:03:26 -0400
+Processing by CoffeesController#index as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 151)
+
+
+  
+SyntaxError (/Users/nisozakuta/Documents/GA/GAProjects/UnitIVProject/ReactiveCoffee/app/models/coffee.rb:3: syntax error, unexpected end):
+  
+app/models/coffee.rb:3: syntax error, unexpected end
+app/models/coffee.rb:3: syntax error, unexpected end
+app/controllers/coffees_controller.rb:3:in `index'
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:03:40 -0400
+Processing by CoffeesController#index as */*
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1500)
+
+
+  
+SyntaxError (/Users/nisozakuta/Documents/GA/GAProjects/UnitIVProject/ReactiveCoffee/app/models/coffee.rb:3: syntax error, unexpected end):
+  
+app/models/coffee.rb:3: syntax error, unexpected end
+app/models/coffee.rb:3: syntax error, unexpected end
+app/controllers/coffees_controller.rb:3:in `index'
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:03:53 -0400
+Processing by CoffeesController#index as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 168)
+
+
+  
+SyntaxError (/Users/nisozakuta/Documents/GA/GAProjects/UnitIVProject/ReactiveCoffee/app/models/coffee.rb:3: syntax error, unexpected end):
+  
+app/models/coffee.rb:3: syntax error, unexpected end
+app/models/coffee.rb:3: syntax error, unexpected end
+app/controllers/coffees_controller.rb:3:in `index'
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:03:54 -0400
+Processing by CoffeesController#index as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 149)
+
+
+  
+SyntaxError (/Users/nisozakuta/Documents/GA/GAProjects/UnitIVProject/ReactiveCoffee/app/models/coffee.rb:3: syntax error, unexpected end):
+  
+app/models/coffee.rb:3: syntax error, unexpected end
+app/models/coffee.rb:3: syntax error, unexpected end
+app/controllers/coffees_controller.rb:3:in `index'
+Started GET "/coffees" for ::1 at 2020-09-21 12:03:59 -0400
+Processing by CoffeesController#index as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 149)
+
+
+  
+SyntaxError (/Users/nisozakuta/Documents/GA/GAProjects/UnitIVProject/ReactiveCoffee/app/models/coffee.rb:3: syntax error, unexpected end):
+  
+app/models/coffee.rb:3: syntax error, unexpected end
+app/models/coffee.rb:3: syntax error, unexpected end
+app/controllers/coffees_controller.rb:3:in `index'
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:04:02 -0400
+Processing by CoffeesController#index as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 149)
+
+
+  
+SyntaxError (/Users/nisozakuta/Documents/GA/GAProjects/UnitIVProject/ReactiveCoffee/app/models/coffee.rb:3: syntax error, unexpected end):
+  
+app/models/coffee.rb:3: syntax error, unexpected end
+app/models/coffee.rb:3: syntax error, unexpected end
+app/controllers/coffees_controller.rb:3:in `index'
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:04:23 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.6ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 25ms (Views: 10.0ms | ActiveRecord: 12.2ms | Allocations: 7688)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:04:31 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.3ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 21ms (Views: 7.6ms | ActiveRecord: 3.0ms | Allocations: 7535)
+
+
+Started GET "/category" for 127.0.0.1 at 2020-09-21 12:04:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/category"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/category/1" for 127.0.0.1 at 2020-09-21 12:04:37 -0400
+  
+ActionController::RoutingError (uninitialized constant CategoryController):
+  
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:92:in `rescue in controller_class_for'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/category/Hot%20Coffee" for 127.0.0.1 at 2020-09-21 12:04:40 -0400
+  
+ActionController::RoutingError (uninitialized constant CategoryController):
+  
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:92:in `rescue in controller_class_for'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/category/Hot-Coffee" for 127.0.0.1 at 2020-09-21 12:04:42 -0400
+  
+ActionController::RoutingError (uninitialized constant CategoryController):
+  
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:92:in `rescue in controller_class_for'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/category/1" for 127.0.0.1 at 2020-09-21 12:04:47 -0400
+  
+ActionController::RoutingError (uninitialized constant CategoryController):
+  
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:92:in `rescue in controller_class_for'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/categor" for 127.0.0.1 at 2020-09-21 12:04:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/categor"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:04:52 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.2ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 2970)
+
+
+Started GET "/coffees/1" for 127.0.0.1 at 2020-09-21 12:05:04 -0400
+Processing by CoffeesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCoffee Load (0.2ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees" WHERE "coffees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/coffees_controller.rb:8:in `show'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 2581)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:06:18 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.2ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:06:23 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.4ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:06:26 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.3ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:06:28 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.2ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 2956)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrder Create (5.4ms)[0m  [1m[32mINSERT INTO "orders" ("coffees_order_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["coffees_order_id", 1], ["created_at", "2020-09-21 16:10:50.451111"], ["updated_at", "2020-09-21 16:10:50.451111"]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/orders" for 127.0.0.1 at 2020-09-21 12:10:58 -0400
+Processing by OrdersController#index as */*
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 6.5ms | ActiveRecord: 2.5ms | Allocations: 5071)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:11:12 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.2ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms | Allocations: 2959)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCoffeeOrder Create (4.9ms)[0m  [1m[32mINSERT INTO "coffee_orders" ("coffee_id", "size", "quantity", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["coffee_id", 2], ["size", 8], ["quantity", 1], ["created_at", "2020-09-21 16:17:35.960055"], ["updated_at", "2020-09-21 16:17:35.960055"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/coffeeorders" for 127.0.0.1 at 2020-09-21 12:18:02 -0400
+  
+SyntaxError (/Users/nisozakuta/Documents/GA/GAProjects/UnitIVProject/ReactiveCoffee/config/routes.rb:6: syntax error, unexpected ':', expecting end
+  resources :orders :coffeeorders
+                    ^):
+  
+config/routes.rb:6: syntax error, unexpected ':', expecting end
+config/routes.rb:6: syntax error, unexpected ':', expecting end
+Started GET "/coffeeorders" for 127.0.0.1 at 2020-09-21 12:18:14 -0400
+  
+ActionController::RoutingError (uninitialized constant CoffeeordersController
+Did you mean?  CoffeeOrdersController
+               CoffeesController):
+  
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:92:in `rescue in controller_class_for'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/coffeeorders" for 127.0.0.1 at 2020-09-21 12:18:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/coffeeorders"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/coffee_orders" for 127.0.0.1 at 2020-09-21 12:18:34 -0400
+Processing by CoffeeOrdersController#index as */*
+  [1m[36mCoffeeOrder Load (0.5ms)[0m  [1m[34mSELECT "coffee_orders".* FROM "coffee_orders"[0m
+  ↳ app/controllers/coffee_orders_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 5.9ms | ActiveRecord: 7.1ms | Allocations: 5577)
+
+
+Started GET "/coffeeOrders" for 127.0.0.1 at 2020-09-21 12:18:46 -0400
+  
+ArgumentError ('coffeeOrders' is not a supported controller name. This can lead to potential routing problems. See https://guides.rubyonrails.org/routing.html#specifying-a-controller-to-use):
+  
+config/routes.rb:7:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/coffee_orders" for 127.0.0.1 at 2020-09-21 12:18:56 -0400
+Processing by CoffeeOrdersController#index as */*
+  [1m[36mCoffeeOrder Load (0.2ms)[0m  [1m[34mSELECT "coffee_orders".* FROM "coffee_orders"[0m
+  ↳ app/controllers/coffee_orders_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 3.1ms | Allocations: 5353)
+
+
+Started GET "/orders" for 127.0.0.1 at 2020-09-21 12:18:59 -0400
+Processing by OrdersController#index as */*
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 5.0ms | ActiveRecord: 2.4ms | Allocations: 4930)
+
+
+Started GET "/orders/1" for 127.0.0.1 at 2020-09-21 12:19:02 -0400
+Processing by OrdersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 0.0ms | Allocations: 69985)
+
+
+  
+NameError (undefined local variable or method `param' for #<OrdersController:0x00007f9cecb68650>
+Did you mean?  params
+               params=):
+  
+app/controllers/orders_controller.rb:8:in `show'
+Started GET "/orders/" for 127.0.0.1 at 2020-09-21 12:19:06 -0400
+Processing by OrdersController#index as */*
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 993)
+
+
+Started GET "/orders/1" for 127.0.0.1 at 2020-09-21 12:19:26 -0400
+Processing by OrdersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 0.0ms | Allocations: 69970)
+
+
+  
+NameError (undefined local variable or method `param' for #<OrdersController:0x00007f9cef35ba18>
+Did you mean?  params
+               params=):
+  
+app/controllers/orders_controller.rb:8:in `show'
+Started GET "/orders/1" for 127.0.0.1 at 2020-09-21 12:19:36 -0400
+Processing by OrdersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 0.0ms | Allocations: 70777)
+
+
+  
+NameError (undefined local variable or method `param' for #<OrdersController:0x00007f9cef455cc0>
+Did you mean?  params
+               params=):
+  
+app/controllers/orders_controller.rb:8:in `show'
+Started GET "/orders" for 127.0.0.1 at 2020-09-21 12:20:18 -0400
+Processing by OrdersController#index as */*
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 7.6ms | ActiveRecord: 2.6ms | Allocations: 5180)
+
+
+Started GET "/orders/1" for 127.0.0.1 at 2020-09-21 12:20:35 -0400
+Processing by OrdersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 0.0ms | Allocations: 69972)
+
+
+  
+NameError (undefined local variable or method `param' for #<OrdersController:0x00007f9cef42cdc0>
+Did you mean?  params
+               params=):
+  
+app/controllers/orders_controller.rb:8:in `show'
+Started GET "/orders/" for 127.0.0.1 at 2020-09-21 12:21:02 -0400
+Processing by OrdersController#index as */*
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 993)
+
+
+Started GET "/orders/0" for 127.0.0.1 at 2020-09-21 12:21:06 -0400
+Processing by OrdersController#show as */*
+  Parameters: {"id"=>"0"}
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 0.0ms | Allocations: 69969)
+
+
+  
+NameError (undefined local variable or method `param' for #<OrdersController:0x00007f9cec3aa8f0>
+Did you mean?  params
+               params=):
+  
+app/controllers/orders_controller.rb:8:in `show'
+Started GET "/orders/1" for 127.0.0.1 at 2020-09-21 12:21:11 -0400
+Processing by OrdersController#show as */*
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 0.0ms | Allocations: 69969)
+
+
+  
+NameError (undefined local variable or method `param' for #<OrdersController:0x00007f9cec4ac2f8>
+Did you mean?  params
+               params=):
+  
+app/controllers/orders_controller.rb:8:in `show'
+Started GET "/orders/1" for 127.0.0.1 at 2020-09-21 12:21:40 -0400
+Processing by OrdersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:8:in `show'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 5064)
+
+
+Started GET "/orders/1" for 127.0.0.1 at 2020-09-21 12:22:47 -0400
+Processing by OrdersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:8:in `show'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 2.8ms | Allocations: 5001)
+
+
+Started GET "/orders/1" for 127.0.0.1 at 2020-09-21 12:23:24 -0400
+Processing by OrdersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:8:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 754)
+
+
+Started GET "/orders/1" for 127.0.0.1 at 2020-09-21 12:23:25 -0400
+Processing by OrdersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:8:in `show'
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 754)
+
+
+Started GET "/orders/1" for 127.0.0.1 at 2020-09-21 12:25:38 -0400
+  
+SyntaxError (/Users/nisozakuta/Documents/GA/GAProjects/UnitIVProject/ReactiveCoffee/config/routes.rb:14: syntax error, unexpected end-of-input, expecting end):
+  
+config/routes.rb:14: syntax error, unexpected end-of-input, expecting end
+config/routes.rb:14: syntax error, unexpected end-of-input, expecting end
+Started GET "/orders/" for 127.0.0.1 at 2020-09-21 12:25:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/orders"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/orders/" for 127.0.0.1 at 2020-09-21 12:25:47 -0400
+Processing by OrdersController#index as */*
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 5.0ms | ActiveRecord: 3.2ms | Allocations: 5164)
+
+
+Started GET "/orders/1" for 127.0.0.1 at 2020-09-21 12:25:51 -0400
+Processing by OrdersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 861)
+
+
+Started GET "/orders/1/coffees_order_id/1" for 127.0.0.1 at 2020-09-21 12:25:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/orders/1/coffees_order_id/1"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/orders/1/coffees_order_id" for 127.0.0.1 at 2020-09-21 12:26:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/orders/1/coffees_order_id"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/orders/1" for 127.0.0.1 at 2020-09-21 12:26:06 -0400
+Processing by OrdersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:8:in `show'
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 753)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:34:41 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.5ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 6.7ms | ActiveRecord: 4.2ms | Allocations: 7596)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:47:33 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.8ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.8ms | Allocations: 3014)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:47:35 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.5ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.5ms | Allocations: 2957)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:47:36 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.3ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.3ms | Allocations: 2959)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:47:39 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.2ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:47:44 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.4ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.4ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:47:49 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.2ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 12:49:02 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.4ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 2956)
+
+
+Started GET "/orders/" for 127.0.0.1 at 2020-09-21 12:50:10 -0400
+Processing by OrdersController#index as */*
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 4809)
+
+
+Started GET "/" for ::1 at 2020-09-21 13:06:18 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/nisozakuta/.rvm/gems/ruby-2.6.6/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.7ms | Allocations: 309)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 1612)
+
+
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2020-09-21 13:29:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/babel/parser/lib/index.js" for 127.0.0.1 at 2020-09-21 13:39:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/babel/parser/lib/index.js"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
