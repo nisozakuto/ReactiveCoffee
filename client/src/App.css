@@ -107,18 +107,29 @@ nav ul{
   flex-direction: row;
   justify-content: space-around;
 }
+
+.container{
+
+}
 /* MAIN */
 main{
-display: flex;
-justify-content: center;
-justify-self: center;
+  /* width: 80vw; */
+  /* margin: auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-self: center;
+  text-align: center;
+}
+
+section{
+  
 }
 
 /* MAIN */
 /* COFFEES */
 
 .coffeeList{
-  width: 80vw;
   display: flex;
   flex-wrap: wrap;
 }

@@ -24,17 +24,17 @@ const CoffeeList = () => {
                     data.map((coffee) => {
                         return (
                             <div className="coffees" key={coffee.name}>
-                                <p>{coffee.name}</p>
+                                <h3 onClick={() => { }}>{coffee.name}</h3>
                                 <p>{coffee.flavor}</p>
                                 <p>{coffee.category}</p>
-
                             </div>
                         )
                     }))
                     : (
-                        <p>Loading</p>
+                        <p>Loading...</p>
                     )}
         </div >
     )
 }
+
 export default CoffeeList;
