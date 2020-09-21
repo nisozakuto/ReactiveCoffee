@@ -85,7 +85,6 @@ header{
 
 nav{
   font-size: 2em;
-  /* margin:1em 0 1em 0; */
   padding:1em;
   -webkit-box-shadow: 0 2px 6px -6px black;
   -moz-box-shadow: 0 2px 6px -6px black;
@@ -110,11 +109,7 @@ nav ul{
 }
 
 
-
 /* REACTIVE COFFEE END  */
-
-
-
 @media only screen and (max-width: 768px) {
   nav{
   font-size:1em;

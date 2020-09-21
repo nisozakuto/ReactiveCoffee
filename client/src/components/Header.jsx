@@ -7,7 +7,7 @@ export default class Header extends Component {
             <header>
                 <nav>
                     <ul>
-                        <Link to="/"><a href="/">Reactive Coffee</a></Link>
+                        <h1><span role="img" aria-label="sheep">☕️</span></h1>
                         <Link to="/"><a href="/">Home</a></Link>
                         <Link to="/"><a href="/orders">Orders</a></Link>
                     </ul>
