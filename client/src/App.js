@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import { Route, Redirect } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header'
 import Home from './components/Home'
-import { Route, Redirect } from 'react-router-dom';
-
+import Orders from './components/Orders'
+import Footer from './components/Footer'
 
 export default class App extends Component {
   constructor() {
@@ -20,6 +21,9 @@ export default class App extends Component {
             render={() => (
               <Home />
             )} />
+          <Route exact path='/orders'
+            render={() => (<Orders />)} />
+          <Footer />
         </div>
       </div>
     )

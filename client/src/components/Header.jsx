@@ -9,7 +9,7 @@ export default class Header extends Component {
                     <ul>
                         <h1><span role="img" aria-label="sheep">☕️</span></h1>
                         <Link to="/"><a href="/">Home</a></Link>
-                        <Link to="/"><a href="/orders">Orders</a></Link>
+                        <Link to="/orders"><a href="/orders">Orders</a></Link>
                     </ul>
                 </nav>
             </header>
