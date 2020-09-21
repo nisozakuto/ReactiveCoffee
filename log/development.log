@@ -367,3 +367,229 @@ Processing by CoffeesController#index as */*
 Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.8ms | Allocations: 2956)
 
 
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 10:54:19 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (2.4ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 2.4ms | Allocations: 3015)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 10:54:27 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.2ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:00:21 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (1.1ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 1.1ms | Allocations: 3014)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:03:13 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.4ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.4ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:03:18 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.3ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:03:48 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (57.3ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 62ms (Views: 4.1ms | ActiveRecord: 57.3ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:03:49 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (2.8ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 2.8ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:03:54 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (1.9ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 1.9ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:03:54 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (1.4ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 1.4ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:04:42 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.7ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.7ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:04:42 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.4ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.4ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:04:43 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (1.0ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 1.0ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:04:43 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.5ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.5ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:07:17 -0400
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:07:17 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (82.3ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 86ms (Views: 3.7ms | ActiveRecord: 82.3ms | Allocations: 2956)
+
+
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.6ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.6ms | Allocations: 3014)
+
+
+Started PUT "/coffees/1" for ::1 at 2020-09-21 11:07:55 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+
+{
+    "name":"Latte",
+    
+}
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+    "name":"Latte",
+    
+}'):
+  
+actionpack (6.0.3.3) lib/action_dispatch/http/parameters.rb:114:in `rescue in parse_formatted_parameters'
+actionpack (6.0.3.3) lib/action_dispatch/http/parameters.rb:110:in `parse_formatted_parameters'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:389:in `block in POST'
+rack (2.2.3) lib/rack/request.rb:69:in `fetch'
+rack (2.2.3) lib/rack/request.rb:69:in `fetch_header'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:388:in `POST'
+actionpack (6.0.3.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:278:in `_wrapper_enabled?'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+
+{
+    "name":"Latte",
+    
+}
+Started PUT "/coffees/1" for ::1 at 2020-09-21 11:07:58 -0400
+Processing by CoffeesController#update as */*
+  Parameters: {"name"=>"Latte", "id"=>"1", "coffee"=>{"name"=>"Latte"}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 37)
+
+
+Started GET "/coffees/1" for ::1 at 2020-09-21 11:08:02 -0400
+Processing by CoffeesController#show as */*
+  Parameters: {"name"=>"Latte", "id"=>"1", "coffee"=>{"name"=>"Latte"}}
+  [1m[36mCoffee Load (0.2ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees" WHERE "coffees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/coffees_controller.rb:8:in `show'
+Completed 200 OK in 25ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 2588)
+
+
+Started PUT "/coffees/1" for ::1 at 2020-09-21 11:08:11 -0400
+Processing by CoffeesController#update as */*
+  Parameters: {"name"=>"Latte", "id"=>"1", "coffee"=>{"name"=>"Latte"}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 33)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:09:31 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.3ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:09:31 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (0.7ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.7ms | Allocations: 2956)
+
+
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:13:22 -0400
+Started GET "/coffees" for 127.0.0.1 at 2020-09-21 11:13:22 -0400
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (4.0ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 3.3ms | ActiveRecord: 4.0ms | Allocations: 2960)
+
+
+Processing by CoffeesController#index as */*
+  [1m[36mCoffee Load (3.1ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 3.1ms | Allocations: 3014)
+
+

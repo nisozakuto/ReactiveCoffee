@@ -8,7 +8,6 @@ const CoffeeList = () => {
         console.log("fetching")
         fetch('/coffees')
             .then((res) => res.json())
-            // .then((res) => console.log(res))
             .then((res) => {
                 console.log(res)
                 setData(res.coffees)
@@ -19,7 +18,7 @@ const CoffeeList = () => {
     }, [updateCoffees])
 
     return (
-        <div>
+        <div className="coffeeList">
             {
                 data ? (
                     data.map((coffee) => {
@@ -28,13 +27,14 @@ const CoffeeList = () => {
                                 <p>{coffee.name}</p>
                                 <p>{coffee.flavor}</p>
                                 <p>{coffee.category}</p>
+
                             </div>
                         )
                     }))
                     : (
                         <p>Loading</p>
                     )}
-        </div>
+        </div >
     )
 }
 export default CoffeeList;
