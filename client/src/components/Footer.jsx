@@ -4,7 +4,9 @@ export default class Footer extends Component {
     render() {
         return (
             <footer>
-                My footer to be updated
+                Coffee Project {new Date().getFullYear()}
+
+                <a>About</a>
             </footer>
         )
     }

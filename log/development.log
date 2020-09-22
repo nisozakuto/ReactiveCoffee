@@ -1924,3 +1924,815 @@ Processing by UsersController#create as */*
 Completed 200 OK in 472ms (Views: 0.3ms | ActiveRecord: 232.4ms | Allocations: 10338)
 
 
+Started POST "/profile" for 127.0.0.1 at 2020-09-21 17:20:59 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/profile"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/profile" for 127.0.0.1 at 2020-09-21 17:21:10 -0400
+Processing by UsersController#profile as */*
+  Parameters: {"user"=>{"username"=>"niso", "password"=>"[FILTERED]", "email"=>"nisozakuto@gmail.com", "name"=>"Niso Zakuto"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "KS4c3xhxqnMaRgXSYCaErCyz"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:26:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "KS4c3xhxqnMaRgXSYCaErCyz"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 5.6ms | Allocations: 6884)
+
+
+Started GET "/coffeeImages[4]" for 127.0.0.1 at 2020-09-21 19:13:02 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/coffeeImages[4]"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/profile" for 127.0.0.1 at 2020-09-21 21:53:09 -0400
+  
+NoMethodError (undefined method `hsd_many' for #<Class:0x00007fa4583053f0>
+Did you mean?  has_many):
+  
+app/models/user.rb:8:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+Started GET "/profile" for 127.0.0.1 at 2020-09-21 21:53:34 -0400
+Processing by UsersController#profile as */*
+  Parameters: {"user"=>{"username"=>"niso", "password"=>"[FILTERED]", "email"=>"nisozakuto@gmail.com", "name"=>"Niso Zakuto"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "KS4c3xhxqnMaRgXSYCaErCyz"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:26:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "KS4c3xhxqnMaRgXSYCaErCyz"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 4.7ms | Allocations: 7578)
+
+
+Started POST "/orders" for 127.0.0.1 at 2020-09-21 21:59:26 -0400
+Processing by OrdersController#create as */*
+  Parameters: {"order"=>{"user_id"=>1, "coffees_order_id"=>2}}
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 0.0ms | Allocations: 35722)
+
+
+  
+NoMethodError (undefined method `require_login' for #<OrdersController:0x00007fa452bc1af8>
+Did you mean?  require):
+  
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:181:in `block (2 levels) in halting_and_conditional'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:182:in `block in halting_and_conditional'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/profile" for 127.0.0.1 at 2020-09-22 10:54:13 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/profile"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 10:54:17 -0400
+Processing by UsersController#profile as */*
+  Parameters: {"order"=>{"user_id"=>1, "coffees_order_id"=>2}, "user"=>{}}
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 218)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/users" for 127.0.0.1 at 2020-09-22 11:05:48 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users" for 127.0.0.1 at 2020-09-22 11:05:54 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"testUser", "password"=>"[FILTERED]", "email"=>"nisozakuto@gmail.com", "name"=>"Niso Zakuto"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testUser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "name", "email", "created_at", "updated_at", "auth_token") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "testUser"], ["password_digest", "$2a$12$XWjCOk3kYOe50MykuZAZOebaJWtQiAV9pj7zGwI7SHhq7bRyRLSjS"], ["name", "Niso Zakuto"], ["email", "nisozakuto@gmail.com"], ["created_at", "2020-09-22 15:05:54.468115"], ["updated_at", "2020-09-22 15:05:54.468115"], ["auth_token", "uY6z9R7141ZWz477dfhc4Dah"]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 200 OK in 246ms (Views: 0.3ms | ActiveRecord: 11.1ms | Allocations: 10126)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 11:07:12 -0400
+Processing by UsersController#profile as */*
+  Parameters: {"username"=>"testUser", "password"=>"[FILTERED]", "user"=>{"username"=>"testUser"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uY6z9R7141ZWz477dfhc4Dah"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uY6z9R7141ZWz477dfhc4Dah"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1511)
+
+
+Started POST "/orders" for 127.0.0.1 at 2020-09-22 11:07:43 -0400
+Processing by OrdersController#create as */*
+  Parameters: {"order"=>{"user_id"=>1, "coffees_order_id"=>1}}
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 0.0ms | Allocations: 35722)
+
+
+  
+NoMethodError (undefined method `require_login' for #<OrdersController:0x00007f945ebf16a8>
+Did you mean?  require):
+  
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:181:in `block (2 levels) in halting_and_conditional'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:182:in `block in halting_and_conditional'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 11:08:18 -0400
+Processing by UsersController#profile as */*
+  Parameters: {"username"=>"testUser", "password"=>"[FILTERED]", "user"=>{"username"=>"testUser"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uY6z9R7141ZWz477dfhc4Dah"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uY6z9R7141ZWz477dfhc4Dah"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1287)
+
+
+Started POST "/orders" for 127.0.0.1 at 2020-09-22 11:08:49 -0400
+Processing by OrdersController#create as */*
+  Parameters: {"order"=>{"user_id"=>1, "coffees_order_id"=>1}}
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 0.0ms | Allocations: 35678)
+
+
+  
+NoMethodError (undefined method `require_login' for #<OrdersController:0x00007f9462d57200>
+Did you mean?  require):
+  
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:181:in `block (2 levels) in halting_and_conditional'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:182:in `block in halting_and_conditional'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 11:09:19 -0400
+Processing by UsersController#profile as */*
+  Parameters: {"order"=>{"user_id"=>1, "coffees_order_id"=>1}, "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uY6z9R7141ZWz477dfhc4Dah"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uY6z9R7141ZWz477dfhc4Dah"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1277)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 11:11:53 -0400
+Processing by UsersController#profile as */*
+  Parameters: {"order"=>{"user_id"=>1, "coffees_order_id"=>1}, "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uY6z9R7141ZWz477dfhc4Dah"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uY6z9R7141ZWz477dfhc4Dah"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1274)
+
+
+Started GET "/orders" for 127.0.0.1 at 2020-09-22 11:12:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/orders"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/orders/1" for 127.0.0.1 at 2020-09-22 11:13:55 -0400
+Processing by OrdersController#show as */*
+  Parameters: {"order"=>{"user_id"=>1, "coffees_order_id"=>1}, "id"=>"1"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `show'
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 3.9ms | Allocations: 74330)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<OrdersController:0x00007f945f1d4890>):
+  
+app/controllers/orders_controller.rb:11:in `show'
+Started GET "/orders/1" for 127.0.0.1 at 2020-09-22 11:16:29 -0400
+Processing by OrdersController#show as */*
+  Parameters: {"order"=>{"user_id"=>1, "coffees_order_id"=>1}, "id"=>"1"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `show'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.6ms | Allocations: 6210)
+
+
+  
+NoMethodError (undefined method `username' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:12:in `show'
+Started GET "/orders/" for 127.0.0.1 at 2020-09-22 11:16:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/orders"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/orders" for 127.0.0.1 at 2020-09-22 11:16:31 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/orders"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/orders/1" for 127.0.0.1 at 2020-09-22 11:16:40 -0400
+Processing by OrdersController#show as */*
+  Parameters: {"order"=>{"user_id"=>1, "coffees_order_id"=>1}, "id"=>"1"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `show'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms | Allocations: 1049)
+
+
+  
+NoMethodError (undefined method `username' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:12:in `show'
+Started GET "/orders/1" for 127.0.0.1 at 2020-09-22 11:18:54 -0400
+Processing by OrdersController#show as */*
+  Parameters: {"order"=>{"user_id"=>1, "coffees_order_id"=>1}, "id"=>"1"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:10:in `show'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.3ms | Allocations: 5488)
+
+
+  
+NoMethodError (undefined method `username' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:12:in `show'
+Started POST "/orders" for 127.0.0.1 at 2020-09-22 11:19:25 -0400
+Processing by OrdersController#create as */*
+  Parameters: {"order"=>{"user_id"=>2, "coffees_order_id"=>1}}
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.0ms | Allocations: 35671)
+
+
+  
+NoMethodError (undefined method `require_login' for #<OrdersController:0x00007f945eaeb2e0>
+Did you mean?  require):
+  
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:181:in `block (2 levels) in halting_and_conditional'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:182:in `block in halting_and_conditional'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/orders" for 127.0.0.1 at 2020-09-22 11:23:41 -0400
+Processing by OrdersController#create as */*
+  Parameters: {"order"=>{"user_id"=>2, "coffees_order_id"=>1}}
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.0ms | Allocations: 35692)
+
+
+  
+NoMethodError (undefined method `require_login' for #<OrdersController:0x00007f945f21c938>
+Did you mean?  require):
+  
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:181:in `block (2 levels) in halting_and_conditional'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:182:in `block in halting_and_conditional'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/profile" for 127.0.0.1 at 2020-09-22 11:25:44 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/profile"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 11:25:47 -0400
+Processing by UsersController#profile as */*
+  Parameters: {"order"=>{"user_id"=>2, "coffees_order_id"=>1}, "user"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uY6z9R7141ZWz477dfhc4Dah"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uY6z9R7141ZWz477dfhc4Dah"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 74ms (Views: 10.1ms | ActiveRecord: 19.1ms | Allocations: 10848)
+
+
+Started POST "/orders" for 127.0.0.1 at 2020-09-22 11:25:55 -0400
+Processing by OrdersController#create as */*
+  Parameters: {"order"=>{"user_id"=>2, "coffees_order_id"=>1}}
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 0.0ms | Allocations: 35670)
+
+
+  
+NoMethodError (undefined method `require_login' for #<OrdersController:0x00007f9462b6b1f8>
+Did you mean?  require):
+  
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:428:in `block in make_lambda'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:181:in `block (2 levels) in halting_and_conditional'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:182:in `block in halting_and_conditional'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/orders" for 127.0.0.1 at 2020-09-22 11:29:15 -0400
+Processing by OrdersController#create as */*
+  Parameters: {"order"=>{"user_id"=>2, "coffees_order_id"=>1}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uY6z9R7141ZWz477dfhc4Dah"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uY6z9R7141ZWz477dfhc4Dah"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:18:in `create'
+  [1m[36mOrder Create (2.5ms)[0m  [1m[32mINSERT INTO "orders" ("user_id", "coffees_order_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 2], ["coffees_order_id", 1], ["created_at", "2020-09-22 15:29:15.462297"], ["updated_at", "2020-09-22 15:29:15.462297"]]
+  ↳ app/controllers/orders_controller.rb:18:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:18:in `create'
+Completed 200 OK in 32ms (Views: 0.5ms | ActiveRecord: 9.4ms | Allocations: 13606)
+
+
+Started GET "/orders" for 127.0.0.1 at 2020-09-22 11:29:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/orders"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/orders" for 127.0.0.1 at 2020-09-22 11:30:09 -0400
+Processing by OrdersController#index as */*
+  Parameters: {"order"=>{"user_id"=>2, "coffees_order_id"=>1}}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/orders_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 9.2ms | ActiveRecord: 4.5ms | Allocations: 4524)
+
+
