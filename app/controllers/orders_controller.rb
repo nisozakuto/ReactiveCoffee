@@ -1,4 +1,6 @@
-class OrdersController < ApplicationController
+class OrdersController < ApiController
+    before_action :require_login, except: [:index, :show]
+
     def index 
         orders = Order.all
         render json: {orders: orders}
@@ -6,12 +8,15 @@ class OrdersController < ApplicationController
 
     def show
         order = Order.find(params[:id])
-        render json: {order: order}
+        order_user = order.user
+        render json: {order: order, username: order.user.username}
     end
 
     def create
-        order = Order.create(order_params)
-        render json: {order: order}
+        new_order = Order.new(order_params)
+        new_order.user = current_user
+        new_order.save 
+        render json: {order: new_order}
     end
     
     def update
@@ -25,6 +30,6 @@ class OrdersController < ApplicationController
 
     private
     def order_params
-        # params.require(:order).permit()
+        params.require(:order).permit(:user_id, :coffees_order_id)
     end        
 end

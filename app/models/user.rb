@@ -5,6 +5,8 @@ class User < ApplicationRecord
     has_secure_password
     has_secure_token :auth_token
 
+    has_many :orders
+    
     def self.validate_login(username, password)
         user = find_by(usenrname: username)
         if  user && user.authenticate(password)
@@ -17,6 +19,6 @@ class User < ApplicationRecord
     end
 
     def profile_info
-        {user: {username: self.username, email: self.email, name:self.name}}
+        {user: {username: self.username, email: self.email, name:self.name, orders: self.orders}}
     end
 end

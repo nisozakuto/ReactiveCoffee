@@ -1,3 +1,4 @@
 class Coffee < ApplicationRecord
-    belongs_to :order
+    has_many :coffee_orders
+    has_many :order, through: :coffee_orders
 end

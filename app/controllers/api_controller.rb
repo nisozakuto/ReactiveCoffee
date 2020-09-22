@@ -3,15 +3,15 @@ class ApiController < ApplicationController
 
     def require_login
         authenticate_token || render_unauthorized("Access denied")
-      end
+    end
     
-      def current_user
-        if @current_user
-          @current_user
-        else
-          authenticate_token
-        end
+    def current_user
+      if @current_user
+        @current_user
+      else
+        authenticate_token
       end
+    end
     
       protected
     
@@ -23,7 +23,9 @@ class ApiController < ApplicationController
       private
     
       def authenticate_token
-        authenticate_with_http_token { | token, options | User.find_by(auth_token: token) }
+        authenticate_with_http_token do | token, options | 
+          User.find_by(auth_token: token) 
+      end
       end
 
 end
