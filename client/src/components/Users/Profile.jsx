@@ -33,7 +33,6 @@ const Profile = () => {
                                             <li key={order.id}>
                                                 <h2>{order.user_id}</h2>
                                                 <h2>{order.coffees_order_id}</h2>
-
                                             </li>
                                         ))
                                 }

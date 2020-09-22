@@ -8,8 +8,8 @@ export default class Header extends Component {
                 <nav>
                     <ul>
                         <h1><span role="img" aria-label="sheep">☕️</span></h1>
-                        <Link to="/"><a href="/">Home</a></Link>
-                        <Link to="/orders"><a href="/orders">Orders</a></Link>
+                        <Link to="/">Home</Link>
+                        <Link to="/orders">Orders</Link>
                     </ul>
                 </nav>
             </header>
