@@ -3678,3 +3678,27 @@ Filter chain halted as :require_login rendered or redirected
 Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 774)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6924149688181871145)[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnToCoffeeOrders (20200922204720)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "coffee_orders" ADD "order_id" integer[0m
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "orders" DROP COLUMN "coffees_order_id"[0m
+  [1m[36mprimary::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200922204720"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6924149688181871145)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/orders" for 127.0.0.1 at 2020-09-22 16:49:23 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#index as */*
+  Parameters: {"username"=>"testUser", "password"=>"[FILTERED]", "order"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "g5XZmSbjbpYERJhVV4PaMYhf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "g5XZmSbjbpYERJhVV4PaMYhf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/orders_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 4.2ms | ActiveRecord: 1.0ms | Allocations: 11272)
+
+
