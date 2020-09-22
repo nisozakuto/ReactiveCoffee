@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 import Auth from '../../modules/Auth'
 
 const Profile = () => {
@@ -15,7 +16,6 @@ const Profile = () => {
             .then(res => {
                 // console.log(res)
                 setData(res)
-
             })
     }, []);
     return (
@@ -26,15 +26,13 @@ const Profile = () => {
                         <div>
                             <h3>Welcome to your profile, {data.username}!</h3>
                             <ul>
-                                {console.log(data.orders)}
-                                {
-                                    data.orders.map(order =>
-                                        (
-                                            <li key={order.id}>
-                                                <h2>{order.user_id}</h2>
-                                                <h2>{order.coffees_order_id}</h2>
-                                            </li>
-                                        ))
+                                {data.orders.map(order =>
+                                    (
+                                        <li key={order.id}>
+                                            <h2>{order.user_id}</h2>
+                                            <h2>{order.coffees_order_id}</h2>
+                                        </li>
+                                    ))
                                 }
                             </ul>
                         </div>
@@ -42,6 +40,7 @@ const Profile = () => {
                     :
                     <p>Loading</p>
             }
+            {!Auth.isUserAuthenticated() && <Redirect to="/login" />}
         </div>
     )
 }

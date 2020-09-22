@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import Auth from '../modules/Auth'
 
 export default class Header extends Component {
     render() {
