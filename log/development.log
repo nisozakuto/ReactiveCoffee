@@ -2875,3 +2875,51 @@ Processing by SessionsController#create as */*
 Completed 200 OK in 235ms (Views: 0.2ms | ActiveRecord: 8.4ms | Allocations: 11275)
 
 
+Started POST "/login" for 127.0.0.1 at 2020-09-22 13:38:24 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"testUser", "password"=>"[FILTERED]", "session"=>{"username"=>"testUser", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testUser"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `validate_login'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "testUser"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "UKLZaaUU6HLBPsoKbWkgwPXW"], ["updated_at", "2020-09-22 17:38:24.286607"], ["id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+Completed 200 OK in 225ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 4411)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-09-22 13:38:25 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"testUser", "password"=>"[FILTERED]", "session"=>{"username"=>"testUser", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testUser"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `validate_login'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "testUser"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "edGV1Z1WNCH5ks4KXJD68tpp"], ["updated_at", "2020-09-22 17:38:26.034768"], ["id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+Completed 200 OK in 219ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 4411)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-09-22 13:39:33 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"testUser", "password"=>"[FILTERED]", "session"=>{"username"=>"testUser", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testUser"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `validate_login'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "testUser"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "KKPZjgiYGALUBfF4Z3ehTf4W"], ["updated_at", "2020-09-22 17:39:33.523036"], ["id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+Completed 200 OK in 218ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 4412)
+
+

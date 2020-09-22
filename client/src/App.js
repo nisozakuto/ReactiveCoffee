@@ -13,7 +13,6 @@ export default class App extends Component {
     super()
     this.state = {
       auth: Auth.isUserAuthenticated(),
-
     }
   }
 
@@ -28,7 +27,12 @@ export default class App extends Component {
       body: JSON.stringify(values)
     }).then(res => res.json())
       .then(res => {
-        console.log(res)
+        Auth.authenticateUser(res.token)
+        this.setState({
+          fireRedirect: true,
+          redirectPath: '/profile',
+          auth: Auth.isUserAuthenticated(),
+        })
       })
   }
 
