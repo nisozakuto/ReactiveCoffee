@@ -8,7 +8,7 @@ class User < ApplicationRecord
     has_many :orders
     
     def self.validate_login(username, password)
-        user = find_by(usenrname: username)
+        user = find_by(username: username)
         if  user && user.authenticate(password)
            user
         end 

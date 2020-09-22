@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   #   end
   # end
 
-  get "/ " => "sessions#create"
+  post "/login" => "sessions#create"
   delete "/logout" => "sessions#destroy"
   get "/profile" => "users#profile"
   resources :coffees
