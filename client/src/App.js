@@ -6,7 +6,8 @@ import Home from './components/Home'
 import Orders from './components/Orders'
 import Footer from './components/Footer'
 import LoginForm from './components/LoginForm'
-import Auth from './components/modules/Auth'
+import Auth from './modules/Auth'
+import Profile from './components/Users/Profile'
 
 export default class App extends Component {
   constructor() {
@@ -41,17 +42,10 @@ export default class App extends Component {
       <div className="App">
         <Header />
         <div className="container">
-          <Route exact path='/'
-            render={() => (
-              <Home />
-            )} />
-          <Route
-            exact
-            path="/login"
-            render={() => <LoginForm handleLoginSubmit={this.handleLoginSubmit} />}
-          />
-          <Route exact path='/orders'
-            render={() => (<Orders />)} />
+          <Route exact path='/' render={() => (<Home />)} />
+          <Route exact path="/login" render={() => <LoginForm handleLoginSubmit={this.handleLoginSubmit} />} />
+          <Route exact path="/profile" component={Profile} />
+          <Route exact path='/orders' render={() => (<Orders />)} />
           <Footer />
         </div>
       </div >
