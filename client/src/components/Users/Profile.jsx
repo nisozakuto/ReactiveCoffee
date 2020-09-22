@@ -14,33 +14,35 @@ const Profile = () => {
         })
             .then(res => res.json())
             .then(res => {
-                // console.log(res)
                 setData(res)
             })
     }, []);
+
+    // fetch(`/orders`
+
     return (
         <div className="profile">
-            {
-                data ?
-                    (
-                        <div>
-                            <h3>Welcome to your profile, {data.username}!</h3>
-                            <ul>
-                                {data.orders.map(order =>
-                                    (
-                                        <li key={order.id}>
-                                            <h2>{order.user_id}</h2>
-                                            <h2>{order.coffees_order_id}</h2>
-                                        </li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
-                    )
-                    :
-                    <p>Loading</p>
+            {data ?
+                (
+                    <div>
+                        <h1>{data.user.username}</h1>
+                        <ul>
+                            {data.orders.map(order =>
+                                (
+                                    <li key={order.id}>
+                                        <h2>{order.user_id}</h2>
+                                        <h2>{order.coffees_order_id}</h2>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                )
+                :
+                <p>Loading</p>
             }
             {!Auth.isUserAuthenticated() && <Redirect to="/login" />}
+
         </div>
     )
 }

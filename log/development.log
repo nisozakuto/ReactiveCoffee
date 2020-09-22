@@ -3281,3 +3281,400 @@ Processing by UsersController#profile as */*
 Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.6ms | Allocations: 2310)
 
 
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 15:54:42 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 1.0ms | Allocations: 2417)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 15:55:29 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 1.1ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 15:55:54 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (2.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 2.9ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 15:56:56 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 7ms (Views: 1.6ms | ActiveRecord: 2.6ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 15:57:52 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 15:58:43 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 10ms (Views: 1.9ms | ActiveRecord: 5.4ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 15:59:14 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (3.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 10ms (Views: 1.5ms | ActiveRecord: 6.3ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 15:59:32 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (7.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 14ms (Views: 2.1ms | ActiveRecord: 9.6ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 16:02:55 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (47.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (4.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 56ms (Views: 2.1ms | ActiveRecord: 51.9ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 16:03:20 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 1.2ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 16:03:51 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 2.3ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 16:04:15 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 9ms (Views: 1.9ms | ActiveRecord: 3.3ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 16:04:22 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (7.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 13ms (Views: 2.0ms | ActiveRecord: 8.1ms | Allocations: 2316)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 16:04:59 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (65.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (77.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 149ms (Views: 2.1ms | ActiveRecord: 143.8ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 16:05:21 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (57.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 63ms (Views: 1.9ms | ActiveRecord: 58.2ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 16:05:25 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (48.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (3.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 56ms (Views: 2.2ms | ActiveRecord: 51.5ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 16:05:51 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (2.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 12ms (Views: 2.3ms | ActiveRecord: 6.8ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 16:05:59 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 7ms (Views: 1.6ms | ActiveRecord: 2.9ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 16:07:25 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (1.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 8ms (Views: 2.1ms | ActiveRecord: 3.3ms | Allocations: 2310)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 16:19:35 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 45ms (Views: 20.5ms | ActiveRecord: 1.4ms | Allocations: 13408)
+
+
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/profile" for 127.0.0.1 at 2020-09-22 16:26:37 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/profile"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/" for 127.0.0.1 at 2020-09-22 16:26:43 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/coffees" for 127.0.0.1 at 2020-09-22 16:26:55 -0400
+Processing by CoffeesController#index as */*
+  Parameters: {"username"=>"testUser", "password"=>"[FILTERED]", "coffee"=>{}}
+  [1m[36mCoffee Load (1.5ms)[0m  [1m[34mSELECT "coffees".* FROM "coffees"[0m
+  ↳ app/controllers/coffees_controller.rb:4:in `index'
+Completed 200 OK in 23ms (Views: 18.4ms | ActiveRecord: 6.6ms | Allocations: 6666)
+
+
+Started GET "/orders" for 127.0.0.1 at 2020-09-22 16:26:58 -0400
+Processing by OrdersController#index as */*
+  Parameters: {"username"=>"testUser", "password"=>"[FILTERED]", "order"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uY6z9R7141ZWz477dfhc4Dah"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 7ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 2095)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-09-22 16:27:26 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"testUser", "password"=>"[FILTERED]", "session"=>{"username"=>"testUser", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testUser"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `validate_login'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "testUser"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "XcDurQ2iKz4MovZie2AZTX2n"], ["updated_at", "2020-09-22 20:27:26.858769"], ["id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+Completed 200 OK in 260ms (Views: 0.2ms | ActiveRecord: 3.6ms | Allocations: 9397)
+
+
+Started GET "/orders" for 127.0.0.1 at 2020-09-22 16:27:34 -0400
+Processing by OrdersController#index as */*
+  Parameters: {"username"=>"testUser", "password"=>"[FILTERED]", "order"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uY6z9R7141ZWz477dfhc4Dah"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 748)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 16:27:43 -0400
+Processing by UsersController#profile as */*
+  Parameters: {"username"=>"testUser", "password"=>"[FILTERED]", "user"=>{"username"=>"testUser"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uY6z9R7141ZWz477dfhc4Dah"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 774)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-09-22 16:28:11 -0400
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"testUser", "password"=>"[FILTERED]", "session"=>{"username"=>"testUser", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "testUser"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `validate_login'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "testUser"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "g5XZmSbjbpYERJhVV4PaMYhf"], ["updated_at", "2020-09-22 20:28:12.117251"], ["id", 2]]
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:26:in `allow_token_to_be_used_only_once_for'
+Completed 200 OK in 233ms (Views: 0.1ms | ActiveRecord: 1.4ms | Allocations: 4407)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 16:28:48 -0400
+Processing by UsersController#profile as */*
+  Parameters: {"username"=>"testUser", "password"=>"[FILTERED]", "user"=>{"username"=>"testUser"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "g5XZmSbjbpYERJhVV4PaMYhf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "g5XZmSbjbpYERJhVV4PaMYhf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `profile'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `profile'
+Completed 200 OK in 13ms (Views: 8.9ms | ActiveRecord: 0.6ms | Allocations: 5505)
+
+
+Started GET "/orders" for 127.0.0.1 at 2020-09-22 16:28:57 -0400
+Processing by OrdersController#index as */*
+  Parameters: {"username"=>"testUser", "password"=>"[FILTERED]", "order"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "g5XZmSbjbpYERJhVV4PaMYhf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+Completed 500 Internal Server Error in 179ms (ActiveRecord: 0.2ms | Allocations: 70814)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<OrdersController:0x00007f945ed49dc0>
+Did you mean?  user_url):
+  
+app/controllers/orders_controller.rb:7:in `index'
+Started GET "/orders" for 127.0.0.1 at 2020-09-22 16:29:44 -0400
+Processing by OrdersController#index as */*
+  Parameters: {"username"=>"testUser", "password"=>"[FILTERED]", "order"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "g5XZmSbjbpYERJhVV4PaMYhf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 6.3ms | Allocations: 7438)
+
+
+  
+NoMethodError (undefined method `user_id' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:7:in `index'
+Started GET "/orders" for 127.0.0.1 at 2020-09-22 16:30:00 -0400
+Processing by OrdersController#index as */*
+  Parameters: {"username"=>"testUser", "password"=>"[FILTERED]", "order"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "g5XZmSbjbpYERJhVV4PaMYhf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "g5XZmSbjbpYERJhVV4PaMYhf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/controllers/orders_controller.rb:8:in `index'
+Completed 200 OK in 27ms (Views: 5.2ms | ActiveRecord: 7.8ms | Allocations: 11531)
+
+
+Started GET "/profile" for 127.0.0.1 at 2020-09-22 16:30:43 -0400
+Processing by UsersController#profile as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "ziQbaXMJ2Lf87W5H8CCuAQxf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:27:in `block in authenticate_token'
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 774)
+
+

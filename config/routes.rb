@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   delete "/logout" => "sessions#destroy"
   get "/profile" => "users#profile"
   resources :coffees
-  resources :users, only: [:show, :create, :update]
+  resources :coffee_orders
   resources :orders, only: [:index, :show, :create, :update]
+  resources :users, only: [:show, :create, :update]
 end
