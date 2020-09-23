@@ -15,6 +15,9 @@ class CoffeesController < ApplicationController
     end
 
     def update
+        coffee = Coffee.find(params[:id])
+        coffee.update(params.require(:coffee).permit(:name, :flavor, :category))
+        # redirect_to cofees_path(@coffee)
     end
 
     def destroy

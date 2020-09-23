@@ -1,69 +1,3 @@
-// import React, { useState, useEffect } from 'react';
-// import { Redirect } from 'react-router-dom';
-// import Auth from '../../modules/Auth'
-
-// const Profile = () => {
-//     const [data, setData] = useState(null);
-//     useEffect(() => {
-//         fetch('/profile', {
-//             headers: {
-//                 token: Auth.getToken(),
-//                 'Authorization': `Token ${Auth.getToken()}`
-//             }
-//         })
-//             .then(res => res.json())
-//             .then(res => {
-//                 // console.log("RES", res)
-//                 setData(res)
-//             })
-//     }, []);
-
-//     const [ordersData, setOrdersData] = useState(null)
-//     useEffect(() => {
-//         fetch('/orders', {
-//             headers: {
-//                 token: Auth.getToken(),
-//                 'Authorization': `Token ${Auth.getToken()}`
-//             }
-//         })
-//             .then(res => res.json())
-//             .then(res => {
-//                 console.log("res", res)
-//                 setOrdersData(res)
-//             })
-//     })
-
-
-//     return (
-//         <div className="profile">
-//             {data ?
-//                 (
-//                     < div >
-//                         <h1>Welcome, {data.user.username}</h1>
-//                         < ul >
-//                             {
-//                                 data.orders.map(order =>
-//                                     (
-//                                         <li key={order.id}>
-//                                             <h2>User ID{order.user_id}</h2>
-//                                         </li>
-//                                     ))
-//                             }
-//                         </ul>
-//                     </div >
-//                 )
-//                 :
-//                 <p>Loading</p>
-//             }
-//             { !Auth.isUserAuthenticated() && <Redirect to="/login" />}
-
-//         </div >
-//     )
-// }
-
-// export default Profile;
-
-
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import Auth from '../../modules/Auth'
@@ -111,6 +45,12 @@ export default class Profile extends Component {
             })
     }
 
+    logout() {
+        fetch('/logout', {
+            method: 'POST'
+        })
+    }
+
     render() {
         return (
             <div className="profile">
@@ -118,7 +58,6 @@ export default class Profile extends Component {
                     (
                         <>
                             <h4 id="logout">Logout</h4>
-
                             <h1 className="title">Welcome, {this.state.data.user.username}</h1>
                             <ul>
                                 {

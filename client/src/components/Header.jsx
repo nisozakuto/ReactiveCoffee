@@ -11,6 +11,7 @@ export default class Header extends Component {
                         <div className="site-menu">
                             <p><span role="img" aria-label="sheep">☕️</span></p>
                             <Link to="/">Home</Link>
+                            <Link to="/coffees">Coffees</Link>
                         </div>
                         {Auth.isUserAuthenticated() ?
                             <div className="user-menu">

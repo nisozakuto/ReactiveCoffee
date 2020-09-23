@@ -8,15 +8,16 @@ import Footer from './components/Footer'
 import LoginForm from './components/LoginForm'
 import Auth from './modules/Auth'
 import Profile from './components/Users/Profile'
-
+import CoffeeList from './components/Coffees/CoffeeList'
+import Coffee from './components/Coffees/Coffee'
 export default class App extends Component {
   constructor() {
     super()
     this.state = {
       auth: Auth.isUserAuthenticated(),
+      selectedCofee: null
     }
   }
-
 
   handleLoginSubmit = (evt, values) => {
     evt.preventDefault();
@@ -37,6 +38,20 @@ export default class App extends Component {
       })
   }
 
+  selectedCoffee(id) {
+    fetch(`/coffees/${id}`, {
+      headers: {
+        token: Auth.getToken(),
+        'Authorization': `Token ${Auth.getToken()}`
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        // this.setState({
+        // })
+      })
+  }
   render() {
     return (
       <div className="App">
@@ -46,6 +61,8 @@ export default class App extends Component {
           <Route exact path="/login" render={() => <LoginForm handleLoginSubmit={this.handleLoginSubmit} />} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path='/orders' render={() => (<Orders />)} />
+          <Route exact path='/coffees' render={() => (<CoffeeList selectedCoffee={this.selectedCoffee} />)} />
+          <Route exact path='/coffee' render={(() => (<Coffee />))} />
         </div>
         <Footer />
       </div >

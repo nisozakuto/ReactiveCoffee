@@ -8,15 +8,15 @@
 
 
 #HOT COFFEES
-Coffee.create(name:"Latte", flavor:"Espresso",category:"Hot Coffee")
-Coffee.create(name:"Caffe Americano", flavor:"Espresso",category:"Hot Coffee")
-Coffee.create(name:"Blonde Roast", flavor:"Brewed",category:"Hot Coffee")
-Coffee.create(name:"Caffè Misto", flavor:"Brewed",category:"Hot Coffee")
-Coffee.create(name:"Cappuccinos", flavor:"Cappuccinos",category:"Hot Coffee")
-Coffee.create(name:"Espresso Shots", flavor:"Espresso",category:"Hot Coffee")
-Coffee.create(name:"Flat Whites", flavor:"Ristretto",category:"Hot Coffee")
-Coffee.create(name:"Caramel Macchiato", flavor:"Espresso",category:"Hot Coffee")
-Coffee.create(name:"Mochas", flavor:"Espresso",category:"Hot Coffee")
+Coffee.create(name:"Latte", flavor:"Espresso",category:"Hot Coffee", url:"https://globalassets.starbucks.com/assets/b635f407bbcd49e7b8dd9119ce33f76e.jpg?impolicy=1by1_wide_1242")
+Coffee.create(name:"Caffe Americano", flavor:"Espresso",category:"Hot Coffee", url:"https://globalassets.starbucks.com/assets/f12bc8af498d45ed92c5d6f1dac64062.jpg?impolicy=1by1_wide_1242")
+Coffee.create(name:"Blonde Roast", flavor:"Brewed",category:"Hot Coffee", url:"https://globalassets.starbucks.com/assets/abb4f97948c948c28ea2dcaf933c4f6b.jpg?impolicy=1by1_wide_1242")
+Coffee.create(name:"Caffè Misto", flavor:"Brewed",category:"Hot Coffee", url:"")
+Coffee.create(name:"Cappuccinos", flavor:"Cappuccinos",category:"Hot Coffee", url:"")
+Coffee.create(name:"Espresso Shots", flavor:"Espresso",category:"Hot Coffee", url:"")
+Coffee.create(name:"Flat Whites", flavor:"Ristretto",category:"Hot Coffee", url:"")
+Coffee.create(name:"Caramel Macchiato", flavor:"Espresso",category:"Hot Coffee", url:"")
+Coffee.create(name:"Mochas", flavor:"Espresso",category:"Hot Coffee", url:"")
 
 #COLD COFFEES
 Coffee.create(name:"Pumpkin Cream Cold Brew", flavor:"Pumpkin",category:"Cold Coffee")
@@ -44,3 +44,4 @@ User.create(username:"Superman", password:"avenger", email:"superman@gmail.com",
 User.create(username:"Thor", password:"avenger", email:"thor@gmail.com", name:"Thor")
 User.create(username:"Hulk", password:"avenger", email:"hulk@gmail.com", name:"Hulk")
 User.create(username:"IronMan", password:"avenger", email:"ironman@gmail.com", name:"IronMan")
+
