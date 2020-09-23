@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import CoffeeList from './CoffeeList'
 import OrderList from './OrderList.jsx/OrderList'
 
 export default class Orders extends Component {

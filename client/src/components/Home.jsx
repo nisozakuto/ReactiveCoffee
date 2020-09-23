@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const API_KEY = process.env.REACT_APP_API_KEY
 export default class Home extends Component {
@@ -22,7 +22,7 @@ export default class Home extends Component {
             .then(parsedRes => {
                 let coffeeImages = []
                 parsedRes.photos.map((e) => {
-                    coffeeImages.push(e.src.medium)
+                    return coffeeImages.push(e.src.medium)
 
                 })
                 this.setState({ images: coffeeImages })

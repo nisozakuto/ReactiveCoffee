@@ -65,7 +65,7 @@
 
 
 import React, { Component } from 'react'
-import { Route, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import Auth from '../../modules/Auth'
 export default class Profile extends Component {
     constructor() {
@@ -114,36 +114,23 @@ export default class Profile extends Component {
     render() {
         return (
             <div className="profile">
-
                 {this.state.data ?
                     (
-                        <div>
-                            <h1>Welcome, {this.state.data.user.username}</h1>
+                        <>
+                            <h4 id="logout">Logout</h4>
+
+                            <h1 className="title">Welcome, {this.state.data.user.username}</h1>
                             <ul>
                                 {
                                     this.state.data.orders.map(order =>
                                         (
                                             <li key={order.id}>
-                                                <h2>ID{order.id}</h2>
+                                                <h4>ID{order.id}</h4>
                                             </li>
                                         ))
                                 }
                             </ul>
-                            {console.log(this.state.ordersData)}
-                            <ul>
-
-                                {this.state.ordersData ?
-                                    this.state.ordersData.orders.map(order =>
-                                        (
-                                            <li key={order.id}>
-                                                <h2>Order - ID{order.id}</h2>
-                                            </li>
-                                        ))
-                                    :
-                                    <p></p>
-                                }
-                            </ul>
-                        </div>
+                        </>
                     )
                     :
                     <p>Loading</p>
