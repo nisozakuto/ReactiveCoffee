@@ -37,7 +37,7 @@ export default class CoffeeList extends Component {
                         this.state.coffeeList.coffees.map((coffee) => {
                             return (
                                 <div className="coffees" key={coffee.name}>
-                                    <img src={coffee.url} width="250px" />
+                                    <img src={coffee.url} width="250px" alt={coffee.name} />
                                     <div className="coffee-info">
                                         <h2 onClick={() => { }}>{coffee.name}</h2>
                                         <p>{coffee.flavor}</p>
