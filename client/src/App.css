@@ -72,6 +72,7 @@ button::-moz-focus-inner {
 html
 {
   color: #333;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .App{
@@ -209,6 +210,20 @@ section img{
 }
 
 /* COFFEES */
+
+/* Add to cart START */
+  #add-to-cart{
+    background-color: rgb(94,	166,	102);
+    padding:2%;
+    border-radius: 500px;
+    z-index:1;
+    font-size: 1.3em;
+    color: white;
+    font-weight: 600;
+    position: relative;
+    
+  }
+/* Add to cart END */
 
 /* PROFILE STARTS */
 .profile{

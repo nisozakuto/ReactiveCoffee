@@ -15,7 +15,8 @@ export default class App extends Component {
     super()
     this.state = {
       auth: Auth.isUserAuthenticated(),
-      selectedCofee: null
+      selectedCofee: null,
+      currentPage: null,
     }
   }
 
