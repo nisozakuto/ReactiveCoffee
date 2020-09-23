@@ -66,9 +66,7 @@ button::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
-
 /* RESET ENDS */
-
 
 /* REACTIVE COFFEE STARTS */
 html
@@ -76,11 +74,16 @@ html
   color: #333;
 }
 
+.App{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* HEADER STARTS */
 header{
   background-color: white;
-  /* height: 3em; */
-  
-
 }
 
 nav{
@@ -108,13 +111,32 @@ nav ul{
   justify-content: space-around;
 }
 
-.container{
-
+.user-menu, .site-menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
-/* MAIN */
+.site-menu h1{
+  margin:0 45% 0 0;
+}
+/* HEADER ENDS */
+
+/* Hs START */
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1.12em; }
+h5 { font-size: .83em; }
+h6 { font-size: .75em; }
+/* Hs END */
+
+.container{
+  background-color: rgba(241	,222	,179,0.1	);
+  flex-grow: 1;
+}
+
+/* MAIN START */
 main{
-  /* width: 80vw; */
-  /* margin: auto; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -136,11 +158,13 @@ article{
   justify-content: center;
   /* padding: 10% */
 }
+
 section article{
   font-size: 1.5em;
   line-height: 1.4em;
   margin: 0 5% 0 5%;
 }
+
 section img{
   margin: 0 5% 0 5%;
 }
@@ -150,7 +174,8 @@ section img{
   background-color: #8080802e;
 }
 
-/* MAIN */
+/* MAIN END */
+
 /* COFFEES */
 
 .coffeeList{
@@ -165,6 +190,42 @@ section img{
 }
 
 /* COFFEES */
+
+/* PROFILE STARTS */
+.profile{
+  padding-top: 5%;
+  margin: 0 15%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid red;
+}
+
+#logout{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+/* PROFILE ENDS */
+
+/* FOOTER STARTS */
+footer{
+  background-color: rgb(241	,222,179);
+  color: black;
+}
+footer p{
+  text-align: center;
+  margin:10px auto;
+}
+.bottom-nav{
+  margin: 0 15%;
+  padding-bottom:40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+/* FOOTER ENDS */
+
 /* REACTIVE COFFEE END  */
 @media only screen and (max-width: 768px) {
   nav{

@@ -8,12 +8,23 @@ export default class Header extends Component {
             <header>
                 <nav>
                     <ul>
-                        <h1><span role="img" aria-label="sheep">☕️</span></h1>
-                        <Link to="/">Home</Link>
-                        <Link to="/orders">Orders</Link>
+                        <div className="site-menu">
+                            <p><span role="img" aria-label="sheep">☕️</span></p>
+                            <Link to="/">Home</Link>
+                        </div>
+                        {Auth.isUserAuthenticated() ?
+                            <div className="user-menu">
+                                <Link to="/profile">Profile</Link>
+                            </div>
+                            :
+                            <div className="user-menu">
+                                <Link to="/profile">Sign up</Link>
+                                <Link to="/profile">Log in</Link>
+                            </div>
+                        }
                     </ul>
                 </nav>
-            </header>
+            </header >
         )
     }
 }

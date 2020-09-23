@@ -27,5 +27,20 @@ Coffee.create(name:"Iced Flat Whites", flavor:"Nitro",category:"Cold Coffee")
 Coffee.create(name:"Iced Caramel Macchiato", flavor:"Caramel",category:"Cold Coffee")
 
 #ORDERS
-Order.create("coffees_order_id":1)
+# Order.create("coffees_order_id":1)
+Order.create(user_id:1)
+Order.create(user_id:2)
+Order.create(user_id:2)
+Order.create(user_id:4)
+Order.create(user_id:3)
+Order.create(user_id:3)
+Order.create(user_id:4)
+Order.create(user_id:4)
+Order.create(user_id:4)
 
+#Users
+User.create(username:"Batman", password:"avenger", email:"batman@gmail.com", name:"Batman")
+User.create(username:"Superman", password:"avenger", email:"superman@gmail.com", name:"Superman")
+User.create(username:"Thor", password:"avenger", email:"thor@gmail.com", name:"Thor")
+User.create(username:"Hulk", password:"avenger", email:"hulk@gmail.com", name:"Hulk")
+User.create(username:"IronMan", password:"avenger", email:"ironman@gmail.com", name:"IronMan")
