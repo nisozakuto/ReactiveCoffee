@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Redirect } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import './App.css';
 import Header from './components/Header'
 import Home from './components/Home'
@@ -46,8 +46,8 @@ export default class App extends Component {
           <Route exact path="/login" render={() => <LoginForm handleLoginSubmit={this.handleLoginSubmit} />} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path='/orders' render={() => (<Orders />)} />
-          <Footer />
         </div>
+        <Footer />
       </div >
     )
   }
