@@ -30,6 +30,7 @@ export default class Profile extends Component {
             })
     }
 
+
     ordersData() {
         fetch('/orders', {
             headers: {
@@ -59,12 +60,13 @@ export default class Profile extends Component {
                         <>
                             <h4 id="logout">Logout</h4>
                             <h1 className="title">Welcome, {this.state.data.user.username}</h1>
+                            <h3>Past Orders</h3>
                             <ul>
                                 {
                                     this.state.data.orders.map(order =>
                                         (
                                             <li key={order.id}>
-                                                <h4>ID{order.id}</h4>
+                                                <h4>ID - {order.id}</h4>
                                             </li>
                                         ))
                                 }
