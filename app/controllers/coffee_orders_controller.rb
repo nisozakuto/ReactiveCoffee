@@ -15,6 +15,7 @@ class CoffeeOrdersController < ApplicationController
     end
 
     private
-    def coffeeorder_params
+    def coffeeorder_params 
+        params.require(:coffee_orders).permit(:coffee_id, :size, :quantity, :order_id)
     end
 end

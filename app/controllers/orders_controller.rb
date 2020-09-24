@@ -7,6 +7,11 @@ class OrdersController < ApiController
         orders = Order.where(params[:user_id] == current_user)
         render json: {orders: orders}
     end
+    
+    def checkisFulfilled
+        order = User.find_by!(auth_token: request.headers[:token])        
+        render json: {order: order}
+    end
 
     def show
         order = Order.find(params[:id])
@@ -22,6 +27,9 @@ class OrdersController < ApiController
     end
     
     def update
+        order = Order.find(params[:id]) 
+        order.isFulFilled = order_params
+        order.save
     end
 
     def destroy
@@ -32,6 +40,6 @@ class OrdersController < ApiController
 
     private
     def order_params
-        params.require(:order).permit(:user_id, :coffees_order_id)
+        params.require(:order).permit(:user_id, :isFulFilled)
     end        
 end
