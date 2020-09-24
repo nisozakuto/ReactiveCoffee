@@ -7,22 +7,17 @@ export default class Coffee extends Component {
             currentPage: null,
         }
     }
+
     render() {
         return (
             <main>
-                <div>
-                    <img src="https://globalassets.starbucks.com/assets/f12bc8af498d45ed92c5d6f1dac64062.jpg?impolicy=1by1_wide_1242" width="350px" />
-                    <ul>
-                        <li>lksjdfsl</li>
-                        <li>lksjdfsl</li>
-                        <li>lksjdfsl</li>
-                        <li>lksjdfsl</li>
-                        <li>lksjdfsl</li>
-                        <li>lksjdfsl</li>
-                    </ul>
-                </div>
-                <div>
-                    <input type="submit" value="Add to Order" id="add-to-cart" />
+                <div className="coffees" key={this.props.coffeeName}>
+                    <img src={this.props.coffeeImageLarge} width="250px" alt={this.props.id} onClick={(() => this.props.handleSelectedCoffee(this.props.id))} />
+                    <div className="coffee-info">
+                        <h2 onClick={() => { console.log("clicked") }}>{this.props.coffeeName}</h2>
+                        <p>{this.props.coffeeFlavor}</p>
+                        <p>{this.props.coffeeCategory}</p>
+                    </div>
                 </div>
             </main>
         )
