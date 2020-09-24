@@ -19,7 +19,7 @@ export default class Header extends Component {
                             </div>
                             :
                             <div className="user-menu">
-                                <Link to="/profile">Sign up</Link>
+                                <Link to="/signup">Sign up</Link>
                                 <Link to="/profile">Log in</Link>
                             </div>
                         }
