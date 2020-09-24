@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Auth from '../../modules/Auth'
-import Coffee from './Coffee'
+
 export default class CoffeeList extends Component {
     constructor(props) {
         super(props)
@@ -49,7 +49,7 @@ export default class CoffeeList extends Component {
                         this.state.coffeeList.coffees.map((coffee) => {
                             return (
                                 <div className="coffees" key={coffee.name}>
-                                    <img src={coffee.short_url} width="250px" />
+                                    <img src={coffee.short_url} width="250px" onClick={() => { this.props.handleSelectedCoffee(coffee.id) }} alt={coffee.name} />
                                     <div className="coffee-info">
                                         <h2 onClick={() => { this.props.handleSelectedCoffee(coffee.id) }}>{coffee.name}</h2>
                                         <p>{coffee.flavor}</p>
@@ -60,7 +60,8 @@ export default class CoffeeList extends Component {
                         }))
                         : (
                             <p>Loading...</p>
-                        )}
+                        )
+                }
             </div >
         )
     }

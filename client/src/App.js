@@ -5,12 +5,14 @@ import Header from './components/Header'
 import Home from './components/Home'
 import Orders from './components/Orders'
 import Footer from './components/Footer'
-import LoginForm from './components/LoginForm'
+import LoginForm from './components/Users/LoginForm'
 import Auth from './modules/Auth'
 import Profile from './components/Users/Profile'
 import CoffeeList from './components/Coffees/CoffeeList'
-import Coffee from './components/Coffees/Coffee'
 import Details from './components/Coffees/Details';
+import SignupForm from './components/Users/SignUpForm'
+import ls from 'local-storage'
+
 export default class App extends Component {
   constructor() {
     super()
@@ -23,8 +25,11 @@ export default class App extends Component {
     }
   }
 
+  componentDidMount() {
+
+  }
+
   handleSelectedCoffee = (id) => {
-    console.log(id)
     fetch(`/coffees/${id}`, {
       headers: {
         token: Auth.getToken(),
@@ -33,12 +38,19 @@ export default class App extends Component {
     })
       .then(res => res.json())
       .then(res => {
-        console.log(res.coffee)
         this.setState({
           selectedCoffee: res.coffee,
           fireRedirect: true,
           redirectPath: `/coffees/${id}`
         })
+        const coffeeCategory = []
+        ls.set('coffeeCategory', this.state.selectedCoffee.category)
+        ls.set('coffeeFlavor', this.state.selectedCoffee.flavor)
+        ls.set('coffeeId', this.state.selectedCoffee.id)
+        ls.set('coffeeLargeUrl', this.state.selectedCoffee.large_url)
+        ls.set('coffeeShortUrl', this.state.selectedCoffee.short_url)
+        ls.set('coffeeName', this.state.selectedCoffee.name)
+
       })
   }
 
@@ -61,14 +73,19 @@ export default class App extends Component {
       })
   }
 
+  handleSignup = () => {
+
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
-        {console.log("selected coffee at the app.js", this.state.selectedCoffee)}
+        {console.log("selected coffee at the app.js", this.state)}
         <div className="container">
           <Route exact path='/' render={() => (<Home />)} />
           <Route exact path="/login" render={() => <LoginForm handleLoginSubmit={this.handleLoginSubmit} />} />
+          <Route exact path="/signup" render={() => <SignupForm handleLoginSubmit={this.handleSignup} />} />
           {/* <Route exact path="/logout" /> */}
           <Route exact path="/profile" component={Profile} />
           <Route exact path='/orders' render={() => (<Orders />)} />

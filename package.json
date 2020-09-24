@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "dotenv": "^8.2.0",
-    "node-fetch": "^2.6.1"
+    "local-storage": "^2.0.0",
+    "node-fetch": "^2.6.1",
+    "react-use-localstorage": "^3.5.3"
   }
 }
