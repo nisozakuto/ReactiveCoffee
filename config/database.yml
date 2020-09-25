@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: ReactiveCoffee_production
-  # username: ReactiveCoffee
-  # password: <%= ENV['REACTIVECOFFEE_DATABASE_PASSWORD'] %>
+  username: ReactiveCoffee
+  password: <%= ENV['REACTIVECOFFEE_DATABASE_PASSWORD'] %>
