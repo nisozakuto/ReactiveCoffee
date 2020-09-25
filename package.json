@@ -6,6 +6,6 @@
     "react-use-localstorage": "^3.5.3"
   },
   "scripts": {
-    "heroku-postbuild": "cd client && npm run build && npm run deploy"
+    "heroku-postbuild": "cd client && npm install && npm run build && npm run deploy"
   }
 }
