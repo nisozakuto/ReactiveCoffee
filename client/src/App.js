@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import './App.css';
-import Header from './components/Header'
-import Home from './components/Home'
+import Header from './components/partials/Header'
+import Home from './components/partials/Home'
 import Orders from './components/Orders'
-import Footer from './components/Footer'
+import Footer from './components/partials/Footer'
 import LoginForm from './components/Users/LoginForm'
 import Auth from './modules/Auth'
 import Profile from './components/Users/Profile'
@@ -12,7 +12,7 @@ import CoffeeList from './components/Coffees/CoffeeList'
 import Details from './components/Coffees/Details';
 import SignupForm from './components/Users/SignUpForm'
 import ls from 'local-storage'
-
+import About from './components/About'
 export default class App extends Component {
   constructor() {
     super()
@@ -22,6 +22,7 @@ export default class App extends Component {
       currentPage: null,
       fireRedirect: false,
       redirectPath: null,
+      cart: ''
     }
   }
 
@@ -91,6 +92,7 @@ export default class App extends Component {
           <Route exact path='/orders' render={() => (<Orders />)} />
           <Route exact path='/coffees' render={() => (<CoffeeList handleSelectedCoffee={this.handleSelectedCoffee} />)} />
           <Route exact path='/coffees/:id' render={() => (<Details selectedCoffee={this.state.selectedCoffee} />)} />
+          <Route exact path='/about' render={() => (<About />)} />
           {this.state.fireRedirect && <Redirect push to={this.state.redirectPath} />}
         </div>
         <Footer />
