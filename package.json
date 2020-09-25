@@ -4,5 +4,8 @@
     "local-storage": "^2.0.0",
     "node-fetch": "^2.6.1",
     "react-use-localstorage": "^3.5.3"
+  },
+  "scripts": {
+    "heroku-postbuild": "cd client && npm run build && npm run deploy"
   }
 }

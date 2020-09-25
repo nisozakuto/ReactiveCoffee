@@ -62,14 +62,7 @@ export default class App extends Component {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        user: {
-          "username": "testUser1",
-          "password": "test",
-          "email": "nisozakuto1@gmail.com",
-          "name": "Nisos Zakuto"
-        }
-      })
+      body: JSON.stringify(values)
     }).then(res => res.json())
       .then(res => {
         Auth.authenticateUser(res.token)
@@ -89,9 +82,14 @@ export default class App extends Component {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(values)
+        body: JSON.stringify({ user: values })
       }).then(res => res.json())
       .then(res => {
+        if (res.token)
+          Auth.authenticateToken(res.token);
+        this.setState({
+          auth: Auth.isUserAuthenticated()
+        })
         console.log(res)
       })
 
