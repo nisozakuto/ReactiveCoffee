@@ -30,6 +30,20 @@ export default class Profile extends Component {
             })
     }
 
+    getCoffeeDetails(order_id) {
+        fetch(`/coffee_orders/${order_id}`, {
+            headers: {
+                token: Auth.getToken(),
+                'Authorization': `Token ${Auth.getToken()}`
+            }
+        })
+            .then(res => res.json())
+            .then((res) => {
+                console.log("getCoffeeDetails", res)
+
+            })
+    }
+
     ordersData() {
         fetch('/orders', {
             headers: {
@@ -75,7 +89,7 @@ export default class Profile extends Component {
                                     this.state.data.orders.map(order =>
                                         (
                                             <li key={order.id}>
-                                                <h4>ID - {order.id}</h4>
+                                                <h4 onClick={() => this.getCoffeeDetails(order.id)}>ID - {order.id}</h4>
                                             </li>
                                         ))
                                 }
