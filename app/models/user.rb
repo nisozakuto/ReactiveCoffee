@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-    # has_many :order
     validates :username, uniqueness: true
 
     has_secure_password

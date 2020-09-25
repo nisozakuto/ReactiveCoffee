@@ -3,7 +3,6 @@ class OrdersController < ApiController
     before_action :require_login
 
     def index 
-        # orders = Order.all
         orders = Order.where(params[:user_id] == current_user)
         render json: {orders: orders}
     end

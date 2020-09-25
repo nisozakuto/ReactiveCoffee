@@ -5,7 +5,7 @@ class CoffeeOrdersController < ApplicationController
     end
 
     def show
-        coffeeorder =  CoffeeOrder.find(params[:id])
+        coffeeorder =  CoffeeOrder.where(:order_id => params[:id])
         render json: {coffeeorder: coffeeorder}
     end
     
