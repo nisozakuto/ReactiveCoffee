@@ -6,7 +6,9 @@ export default class Profile extends Component {
         super()
         this.state = {
             data: null,
-            ordersData: null
+            ordersData: null,
+            ordersCoffeesData: null,
+            coffeeDetail: null
         }
     }
 
@@ -30,7 +32,7 @@ export default class Profile extends Component {
             })
     }
 
-    getCoffeeDetails(order_id) {
+    getCoffeeOrdersDetails(order_id) {
         fetch(`/coffee_orders/${order_id}`, {
             headers: {
                 token: Auth.getToken(),
@@ -39,10 +41,40 @@ export default class Profile extends Component {
         })
             .then(res => res.json())
             .then((res) => {
-                console.log("getCoffeeDetails", res)
-
+                this.setState({
+                    ordersCoffeesData: res
+                })
             })
     }
+
+    getCoffeeDetails(coffee_id) {
+        // console.log("getCoffeeDetails", res.coffeeorder[0].coffee_id)
+        //Need map here
+
+        fetch(`/coffees/${coffee_id}`, {
+            headers: {
+                token: Auth.getToken(),
+                'Authorization': `Token ${Auth.getToken()}`
+            }
+        })
+            .then(res => res.json())
+            .then((res) => {
+                console.log("coffee detail", res)
+                this.setState({
+
+                    coffeeDetail: res
+                })
+                // console.log("res", res)
+            })
+
+        // res.coffeeorder.map((singleCoffeeorder) => {
+        //     console.log("single-id", singleCoffeeorder.coffee_id)
+        //     return (
+
+        //     )
+        // })
+    }
+
 
     ordersData() {
         fetch('/orders', {
@@ -89,11 +121,45 @@ export default class Profile extends Component {
                                     this.state.data.orders.map(order =>
                                         (
                                             <li key={order.id}>
-                                                <h4 onClick={() => this.getCoffeeDetails(order.id)}>ID - {order.id}</h4>
+                                                <h4 onClick={() => this.getCoffeeOrdersDetails(order.id)}>ID - {order.id}</h4>
                                             </li>
                                         ))
                                 }
                             </ul>
+
+                            <h3>
+                                <h4>Coffee Order</h4>
+                                {this.state.ordersCoffeesData ?
+                                    (
+                                        this.state.ordersCoffeesData.coffeeorder.map((coffeeorder) =>
+                                            (
+
+                                                <>
+                                                    <p></p>
+                                                    <p onClick={() => this.getCoffeeDetails(coffeeorder.coffee_id)}>Ordered Coffee number: {coffeeorder.coffee_id}</p>
+                                                    {
+                                                        this.state.coffeeDetail ?
+                                                            (
+
+                                                                <p>Here: {this.state.coffeeDetail.coffee.name}</p>
+                                                            )
+                                                            :
+                                                            (
+                                                                <p>Brewing coffee</p>
+                                                            )
+
+                                                    }
+                                                    <p>Order id: {coffeeorder.order_id} </p>
+                                                    <p>Quantity id: {coffeeorder.quantity} </p>
+                                                    <p>Size: {coffeeorder.size} </p>
+                                                </>
+                                            )
+                                        )
+                                    )
+                                    :
+                                    <p>loading</p>
+                                }
+                            </h3>
                         </>
                     )
                     :
