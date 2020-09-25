@@ -139,7 +139,15 @@ h6 { font-size: .75em; }
   background-color: rgba(241	,222	,179,0.1	);
   flex-grow: 1;
 }
-
+/* HOME START */
+.home-main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-self: center;
+  text-align: center;
+}
+/* HOME END */
 /* MAIN START */
 main{
   display: flex;
@@ -154,14 +162,12 @@ section{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  
 }
 
 article{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* padding: 10% */
 }
 
 section article{
@@ -178,7 +184,6 @@ section img{
 {
   background-color: #8080802e;
 }
-
 /* MAIN END */
 
 /* COFFEES */

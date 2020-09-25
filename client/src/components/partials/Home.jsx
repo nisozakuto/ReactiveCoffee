@@ -31,13 +31,7 @@ export default class Home extends Component {
 
     render() {
         return (
-            <main>
-                {this.state.auth ?
-                    (<p>You are logged in</p>)
-                    :
-                    (<p>Log in <Link to="/login"> here </Link></p>)
-                }
-
+            <main className="home-main">
                 <section id="first-section">
                     <article>
                         Spoon, con panna americano that coffee qui wings coffee cinnamon carajillo. Lungo, et, mazagran, macchiato breve kopi-luwak cream cultivar. Variety cream cup single shot qui percolator id sugar frappuccino single origin fair trade. Seasonal, coffee, blue mountain a, beans at aromatic roast saucer kopi-luwak. Cream, extra, trifecta et sugar qui aroma sit black decaffeinated body.

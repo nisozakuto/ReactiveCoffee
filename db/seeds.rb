@@ -19,12 +19,12 @@ Coffee.create(name:"Caramel Macchiato", flavor:"Espresso",category:"Hot Coffee",
 Coffee.create(name:"Mochas", flavor:"Espresso",category:"Hot Coffee", large_url:"https://globalassets.starbucks.com/assets/f4ec500b34624242b15c2d29e53f3c48.jpg?impolicy=1by1_wide_1242", short_url:"https://globalassets.starbucks.com/assets/f4ec500b34624242b15c2d29e53f3c48.jpg?impolicy=1by1_tight_288")
 
 #COLD COFFEES
-Coffee.create(name:"Pumpkin Cream Cold Brew", flavor:"Pumpkin",category:"Cold Coffee", large_url:"", short_url:"")
-Coffee.create(name:"Pumpkin Cream Nitro Cold Brew", flavor:"Nitro Cold Brew",category:"Cold Coffee", large_url:"", short_url:"")
-Coffee.create(name:"Iced Caffè Americano", flavor:"Espresso",category:"Cold Coffee", large_url:"", short_url:"")
-Coffee.create(name:"Iced Coffees", flavor:"Brewed",category:"Cold Coffee", large_url:"", short_url:"")
-Coffee.create(name:"Iced Flat Whites", flavor:"Nitro",category:"Cold Coffee", large_url:"", short_url:"")
-Coffee.create(name:"Iced Caramel Macchiato", flavor:"Caramel",category:"Cold Coffee", large_url:"", short_url:"")
+Coffee.create(name:"Pumpkin Cream Cold Brew", flavor:"Pumpkin",category:"Cold Coffee", large_url:"https://globalassets.starbucks.com/assets/259c28ab81a34479b56afa212329930b.jpg?impolicy=1by1_wide_1242", short_url:"https://globalassets.starbucks.com/assets/259c28ab81a34479b56afa212329930b.jpg?impolicy=1by1_tight_288")
+Coffee.create(name:"Pumpkin Cream Nitro Cold Brew", flavor:"Nitro Cold Brew",category:"Cold Coffee", large_url:"https://globalassets.starbucks.com/assets/481acb1e88ee4b528dd337277dc94de6.jpg?impolicy=1by1_wide_1242", short_url:"https://globalassets.starbucks.com/assets/481acb1e88ee4b528dd337277dc94de6.jpg?impolicy=1by1_tight_288")
+Coffee.create(name:"Iced Caffè Americano", flavor:"Espresso",category:"Cold Coffee", large_url:"https://globalassets.starbucks.com/assets/84ede138768e42ebb2e0366c2f09960a.jpg?impolicy=1by1_wide_1242", short_url:"https://globalassets.starbucks.com/assets/84ede138768e42ebb2e0366c2f09960a.jpg?impolicy=1by1_tight_288")
+Coffee.create(name:"Iced Coffees", flavor:"Brewed",category:"Cold Coffee", large_url:"https://globalassets.starbucks.com/assets/84ede138768e42ebb2e0366c2f09960a.jpg?impolicy=1by1_wide_1242", short_url:"https://globalassets.starbucks.com/assets/84ede138768e42ebb2e0366c2f09960a.jpg?impolicy=1by1_tight_288")
+Coffee.create(name:"Iced Flat Whites", flavor:"Nitro",category:"Cold Coffee", large_url:"https://globalassets.starbucks.com/assets/1266dd4687e943e0a54c9da9269e95e3.jpg?impolicy=1by1_wide_1242", short_url:"https://globalassets.starbucks.com/assets/1266dd4687e943e0a54c9da9269e95e3.jpg?impolicy=1by1_tight_288")
+Coffee.create(name:"Iced Caramel Macchiato", flavor:"Caramel",category:"Cold Coffee", large_url:"https://globalassets.starbucks.com/assets/b583bccc3df243698937e2ad21d7be7b.jpg?impolicy=1by1_wide_1242", short_url:"https://globalassets.starbucks.com/assets/b583bccc3df243698937e2ad21d7be7b.jpg?impolicy=1by1_tight_288")
 
 #ORDERS
 # Order.create("coffees_order_id":1)
