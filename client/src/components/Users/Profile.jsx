@@ -7,14 +7,20 @@ export default class Profile extends Component {
         this.state = {
             data: null,
             ordersData: null,
-            ordersCoffeesData: null,
-            coffeeDetail: null
+            coffeeOrdersData: null,
+            coffeeDetail: null,
+            testState: 'sdf',
         }
     }
 
     componentDidMount() {
         this.getData()
         this.ordersData()
+    }
+
+    componentDidUpdate() {
+        if (this.state.coffeeOrdersData !== this.state.coffeeOrdersData)
+            console.log('wasnt same')
     }
 
     getData() {
@@ -32,50 +38,6 @@ export default class Profile extends Component {
             })
     }
 
-    getCoffeeOrdersDetails(order_id) {
-        fetch(`/coffee_orders/${order_id}`, {
-            headers: {
-                token: Auth.getToken(),
-                'Authorization': `Token ${Auth.getToken()}`
-            }
-        })
-            .then(res => res.json())
-            .then((res) => {
-                this.setState({
-                    ordersCoffeesData: res
-                })
-            })
-    }
-
-    getCoffeeDetails(coffee_id) {
-        // console.log("getCoffeeDetails", res.coffeeorder[0].coffee_id)
-        //Need map here
-
-        fetch(`/coffees/${coffee_id}`, {
-            headers: {
-                token: Auth.getToken(),
-                'Authorization': `Token ${Auth.getToken()}`
-            }
-        })
-            .then(res => res.json())
-            .then((res) => {
-                console.log("coffee detail", res)
-                this.setState({
-
-                    coffeeDetail: res
-                })
-                // console.log("res", res)
-            })
-
-        // res.coffeeorder.map((singleCoffeeorder) => {
-        //     console.log("single-id", singleCoffeeorder.coffee_id)
-        //     return (
-
-        //     )
-        // })
-    }
-
-
     ordersData() {
         fetch('/orders', {
             headers: {
@@ -91,6 +53,39 @@ export default class Profile extends Component {
             })
     }
 
+    getCoffeeOrdersDetails(order_id) {
+        fetch(`/coffee_orders/${order_id}`, {
+            headers: {
+                token: Auth.getToken(),
+                'Authorization': `Token ${Auth.getToken()}`
+            }
+        })
+            .then(res => res.json())
+            .then((res) => {
+                this.setState({
+                    coffeeOrdersData: res
+                })
+                console.log("coffeeOrdersData", this.state.coffeeOrdersData)
+            })
+    }
+
+    getCoffeeDetails(coffee_id) {
+        fetch(`/coffees/${coffee_id}`, {
+            headers: {
+                token: Auth.getToken(),
+                'Authorization': `Token ${Auth.getToken()}`
+            }
+        })
+            .then(res => res.json())
+            .then((res) => {
+                console.log("coffee detail", res)
+                this.setState({
+                    coffeeDetail: res
+                })
+                console.log("coffeeDetail", this.state.coffeeDetail)
+            })
+    }
+
     logout() {
         //Get this to work
     }
@@ -103,52 +98,51 @@ export default class Profile extends Component {
                         <>
                             <h4 id="logout">Logout</h4>
                             <h1 className="title">Welcome, {this.state.data.user.username}</h1>
-                            <h2>Your Active Orders</h2>
-                            <ul>
-                                {
-                                    this.state.data.active_order ?
-                                        (
-                                            <li key={this.state.data.active_order.id}>Order ID: {this.state.data.active_order.id}</li>
-                                        )
-                                        :
-                                        <h4>You do not have any open orders</h4>
-                                }
-                            </ul>
-
-                            <h3>Past Orders</h3>
-                            <ul>
-                                {
-                                    this.state.data.orders.map(order =>
-                                        (
-                                            <li key={order.id}>
-                                                <h4 onClick={() => this.getCoffeeOrdersDetails(order.id)}>ID - {order.id}</h4>
-                                            </li>
-                                        ))
-                                }
-                            </ul>
-
-                            <h3>
-                                <h4>Coffee Order</h4>
-                                {this.state.ordersCoffeesData ?
-                                    (
-                                        this.state.ordersCoffeesData.coffeeorder.map((coffeeorder) =>
+                            <section className="active-orders">
+                                <h3>Your Active Orders</h3>
+                                <ul>
+                                    {
+                                        this.state.data.active_order ?
                                             (
-
+                                                <li key={this.state.data.active_order.id}>Order ID: {this.state.data.active_order.id}</li>
+                                            )
+                                            :
+                                            <h4>You do not have any open orders</h4>
+                                    }
+                                </ul>
+                            </section>
+                            <section className="past-orders">
+                                <h3>Past Orders</h3>
+                                <ul>
+                                    {
+                                        this.state.data.orders.map(order =>
+                                            (
+                                                <li key={order.id} onClick={() => this.getCoffeeOrdersDetails(order.id)}>ID - {order.id}</li>
+                                            ))
+                                    }
+                                </ul>
+                            </section>
+                            <section className="order-details">
+                                <h4>Coffee Order</h4>
+                                {this.state.coffeeOrdersData ?
+                                    (
+                                        this.state.coffeeOrdersData.coffeeorder.map((coffeeorder) =>
+                                            (
                                                 <>
-                                                    <p></p>
-                                                    <p onClick={() => this.getCoffeeDetails(coffeeorder.coffee_id)}>Ordered Coffee number: {coffeeorder.coffee_id}</p>
                                                     {
                                                         this.state.coffeeDetail ?
                                                             (
-
-                                                                <p>Here: {this.state.coffeeDetail.coffee.name}</p>
+                                                                <div div div className="single-order">
+                                                                    <img src={this.state.coffeeDetail.coffee.short_url} width="200px" />
+                                                                    <p>Here: {this.state.coffeeDetail.coffee.name}</p>
+                                                                </div>
                                                             )
                                                             :
                                                             (
                                                                 <p>Brewing coffee</p>
                                                             )
-
                                                     }
+                                                    <p onClick={() => this.getCoffeeDetails(coffeeorder.coffee_id)}>Ordered Coffee number: {coffeeorder.coffee_id}</p>
                                                     <p>Order id: {coffeeorder.order_id} </p>
                                                     <p>Quantity id: {coffeeorder.quantity} </p>
                                                     <p>Size: {coffeeorder.size} </p>
@@ -159,7 +153,7 @@ export default class Profile extends Component {
                                     :
                                     <p>loading</p>
                                 }
-                            </h3>
+                            </section>
                         </>
                     )
                     :

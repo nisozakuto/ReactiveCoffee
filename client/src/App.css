@@ -238,6 +238,17 @@ section img{
   justify-content: center;
   flex-direction: column;
 }
+.profile section{
+  margin:50px;
+}
+.profile .order-details{
+display: flex;
+flex-direction: column;
+}
+
+.single-order{
+  margin:30px;
+}
 
 #logout{
   display: flex;

@@ -62,7 +62,14 @@ export default class App extends Component {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(values)
+      body: JSON.stringify({
+        user: {
+          "username": "testUser1",
+          "password": "test",
+          "email": "nisozakuto1@gmail.com",
+          "name": "Nisos Zakuto"
+        }
+      })
     }).then(res => res.json())
       .then(res => {
         Auth.authenticateUser(res.token)
@@ -74,7 +81,19 @@ export default class App extends Component {
       })
   }
 
-  handleSignup = () => {
+  handleSignupSubmit = (e, values) => {
+    e.preventDefault()
+    fetch('/users',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(values)
+      }).then(res => res.json())
+      .then(res => {
+        console.log(res)
+      })
 
   }
 
@@ -86,7 +105,7 @@ export default class App extends Component {
         <div className="container">
           <Route exact path='/' render={() => (<Home />)} />
           <Route exact path="/login" render={() => <LoginForm handleLoginSubmit={this.handleLoginSubmit} />} />
-          <Route exact path="/signup" render={() => <SignupForm handleLoginSubmit={this.handleSignup} />} />
+          <Route exact path="/signup" render={() => <SignupForm handleSignupSubmit={this.handleSignupSubmit} />} />
           {/* <Route exact path="/logout" /> */}
           <Route exact path="/profile" component={Profile} />
           <Route exact path='/orders' render={() => (<Orders />)} />
