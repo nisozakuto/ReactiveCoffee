@@ -52,7 +52,6 @@ button {
     background: none;
     border: 0;
     color: inherit;
-    /* cursor: default; */
     font: inherit;
     line-height: normal;
     overflow: visible;
@@ -197,29 +196,37 @@ section img{
 /* COFFEES */
 
 .coffeeList{
-  margin: 2% 15% 0 15%;
+  margin: 2% 10% 0 10%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-
-  /* flex-wrap: wrap; */
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .coffees{
-  /* height: 300px; */
   display: flex;
-  flex-direction: row;
-  margin:30px 0 30px 0;
+  flex-direction: column;
+  margin:30px;
+  width: max-content;
 }
 
 .coffees img{
+  max-width: 148px;
   border-radius: 50%;
 }
+
+.coffees img:hover, .coffee-info{
+  cursor: pointer;
+}
+
 .coffee-info{
-  margin-left:40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  max-width: 148px;
+  margin: 0 auto;
+  margin-top:15px;
+  text-align: center;
 }
 
 /* COFFEES */

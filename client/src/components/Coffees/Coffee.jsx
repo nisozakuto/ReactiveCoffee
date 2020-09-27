@@ -11,15 +11,15 @@ export default class Coffee extends Component {
     render() {
         return (
             <main>
-                {/* <div className="coffees" key={this.props.coffeeName}>
-                    <img src={this.props.coffeeImageLarge} width="250px" alt={this.props.id} onClick={(() => this.props.handleSelectedCoffee(this.props.id))} alt={this.props.coffeeName} />
+                <div className="coffees" key={this.props.coffeeName}>
+                    <img src={this.props.coffeeImageLarge} width="150px" alt={this.props.id} onClick={(() => this.props.selectedCoffee(this.props.id))} alt={this.props.coffeeName} />
                     <div className="coffee-info">
                         <h2>{this.props.coffeeName}</h2>
                         <p>{this.props.coffeeFlavor}</p>
                         <p>{this.props.coffeeCategory}</p>
                     </div>
                     {console.log("coffee-props:", this.props)}
-                </div> */}
+                </div>
             </main>
         )
     }

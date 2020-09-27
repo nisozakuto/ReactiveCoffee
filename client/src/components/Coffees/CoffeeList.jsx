@@ -14,11 +14,11 @@ export default class CoffeeList extends Component {
         this.getCoffeeList()
     }
 
-    getCoffeeList() {
-        fetch('/coffees', {
+    getCoffeeList(category) {
+        fetch(`/coffees`, {
             headers: {
                 token: Auth.getToken(),
-                'Authorization': `Token ${Auth.getToken()}`
+                'Authorization': `Token ${Auth.getToken()} `
             }
         })
             .then(res => res.json())
@@ -51,9 +51,7 @@ export default class CoffeeList extends Component {
                                 <div className="coffees" key={coffee.name}>
                                     <img src={coffee.short_url} width="200px" onClick={() => { this.props.handleSelectedCoffee(coffee.id) }} alt={coffee.name} />
                                     <div className="coffee-info">
-                                        <h2 onClick={() => { this.props.handleSelectedCoffee(coffee.id) }}>{coffee.name}</h2>
-                                        <p>{coffee.flavor}</p>
-                                        <p>{coffee.category}</p>
+                                        <h3 onClick={() => { this.props.handleSelectedCoffee(coffee.id) }}>{coffee.name}</h3>
                                     </div>
                                 </div>
                             )

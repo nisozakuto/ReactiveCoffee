@@ -1,6 +1,7 @@
 class CoffeesController < ApplicationController
     def index
         coffees = Coffee.all
+        # coffees = Coffee.where(:category => params[:id])
         render json: {coffees: coffees}
     end
 
