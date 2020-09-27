@@ -30,7 +30,7 @@ export default class CoffeeList extends Component {
     }
     render() {
         return (
-            < div className="coffeeList" >
+            < section className="coffeeList" >
                 {
                     this.state.coffeeList ? (
                         this.state.coffeeList.coffees.map((coffee) => {
@@ -42,8 +42,7 @@ export default class CoffeeList extends Component {
                             <p>Loading...</p>
                         )
                 }
-
-                {/* {
+                {/*   {
                     this.state.coffeeList ? (
                         this.state.coffeeList.coffees.map((coffee) => {
                             return (
@@ -58,8 +57,8 @@ export default class CoffeeList extends Component {
                         : (
                             <p>Loading...</p>
                         )
-                } */}
-            </div >
+                }*/}
+            </section >
         )
     }
 }

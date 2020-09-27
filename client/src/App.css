@@ -157,11 +157,11 @@ h6 { font-size: .75em; }
 /* HOME END */
 /* MAIN START */
 main{
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
   justify-self: center;
-  text-align: center;
+  text-align: center; */
 }
 
 section{
@@ -229,6 +229,11 @@ section img{
   text-align: center;
 }
 
+.coffee-page{
+  display: flex;
+  flex-direction: row;
+  
+}
 /* COFFEES */
 
 /* Add to cart START */
