@@ -87,18 +87,22 @@ header{
 }
 
 nav{
-  font-size: 2em;
-  padding:1em;
+  font-size: 1.5em;
+  font-weight: 600;
   -webkit-box-shadow: 0 2px 6px -6px black;
   -moz-box-shadow: 0 2px 6px -6px black;
        box-shadow: 0 2px 6px -6px black;
+  padding: 1em 3em;
 }
 
 nav a{ 
-  text-transform: uppercase;
   font-weight: 500;
   color: #333;
   text-decoration: none;
+}
+
+.site-menu{
+  text-transform: uppercase;
 }
 
 nav a:hover{ 
@@ -108,7 +112,8 @@ nav a:hover{
 nav ul{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  
 }
 
 .user-menu, .site-menu{
@@ -120,7 +125,10 @@ nav ul{
 .site-menu a{
   margin-left: 2em;
 }
+.user-menu a{
+  margin-left: 2em;
 
+}
 .site-menu h1{
   margin:0 45% 0 0;
 }
