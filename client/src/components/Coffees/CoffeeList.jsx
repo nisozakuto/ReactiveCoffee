@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Auth from '../../modules/Auth'
-
+import Coffee from './Coffee'
 export default class CoffeeList extends Component {
     constructor(props) {
         super(props)
@@ -31,20 +31,19 @@ export default class CoffeeList extends Component {
     render() {
         return (
             < div className="coffeeList" >
-                {/* {
+                {
                     this.state.coffeeList ? (
                         this.state.coffeeList.coffees.map((coffee) => {
                             return (
-                                <Coffee key={coffee.id} coffeeName={coffee.name} coffeeFlavor={coffee.flavor} coffeeCategory={coffee.category} coffeeImageLarge={coffee.large_url} handleSelectedCoffee={this.handleSelectedCoffee} id={coffee.id} />
-
+                                < Coffee key={coffee.id} coffeeName={coffee.name} coffeeFlavor={coffee.flavor} coffeeCategory={coffee.category} coffeeImageLarge={coffee.large_url} handleSelectedCoffee={this.props.handleSelectedCoffee} id={coffee.id} />
                             )
                         }))
                         : (
                             <p>Loading...</p>
                         )
-                } */}
+                }
 
-                {
+                {/* {
                     this.state.coffeeList ? (
                         this.state.coffeeList.coffees.map((coffee) => {
                             return (
@@ -59,7 +58,7 @@ export default class CoffeeList extends Component {
                         : (
                             <p>Loading...</p>
                         )
-                }
+                } */}
             </div >
         )
     }
