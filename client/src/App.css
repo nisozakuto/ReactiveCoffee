@@ -166,9 +166,9 @@ main{
 
 section{
   margin-top: 2em;
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
 }
 
 article{
@@ -235,6 +235,20 @@ section img{
   
 }
 /* COFFEES */
+
+/* DETAILS START */
+  .details-main{
+    display: flex;
+    flex-direction: row;
+    max-width: 100vw;
+  }
+
+  .details-main aside{
+  flex-grow: 1;
+  }
+  .details-main section{
+    flex-grow: 3;}
+/* DETAILS END */
 
 /* Add to cart START */
   #add-to-cart{

@@ -41,13 +41,11 @@ export default class Details extends Component {
 
     render() {
         return (
-            <div>
-                <>
-
-                    {/* { console.log("coffee-list", this.props.selectedCoffee)} */}
-                    {/* {console.log("PROPS", this.props.selectedCoffee)}
-                    {console.log("state", this.state)}  */}
-                    {/* <Coffee {...this.props} /> */}
+            <main className="details-main">
+                <aside>
+                    lorem info
+                </aside>
+                <section>
                     <div className="coffees" key={this.state.coffeeName}>
                         <img src={this.state.coffeeShort_url} width="250px" alt={this.state.coffeeName} />
                         <div className="coffee-info">
@@ -65,16 +63,15 @@ export default class Details extends Component {
                         <ul>coffeeFlavor:{this.props.selectedCoffee.flavor} </ul>
                         <ul>coffeeCategory:{this.props.selectedCoffee.category} </ul>
                     </div>
+                    <AddOrder test={("text")} />
                     <div>
                         <form onSubmit={(evt) => this.handleOrderSubmit(evt, this.state)} >
                             <input type="submit" id="add-to-cart" value="Add to Order" />
                         </form>
                     </div>
 
-                    <AddOrder />
-
-                </>
-            </div >
+                </section>
+            </main >
         )
     }
 }
