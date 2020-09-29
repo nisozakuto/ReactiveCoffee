@@ -8,6 +8,7 @@ export default class Coffee extends Component {
         }
     }
 
+
     render() {
         return (
             <div className="coffees" key={this.props.coffeeName}>

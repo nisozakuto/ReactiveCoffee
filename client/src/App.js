@@ -95,6 +95,28 @@ export default class App extends Component {
       })
   }
 
+  handleOrderCloseSubmit = (evt) => {
+    evt.preventDefault();
+    // WHEN CLICKED TO ORDER COFFEE
+    console.log("Clicked to big green", evt)
+    console.log("this.state.order_id", this.state.order_id)
+    fetch(`/orders/${this.state.order_id}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          token: Auth.getToken(),
+          'Authorization': `Token ${Auth.getToken()} `,
+        },
+        body: JSON.stringify({
+          isFulFilled: true
+        })
+      })
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  }
+
+
   // active_coffee_order = (values) => {
   //   console.log("app js active coffee order")
   //   fetch('/profile', {
@@ -125,7 +147,7 @@ export default class App extends Component {
           <Route exact path="/profile" render={() => <Profile active_coffee_order={this.active_coffee_order} />} />
           <Route exact path='/orders' render={() => (<Orders />)} />
           <Route exact path='/coffees' render={() => (<CoffeeList handleSelectedCoffee={this.handleSelectedCoffee} />)} />
-          <Route exact path='/coffees/:id' render={() => (<Details selectedCoffee={this.state.selectedCoffee} />)} />
+          <Route exact path='/coffees/:id' render={() => (<Details selectedCoffee={this.state.selectedCoffee} handleOrderCloseSubmit={this.handleOrderCloseSubmit} />)} />
           <Route exact path='/about' render={() => (<About />)} />
           {this.state.fireRedirect && <Redirect push to={this.state.redirectPath} />}
         </div>
