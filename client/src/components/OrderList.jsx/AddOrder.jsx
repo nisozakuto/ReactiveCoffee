@@ -1,17 +1,3 @@
-// import React, { useState } from 'react'
-// import Auth from '../../modules/Auth'
-
-// const AddOrder = () => {
-//     const [coffee_id, setcoffeeId] = useState('')
-//     const [size, setSize] = useState('')
-//     const [quantity, setQuantity] = useState('')
-//     const [order_id, setOrder_id] = useState('')
-//     return (
-//     )
-// }
-
-
-
 import React, { Component } from 'react'
 import Auth from '../../modules/Auth'
 export default class AddOrder extends Component {
@@ -24,6 +10,9 @@ export default class AddOrder extends Component {
             order_id: '',
         }
     }
+    componentDidMount() {
+        this.getActiveOrder()
+    }
     handleInputChange = (e) => {
         const name = e.currentTarget.name
         const value = e.currentTarget.value
@@ -32,9 +21,31 @@ export default class AddOrder extends Component {
         })
     }
 
+    getActiveOrder() {
+        fetch('/profile', {
+            headers: {
+                token: Auth.getToken(),
+                'Authorization': `Token ${Auth.getToken()}`
+            }
+        })
+            .then(res => res.json())
+            .then(res => {
+                {
+                    console.log("active order 1", res.active_order)
+                    if (res.active_order)
+                        (
+                            this.setState({
+                                order_id: res.active_order.id
+                            })
+                        )
+                    console.log("active order 2", res.active_order.id)
+                    console.log("active order 2", this.state.order_id)
+                }
+            })
+    }
+
     handleOrderFormSubmit(e, data, props) {
         e.preventDefault();
-        // console.log(data)
         console.log("props", props.coffeeInfo.id)
         fetch('/coffee_orders', {
             method: 'POST',
@@ -50,25 +61,34 @@ export default class AddOrder extends Component {
                 }
             }),
         }).then(res => res.json())
-            .then((res) => {
-                console.log(res)
+            .then(() => {
+                fetch(`/orders/${this.state.order_id}`,
+                    {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            token: Auth.getToken(),
+                            'Authorization': `Token ${Auth.getToken()} `,
+                        },
+                        body: JSON.stringify({
+                            isFulFilled: true
+                        }),
+                    })
+                    .then(res => res.json())
             })
     }
 
-
     render() {
-        // { console.log("coffee info", this.props.coffeeInfo) }
-        // { console.log("state info", this.state) }
         return (
-            < form onSubmit={(e) => this.handleOrderFormSubmit(e, this.state, this.props)} >
-
+            <form onSubmit={(e) => this.handleOrderFormSubmit(e, this.state, this.props)
+            } >
                 {/* <input
                     type="number"
                     name="coffee_id"
                     placeholder="put the coffee ID"
                     value={this.state.coffee_id}
                     onChange={this.handleInputChange} /> */}
-                <input
+                < input
                     type="number"
                     name="size"
                     placeholder="put the size"
@@ -80,13 +100,13 @@ export default class AddOrder extends Component {
                     placeholder="put the quantity"
                     value={this.state.quantity}
                     onChange={this.handleInputChange} />
-                <input
+                {/* <input
                     type="number"
                     name="order_id"
                     placeholder="put the order_id"
                     value={this.state.order_id}
-                    onChange={this.handleInputChange} />
-                <input type="submit" value="Add to the Order" />
+                    onChange={this.handleInputChange} />*/}
+                < input type="submit" value="Add to the Order" />
             </ form >
         )
     }

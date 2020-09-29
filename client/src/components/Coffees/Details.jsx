@@ -69,7 +69,6 @@ export default class Details extends Component {
                             <input type="submit" id="add-to-cart" value="Add to Order" />
                         </form>
                     </div>
-
                 </section>
             </main >
         )

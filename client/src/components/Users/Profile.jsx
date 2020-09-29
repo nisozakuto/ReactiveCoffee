@@ -10,6 +10,7 @@ export default class Profile extends Component {
             coffeeOrdersData: null,
             coffeeDetail: null,
             testState: 'sdf',
+            usrid: null,
         }
     }
 
@@ -32,9 +33,55 @@ export default class Profile extends Component {
         })
             .then(res => res.json())
             .then(res => {
+                console.log("RES", res)
                 this.setState({
-                    data: res
+                    data: res,
                 })
+                if (Auth.isUserAuthenticated) {
+                    if (!this.state.data.active_order) {
+                        console.log("No orders here")
+                        this.createANewOrder()
+                    }
+                }
+            })
+    }
+
+    createANewOrder() {
+        fetch('/profile', {
+            headers: {
+                token: Auth.getToken(),
+                'Authorization': `Token ${Auth.getToken()}`
+            }
+        })
+            .then(res => res.json())
+            .then(res => {
+                console.log("RES", res)
+                this.setState({
+                    usrid: res.user.id
+                })
+                console.log("usrid", this.state.usrid)
+                console.log("data", this.data)
+                if (this.state.data.active_order == null) {
+                    console.log("No orders here")
+                    if (Auth.isUserAuthenticated()) {
+                        fetch('/orders',
+                            {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'token': Auth.getToken(),
+                                    'Authorization': `Token ${Auth.getToken()}`
+                                },
+                                body: JSON.stringify({
+                                    'user_id': this.state.usrid,
+                                    //make sure there is only one open order
+
+                                })
+                            })
+
+                    }
+                }
+                this.getData()
             })
     }
 
@@ -93,6 +140,7 @@ export default class Profile extends Component {
     render() {
         return (
             <div className="profile">
+                {console.log("state", this.state)}
                 {this.state.data ?
                     (
                         <>

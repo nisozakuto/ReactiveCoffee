@@ -12,7 +12,7 @@ class UsersController < ApiController
       unfulfilled_order = user_orders.find{|order| order.isFulFilled == false}
       # .find{ |order| order[:isFulfilled] == false }
       # unfulfilled_order = user_orders.find{ isFulfilled: false }
-      render json: { user: { username: user.username, email: user.email, name: user.name }, orders:user_orders, active_order: unfulfilled_order }
+      render json: { user: { id: user.id, username: user.username, email: user.email, name: user.name }, orders:user_orders, active_order: unfulfilled_order }
     end
   
     private

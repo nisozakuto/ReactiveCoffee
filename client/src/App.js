@@ -22,7 +22,8 @@ export default class App extends Component {
       currentPage: null,
       fireRedirect: false,
       redirectPath: null,
-      cart: ''
+      cart: '',
+      activeOrder: null,
     }
   }
 
@@ -86,14 +87,30 @@ export default class App extends Component {
       }).then(res => res.json())
       .then(res => {
         if (res.token)
-          Auth.authenticateToken(res.token);
+          Auth.authenticateUser(res.token);
         this.setState({
           auth: Auth.isUserAuthenticated()
         })
         console.log(res)
       })
-
   }
+
+  // active_coffee_order = (values) => {
+  //   console.log("app js active coffee order")
+  //   fetch('/profile', {
+  //     headers: {
+  //       token: Auth.getToken(),
+  //       'Authorization': `Token ${Auth.getToken()}`
+  //     }
+  //   })
+  //     .then(res => res.json())
+  //     .then(res => {
+  //       console.log("RES", res)
+  //       this.setState({
+  //         usrid: res.user.id
+  //       })
+  //     })
+  // }
 
   render() {
     return (
@@ -105,7 +122,7 @@ export default class App extends Component {
           <Route exact path="/login" render={() => <LoginForm handleLoginSubmit={this.handleLoginSubmit} />} />
           <Route exact path="/signup" render={() => <SignupForm handleSignupSubmit={this.handleSignupSubmit} />} />
           {/* <Route exact path="/logout" /> */}
-          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/profile" render={() => <Profile active_coffee_order={this.active_coffee_order} />} />
           <Route exact path='/orders' render={() => (<Orders />)} />
           <Route exact path='/coffees' render={() => (<CoffeeList handleSelectedCoffee={this.handleSelectedCoffee} />)} />
           <Route exact path='/coffees/:id' render={() => (<Details selectedCoffee={this.state.selectedCoffee} />)} />
