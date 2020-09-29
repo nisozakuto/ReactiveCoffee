@@ -63,7 +63,7 @@ export default class Details extends Component {
                         <ul>coffeeFlavor:{this.props.selectedCoffee.flavor} </ul>
                         <ul>coffeeCategory:{this.props.selectedCoffee.category} </ul>
                     </div>
-                    <AddOrder test={("text")} />
+                    <AddOrder coffeeInfo={this.state} />
                     <div>
                         <form onSubmit={(evt) => this.handleOrderSubmit(evt, this.state)} >
                             <input type="submit" id="add-to-cart" value="Add to Order" />

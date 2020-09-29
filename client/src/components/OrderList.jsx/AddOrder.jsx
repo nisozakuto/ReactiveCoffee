@@ -24,7 +24,6 @@ export default class AddOrder extends Component {
             order_id: '',
         }
     }
-
     handleInputChange = (e) => {
         const name = e.currentTarget.name
         const value = e.currentTarget.value
@@ -33,9 +32,10 @@ export default class AddOrder extends Component {
         })
     }
 
-    handleOrderFormSubmit(e, data) {
+    handleOrderFormSubmit(e, data, props) {
         e.preventDefault();
-        console.log(data)
+        // console.log(data)
+        console.log("props", props.coffeeInfo.id)
         fetch('/coffee_orders', {
             method: 'POST',
             headers: {
@@ -43,7 +43,7 @@ export default class AddOrder extends Component {
             },
             body: JSON.stringify({
                 coffee_orders: {
-                    coffee_id: this.state.coffee_id,
+                    coffee_id: props.coffeeInfo.id,
                     size: this.state.size,
                     quantity: this.state.quantity,
                     order_id: this.state.order_id
@@ -57,14 +57,17 @@ export default class AddOrder extends Component {
 
 
     render() {
+        // { console.log("coffee info", this.props.coffeeInfo) }
+        // { console.log("state info", this.state) }
         return (
-            < form onSubmit={(e) => this.handleOrderFormSubmit(e, this.state)} >
-                <input
+            < form onSubmit={(e) => this.handleOrderFormSubmit(e, this.state, this.props)} >
+
+                {/* <input
                     type="number"
                     name="coffee_id"
                     placeholder="put the coffee ID"
                     value={this.state.coffee_id}
-                    onChange={this.handleInputChange} />
+                    onChange={this.handleInputChange} /> */}
                 <input
                     type="number"
                     name="size"
