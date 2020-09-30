@@ -176,6 +176,25 @@ export default class App extends Component {
   //       })
   //     })
   // }
+  handleOrderFormSubmit(e, id, size, quantity, order_id) {
+    e.preventDefault();
+    fetch('/coffee_orders', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        coffee_orders: {
+          coffee_id: id,
+          size: size,
+          quantity: quantity,
+          order_id: order_id
+        }
+      })
+    })
+      .then(res => res.json())
+      .then(res => console.log("res from post", res))
+  }
 
   render() {
     return (
@@ -191,7 +210,7 @@ export default class App extends Component {
           < Route exact path="/profile" render={() => <Profile active_coffee_order={this.active_coffee_order} createANewOrder={this.createANewOrder} />} />
           < Route exact path='/orders' render={() => (<Orders />)} />
           < Route exact path='/coffees' render={() => (<CoffeeList handleSelectedCoffee={this.handleSelectedCoffee} />)} />
-          < Route exact path='/coffees/:id' render={() => (<Details selectedCoffee={this.state.selectedCoffee} handleOrderCloseSubmit={this.handleOrderCloseSubmit} />)} />
+          < Route exact path='/coffees/:id' render={() => (<Details selectedCoffee={this.state.selectedCoffee} handleOrderFormSubmit={this.handleOrderFormSubmit} handleOrderCloseSubmit={this.handleOrderCloseSubmit} />)} />
           < Route exact path='/about' render={() => (<About />)} />
           {this.state.fireRedirect && <Redirect push to={this.state.redirectPath} />}
         </div >

@@ -57,26 +57,26 @@ export default class Details extends Component {
             })
     }
 
-    handleOrderFormSubmit(e, data, props) {
-        e.preventDefault();
+    // handleOrderFormSubmit(e, data, props) {
+    //     e.preventDefault();
 
-        fetch('/coffee_orders', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                coffee_orders: {
-                    coffee_id: this.state.id,
-                    size: data.size,
-                    quantity: data.quantity,
-                    order_id: this.state.order_id
-                }
-            })
-        })
-            .then(res => res.json())
-            .then(res => console.log("res from post", res))
-    }
+    //     fetch('/coffee_orders', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify({
+    //             coffee_orders: {
+    //                 coffee_id: this.state.id,
+    //                 size: data.size,
+    //                 quantity: data.quantity,
+    //                 order_id: this.state.order_id
+    //             }
+    //         })
+    //     })
+    //         .then(res => res.json())
+    //         .then(res => console.log("res from post", res))
+    // }
 
     render() {
         return (
@@ -92,8 +92,7 @@ export default class Details extends Component {
                             <p>{this.state.coffeeFlavor}</p>
                         </div>
                     </div>
-                    {/* <AddOrder coffeeInfo={this.state} /> */}
-                    <form onSubmit={(e) => this.handleOrderFormSubmit(e, this.state, this.props)} >
+                    <form onSubmit={(e) => this.props.handleOrderFormSubmit(e, this.props.selectedCoffee.id, this.state.size, this.state.quantity, this.state.order_id)} >
                         < input
                             type="number"
                             name="size"
@@ -106,12 +105,9 @@ export default class Details extends Component {
                             placeholder="put the quantity"
                             value={this.state.quantity}
                             onChange={this.handleInputChange} />
-                        < input type="submit" value="Add to the Order" />
+                        <input type="submit" id="add-to-cart" value="Add to Order" />
                     </ form >
                     <div>
-                        <form onSubmit={(evt) => this.props.handleOrderSubmit(evt)} >
-                            <input type="submit" id="add-to-cart" value="Add to Order" />
-                        </form>
                     </div>
                 </section>
             </main >
