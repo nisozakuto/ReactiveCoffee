@@ -227,11 +227,14 @@ export default class App extends Component {
           .then(res => {
             console.log(res)
             this.createANewOrder()
-              (< Redirect push to='/profile' />)
           })
+          .then(
+            this.setState({
+              fireRedirect: true,
+              redirectPath: '/profile',
+            }))
           .catch(err => console.log(err))
       })
-    // (this.state.fireRedirect && <Redirect push to={this.state.redirectPath} />)
   }
 
   render() {
