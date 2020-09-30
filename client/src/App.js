@@ -28,8 +28,8 @@ export default class App extends Component {
       userId: null,
       loginUserName: null,
       loginUserPassword: null,
-
     }
+    this.handleOrderFormSubmit = this.handleOrderFormSubmit.bind(this)
   }
 
   componentDidMount() {
@@ -138,7 +138,6 @@ export default class App extends Component {
 
   handleOrderCloseSubmit = (evt) => {
     evt.preventDefault();
-    // WHEN CLICKED TO ORDER COFFEE
     console.log("Clicked to big green", evt)
     console.log("this.state.order_id", this.state.order_id)
     fetch(`/orders/${this.state.order_id}`,
@@ -157,7 +156,7 @@ export default class App extends Component {
       .catch(err => console.log(err))
   }
 
-  createANewOrder() {
+  createANewOrder = () => {
     console.log('new order asked to be created')
     fetch('/orders',
       {
@@ -192,7 +191,9 @@ export default class App extends Component {
   // }
 
   handleOrderFormSubmit(e, id, size, quantity, order_id) {
-    e.preventDefault();
+    console.log("fireredirect", this.state.fireRedirect)
+    // this.setState({ fireRedirect: false })
+    e.preventDefault()
     fetch('/coffee_orders', {
       method: 'POST',
       headers: {
@@ -226,9 +227,11 @@ export default class App extends Component {
           .then(res => {
             console.log(res)
             this.createANewOrder()
+              (< Redirect push to='/profile' />)
           })
           .catch(err => console.log(err))
       })
+    // (this.state.fireRedirect && <Redirect push to={this.state.redirectPath} />)
   }
 
   render() {
@@ -239,7 +242,6 @@ export default class App extends Component {
           <Route exact path='/' render={() => (<Home />)} />
           <Route exact path="/login" render={() => <LoginForm handleLoginSubmit={this.handleLoginSubmit} />} />
           <Route exact path="/signup" render={() => <SignupForm handleSignupSubmit={this.handleSignupSubmit} />} />
-          {/* <Route exact path="/logout" /> */}
           < Route exact path="/profile" render={() => (<Profile active_coffee_order={this.active_coffee_order} createANewOrder={this.createANewOrder} logoutUser={this.logoutUser} state={this.state} />)} />
           < Route exact path='/orders' render={() => (<Orders />)} />
           < Route exact path='/coffees' render={() => (<CoffeeList handleSelectedCoffee={this.handleSelectedCoffee} />)} />
