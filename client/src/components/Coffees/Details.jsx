@@ -57,27 +57,6 @@ export default class Details extends Component {
             })
     }
 
-    // handleOrderFormSubmit(e, data, props) {
-    //     e.preventDefault();
-
-    //     fetch('/coffee_orders', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify({
-    //             coffee_orders: {
-    //                 coffee_id: this.state.id,
-    //                 size: data.size,
-    //                 quantity: data.quantity,
-    //                 order_id: this.state.order_id
-    //             }
-    //         })
-    //     })
-    //         .then(res => res.json())
-    //         .then(res => console.log("res from post", res))
-    // }
-
     render() {
         return (
             <main className="details-main">

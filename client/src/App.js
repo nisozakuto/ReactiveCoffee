@@ -176,6 +176,7 @@ export default class App extends Component {
   //       })
   //     })
   // }
+
   handleOrderFormSubmit(e, id, size, quantity, order_id) {
     e.preventDefault();
     fetch('/coffee_orders', {
@@ -193,7 +194,26 @@ export default class App extends Component {
       })
     })
       .then(res => res.json())
-      .then(res => console.log("res from post", res))
+      .then(res => {
+        console.log("res from post", res)
+        fetch(`/orders/${order_id}`,
+          {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+              token: Auth.getToken(),
+              'Authorization': `Token ${Auth.getToken()} `,
+            },
+            body: JSON.stringify({
+              isFulFilled: true
+            })
+          })
+          .then(res => {
+            console.log(res)
+            this.createANewOrder()
+          })
+          .catch(err => console.log(err))
+      })
   }
 
   render() {
