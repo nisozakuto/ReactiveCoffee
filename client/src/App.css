@@ -309,7 +309,22 @@ footer p{
   justify-content: space-around;
 }
 /* FOOTER ENDS */
-
+/* AUTH STARTS */
+.Auth{
+  margin: 0 auto;
+  width: 350px;
+  flex-grow: 1; 
+}
+.Auth form{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-self: center;
+  justify-content: center;
+}
+.Auth form{
+}
+/* AUTH ENDS */
 
 /* ABOUT */
 #font-1{}

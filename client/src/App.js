@@ -24,11 +24,39 @@ export default class App extends Component {
       redirectPath: null,
       cart: '',
       activeOrder: null,
+      isCurrentActiveOrderFulfilled: null,
+      userId: null,
+
     }
   }
 
   componentDidMount() {
+    this.getProfileInfo()
+  }
 
+  getProfileInfo = (e) => {
+    fetch('/profile', {
+      headers: {
+        token: Auth.getToken(),
+        'Authorization': `Token ${Auth.getToken()}`
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log("getProfile Info", res)
+        if (res.active_order != null) {
+          this.setState({
+            activeOrder: res.active_order.id,
+            isCurrentActiveOrderFulfilled: res.active_order.isFulFilled,
+          })
+        }
+        if (res.user) {
+          this.setState({
+            userId: res.user.id,
+          })
+        }
+        console.log("user info gotten.", this.state.userId)
+      })
   }
 
   handleSelectedCoffee = (id) => {
@@ -116,6 +144,21 @@ export default class App extends Component {
       .catch(err => console.log(err))
   }
 
+  createANewOrder = () => {
+    fetch('/orders',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'token': Auth.getToken(),
+          'Authorization': `Token ${Auth.getToken()}`
+        },
+        body: JSON.stringify({
+          'user_id': this.state.userId,
+        })
+      })
+  }
+
 
   // active_coffee_order = (values) => {
   //   console.log("app js active coffee order")
@@ -136,21 +179,22 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" >
         <Header />
-        {console.log("selected coffee at the app.js", this.state)}
-        <div className="container">
+        { console.log("selected coffee at the app.js", this.state)
+        }
+        < div className="container" >
           <Route exact path='/' render={() => (<Home />)} />
           <Route exact path="/login" render={() => <LoginForm handleLoginSubmit={this.handleLoginSubmit} />} />
           <Route exact path="/signup" render={() => <SignupForm handleSignupSubmit={this.handleSignupSubmit} />} />
           {/* <Route exact path="/logout" /> */}
-          <Route exact path="/profile" render={() => <Profile active_coffee_order={this.active_coffee_order} />} />
-          <Route exact path='/orders' render={() => (<Orders />)} />
-          <Route exact path='/coffees' render={() => (<CoffeeList handleSelectedCoffee={this.handleSelectedCoffee} />)} />
-          <Route exact path='/coffees/:id' render={() => (<Details selectedCoffee={this.state.selectedCoffee} handleOrderCloseSubmit={this.handleOrderCloseSubmit} />)} />
-          <Route exact path='/about' render={() => (<About />)} />
+          < Route exact path="/profile" render={() => <Profile active_coffee_order={this.active_coffee_order} createANewOrder={this.createANewOrder} />} />
+          < Route exact path='/orders' render={() => (<Orders />)} />
+          < Route exact path='/coffees' render={() => (<CoffeeList handleSelectedCoffee={this.handleSelectedCoffee} />)} />
+          < Route exact path='/coffees/:id' render={() => (<Details selectedCoffee={this.state.selectedCoffee} handleOrderCloseSubmit={this.handleOrderCloseSubmit} />)} />
+          < Route exact path='/about' render={() => (<About />)} />
           {this.state.fireRedirect && <Redirect push to={this.state.redirectPath} />}
-        </div>
+        </div >
         <Footer />
       </div >
     )

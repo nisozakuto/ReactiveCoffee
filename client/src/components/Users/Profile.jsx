@@ -7,21 +7,16 @@ export default class Profile extends Component {
         this.state = {
             data: null,
             ordersData: null,
+            usrid: null,
             coffeeOrdersData: null,
             coffeeDetail: null,
-            testState: 'sdf',
-            usrid: null,
+
         }
     }
 
     componentDidMount() {
         this.getData()
         this.ordersData()
-    }
-
-    componentDidUpdate() {
-        if (this.state.coffeeOrdersData !== this.state.coffeeOrdersData)
-            console.log('wasnt same')
     }
 
     getData() {
@@ -33,57 +28,50 @@ export default class Profile extends Component {
         })
             .then(res => res.json())
             .then(res => {
-                console.log("RES", res)
                 this.setState({
                     data: res,
                 })
-                if (Auth.isUserAuthenticated) {
-                    if (!this.state.data.active_order) {
-                        console.log("No orders here")
-                        this.createANewOrder()
-                    }
-                }
             })
     }
 
-    createANewOrder() {
-        fetch('/profile', {
-            headers: {
-                token: Auth.getToken(),
-                'Authorization': `Token ${Auth.getToken()}`
-            }
-        })
-            .then(res => res.json())
-            .then(res => {
-                console.log("RES", res)
-                this.setState({
-                    usrid: res.user.id
-                })
-                console.log("usrid", this.state.usrid)
-                console.log("data", this.data)
-                if (this.state.data.active_order == null) {
-                    console.log("No orders here")
-                    if (Auth.isUserAuthenticated()) {
-                        fetch('/orders',
-                            {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'token': Auth.getToken(),
-                                    'Authorization': `Token ${Auth.getToken()}`
-                                },
-                                body: JSON.stringify({
-                                    'user_id': this.state.usrid,
-                                    //make sure there is only one open order
+    // createANewOrder() {
+    //     fetch('/profile', {
+    //         headers: {
+    //             token: Auth.getToken(),
+    //             'Authorization': `Token ${Auth.getToken()}`
+    //         }
+    //     })
+    //         .then(res => res.json())
+    //         .then(res => {
+    //             console.log("RES", res)
+    //             this.setState({
+    //                 usrid: res.user.id
+    //             })
+    //             console.log("usrid", this.state.usrid)
+    //             console.log("data", this.data)
+    //             if (this.state.data.active_order == null) {
+    //                 console.log("No orders here")
+    //                 if (Auth.isUserAuthenticated()) {
+    //                     fetch('/orders',
+    //                         {
+    //                             method: 'POST',
+    //                             headers: {
+    //                                 'Content-Type': 'application/json',
+    //                                 'token': Auth.getToken(),
+    //                                 'Authorization': `Token ${Auth.getToken()}`
+    //                             },
+    //                             body: JSON.stringify({
+    //                                 'user_id': this.state.usrid,
+    //                                 //make sure there is only one open order
 
-                                })
-                            })
+    //                             })
+    //                         })
 
-                    }
-                }
-                this.getData()
-            })
-    }
+    //                 }
+    //             }
+    //             this.getData()
+    //         })
+    // }
 
     ordersData() {
         fetch('/orders', {
@@ -140,7 +128,6 @@ export default class Profile extends Component {
     render() {
         return (
             <div className="profile">
-                {console.log("state", this.state)}
                 {this.state.data ?
                     (
                         <>
@@ -155,7 +142,14 @@ export default class Profile extends Component {
                                                 <li key={this.state.data.active_order.id}>Order ID: {this.state.data.active_order.id}</li>
                                             )
                                             :
-                                            <h4>You do not have any open orders</h4>
+                                            (
+                                                <>
+                                                    <h4>You do not have any open orders</h4>
+                                                    <form onSubmit={(evt => this.props.createANewOrder(evt))}>
+                                                        <input type="submit" value="Create a new order" />
+                                                    </form>
+                                                </>
+                                            )
                                     }
                                 </ul>
                             </section>
