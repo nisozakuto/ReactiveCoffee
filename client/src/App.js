@@ -36,6 +36,13 @@ export default class App extends Component {
     this.getProfileInfo()
   }
 
+  browse = (e, location) => {
+    this.setState({
+      fireRedirect: true,
+      redirectPath: `/${location}`
+    })
+  }
+
   getProfileInfo = () => {
     fetch('/profile', {
       headers: {
@@ -242,7 +249,7 @@ export default class App extends Component {
       <div className="App" >
         <Header />
         < div className="container" >
-          <Route exact path='/' render={() => (<Home />)} />
+          <Route exact path='/' render={() => (<Home browse={this.browse} />)} />
           <Route exact path="/login" render={() => <LoginForm handleLoginSubmit={this.handleLoginSubmit} />} />
           <Route exact path="/signup" render={() => <SignupForm handleSignupSubmit={this.handleSignupSubmit} />} />
           < Route exact path="/profile" render={() => (<Profile active_coffee_order={this.active_coffee_order} createANewOrder={this.createANewOrder} logoutUser={this.logoutUser} state={this.state} />)} />

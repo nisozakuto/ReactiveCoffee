@@ -136,7 +136,9 @@ export default class Profile extends Component {
                                             (
                                                 <>
                                                     <li key={this.state.data.active_order.id} onClick={() => this.getCoffeeOrdersDetails(this.state.data.active_order.id)}>Order ID: {this.state.data.active_order.id}</li>
-
+                                                    <form onSubmit={(evt => this.props.editOrder(evt))}>
+                                                        <input type="submit" value="Edit Order" />
+                                                    </form>
                                                 </>
                                             )
                                             :

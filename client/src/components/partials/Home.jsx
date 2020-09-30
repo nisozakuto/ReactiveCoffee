@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import React, { Component, } from 'react'
 
 const API_KEY = process.env.REACT_APP_API_KEY
 export default class Home extends Component {
@@ -9,7 +8,6 @@ export default class Home extends Component {
             images: ''
         }
     }
-
 
     componentDidMount() {
         this.getImages();
@@ -31,33 +29,45 @@ export default class Home extends Component {
 
     render() {
         return (
-            <main className="home-main">
-                <section id="first-section">
+            <main className="home-main" id="home-main">
+                < section id="first-section" >
                     <article>
-                        Spoon, con panna americano that coffee qui wings coffee cinnamon carajillo. Lungo, et, mazagran, macchiato breve kopi-luwak cream cultivar. Variety cream cup single shot qui percolator id sugar frappuccino single origin fair trade. Seasonal, coffee, blue mountain a, beans at aromatic roast saucer kopi-luwak. Cream, extra, trifecta et sugar qui aroma sit black decaffeinated body.
+                        <h2>It's the coffee season </h2>
+                        <p>Reactive coffee is ready to brew some coffee for you. Browse the seasonal and year round coffees and place your order</p>
+                        <form onSubmit={(e) => this.props.browse(e, 'coffees')} >
+                            <input id="homepage-button" type="submit" value="Explore" />
+                        </form>
                     </article>
                     <img src={this.state.images[2]} alt="first-section" />
-                </section>
+                </ section>
+
                 <section id="second-section" className="gray-background">
                     <img src={this.state.images[4]} alt="second-section" />
                     <article>
-                        Robust, flavour, shop redeye, and carajillo eu, java espresso coffee coffee barista. Barista, aftertaste skinny extra blue mountain variety crema sugar. Redeye beans, macchiato black breve caramelization, et java blue mountain whipped blue mountain. Mazagran doppio spoon saucer coffee variety cappuccino whipped. Variety, con panna rich, seasonal, robust, bar arabica beans sit grinder.
+                        Reactive Coffee offers more than 10 different types of coffee.
+                        What's your favorite type?
                     </article>
                 </section>
+
                 <section id="third-section">
                     <article>
-                        Flavour caramelization iced viennese steamed latte barista. Organic bar, at kopi-luwak so flavour spoon. And cultivar organic robust organic milk sweet plunger pot a variety. Et, mug dripper cup, whipped a pumpkin spice milk kopi-luwak.
+                        <h2>Are you a member?</h2>
+                        <p>It is so easy to become one! Follow the link below and start ordering</p>
+                        <form onSubmit={(e) => this.props.browse(e, 'signup')} >
+                            <input id="homepage-button" type="submit" value="Sign up" />
+                        </form>
                     </article>
                     <img src={this.state.images[6]} alt="third-section" />
                 </section>
 
                 <section className="gray-background">
                     <article>
-                        Steamed coffee aftertaste, caffeine redeye body acerbic robusta filter crema cultivar. Rich, whipped mug cup, as, mazagran espresso percolator and iced. Skinny coffee cinnamon breve in, dripper, redeye americano kopi-luwak americano crema. Beans seasonal espresso con panna café au lait single shot cinnamon espresso.
+                        <h2>We are growing</h2>
+                        <p>As we have more opportunities to serve you, we also increase our service area.</p>
                     </article>
                     <img src={this.state.images[3]} alt="fourth-section" />
                 </section>
-            </main>
+            </main >
         )
     }
 }

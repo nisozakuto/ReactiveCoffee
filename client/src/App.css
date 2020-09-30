@@ -135,7 +135,7 @@ nav ul{
 
 /* Hs START */
 h1 { font-size: 2em; }
-h2 { font-size: 1.5em; }
+h2 { font-size: 1.7em; }
 h3 { font-size: 1.17em; }
 h4 { font-size: 1.12em; }
 h5 { font-size: .83em; }
@@ -153,22 +153,38 @@ h6 { font-size: .75em; }
   justify-content: center;
   justify-self: center;
   text-align: center;
+  background-color: rgb(241	,222,179);
+}
+#home-main{
+  font-size: 1.55em;
+}
+.home-main section{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+#homepage-button{
+  border: 1px black solid;
+  width: fit-content;
+  align-self: center;
+  padding:1% 3%;
+  border-radius: 500px;
+}
+
+#homepage-button:hover{
+  background-color: #a7a7a740;
 }
 /* HOME END */
 /* MAIN START */
-main{
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-self: center;
-  text-align: center; */
+section {
+  margin-top: 2em;
 }
 
-section{
-  margin-top: 2em;
-  /* display: flex;
-  flex-direction: row;
-  justify-content: space-evenly; */
+.gray-background{
+  padding: 2em 0;
+  background-color: rgb(44	,60	,54	);
+  color: white;
 }
 
 article{
@@ -178,18 +194,12 @@ article{
 }
 
 section article{
-  font-size: 1.5em;
   line-height: 1.4em;
   margin: 0 5% 0 5%;
 }
 
 section img{
   margin: 0 5% 0 5%;
-}
-
-.gray-background
-{
-  background-color: #8080802e;
 }
 /* MAIN END */
 
@@ -314,15 +324,17 @@ flex-direction: column;
 
 /* FOOTER STARTS */
 footer{
-  background-color: rgb(241	,222,179);
+  background-color:white;
   color: black;
 }
 footer .coffee-project{
   text-align: center;
   margin:10px auto;
+  color:black;
 }
 footer p{
   margin:10px auto;
+  color: #333;
 }
 .bottom-nav{
   margin: 0 15%;

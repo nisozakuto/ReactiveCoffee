@@ -38,6 +38,8 @@ export default class Details extends Component {
         })
     }
 
+
+
     getActiveOrder() {
         fetch('/profile', {
             headers: {
