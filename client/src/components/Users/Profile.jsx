@@ -2,22 +2,22 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import Auth from '../../modules/Auth'
 export default class Profile extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             data: null,
             ordersData: null,
-            usrid: null,
+            userId: null,
             coffeeOrdersData: null,
             coffeeDetail: null,
-
         }
     }
 
     componentDidMount() {
         this.getData()
         this.ordersData()
-
+        console.log("this.state.userId", this.state)
+        console.log("THIS PROPS", this.props)
     }
 
     getData() {

@@ -36,7 +36,7 @@ export default class App extends Component {
     this.getProfileInfo()
   }
 
-  getProfileInfo = (e) => {
+  getProfileInfo = () => {
     fetch('/profile', {
       headers: {
         token: Auth.getToken(),
@@ -75,14 +75,6 @@ export default class App extends Component {
           fireRedirect: true,
           redirectPath: `/coffees/${id}`
         })
-        const coffeeCategory = []
-        ls.set('coffeeCategory', this.state.selectedCoffee.category)
-        ls.set('coffeeFlavor', this.state.selectedCoffee.flavor)
-        ls.set('coffeeId', this.state.selectedCoffee.id)
-        ls.set('coffeeLargeUrl', this.state.selectedCoffee.large_url)
-        ls.set('coffeeShortUrl', this.state.selectedCoffee.short_url)
-        ls.set('coffeeName', this.state.selectedCoffee.name)
-
       })
   }
 
@@ -243,14 +235,12 @@ export default class App extends Component {
     return (
       <div className="App" >
         <Header />
-        { console.log("selected coffee at the app.js", this.state)
-        }
         < div className="container" >
           <Route exact path='/' render={() => (<Home />)} />
           <Route exact path="/login" render={() => <LoginForm handleLoginSubmit={this.handleLoginSubmit} />} />
           <Route exact path="/signup" render={() => <SignupForm handleSignupSubmit={this.handleSignupSubmit} />} />
           {/* <Route exact path="/logout" /> */}
-          < Route exact path="/profile" render={() => <Profile active_coffee_order={this.active_coffee_order} createANewOrder={this.createANewOrder} logoutUser={this.logoutUser} />} />
+          < Route exact path="/profile" render={() => (<Profile active_coffee_order={this.active_coffee_order} createANewOrder={this.createANewOrder} logoutUser={this.logoutUser} state={this.state} />)} />
           < Route exact path='/orders' render={() => (<Orders />)} />
           < Route exact path='/coffees' render={() => (<CoffeeList handleSelectedCoffee={this.handleSelectedCoffee} />)} />
           < Route exact path='/coffees/:id' render={() => (<Details selectedCoffee={this.state.selectedCoffee} handleOrderFormSubmit={this.handleOrderFormSubmit} handleOrderCloseSubmit={this.handleOrderCloseSubmit} />)} />
