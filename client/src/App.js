@@ -3,7 +3,6 @@ import { Route, Redirect } from 'react-router-dom'
 import './App.css';
 import Header from './components/partials/Header'
 import Home from './components/partials/Home'
-import Orders from './components/Orders'
 import Footer from './components/partials/Footer'
 import LoginForm from './components/Users/LoginForm'
 import Auth from './modules/Auth'
@@ -252,11 +251,10 @@ export default class App extends Component {
           <Route exact path='/' render={() => (<Home browse={this.browse} />)} />
           <Route exact path="/login" render={() => <LoginForm handleLoginSubmit={this.handleLoginSubmit} />} />
           <Route exact path="/signup" render={() => <SignupForm handleSignupSubmit={this.handleSignupSubmit} />} />
-          < Route exact path="/profile" render={() => (<Profile active_coffee_order={this.active_coffee_order} createANewOrder={this.createANewOrder} logoutUser={this.logoutUser} state={this.state} />)} />
-          < Route exact path='/orders' render={() => (<Orders />)} />
-          < Route exact path='/coffees' render={() => (<CoffeeList handleSelectedCoffee={this.handleSelectedCoffee} />)} />
-          < Route exact path='/coffees/:id' render={() => (<Details selectedCoffee={this.state.selectedCoffee} handleOrderFormSubmit={this.handleOrderFormSubmit} handleOrderCloseSubmit={this.handleOrderCloseSubmit} />)} />
-          < Route exact path='/about' render={() => (<About />)} />
+          <Route exact path="/profile" render={() => (<Profile active_coffee_order={this.active_coffee_order} createANewOrder={this.createANewOrder} logoutUser={this.logoutUser} state={this.state} />)} />
+          <Route exact path='/coffees' render={() => (<CoffeeList handleSelectedCoffee={this.handleSelectedCoffee} />)} />
+          <Route exact path='/coffees/:id' render={() => (<Details selectedCoffee={this.state.selectedCoffee} handleOrderFormSubmit={this.handleOrderFormSubmit} handleOrderCloseSubmit={this.handleOrderCloseSubmit} />)} />
+          <Route exact path='/about' render={() => (<About />)} />
           {this.state.fireRedirect && <Redirect push to={this.state.redirectPath} />}
         </div >
         <Footer />

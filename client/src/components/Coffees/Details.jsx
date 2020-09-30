@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import AddOrder from '../OrderList.jsx/AddOrder'
 import Auth from '../../modules/Auth'
 
 export default class Details extends Component {
