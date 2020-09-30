@@ -290,6 +290,26 @@ flex-direction: column;
   flex-direction: row;
   justify-content: flex-end;
 }
+
+.orders-div{
+  display: flex; 
+  flex-direction: column;
+}
+
+.one-order{
+  width: 550px;
+  margin:10px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.one-order img{
+  width: 100px;
+}
+
+.profile-order-info{
+
+}
 /* PROFILE ENDS */
 
 /* FOOTER STARTS */
@@ -297,8 +317,11 @@ footer{
   background-color: rgb(241	,222,179);
   color: black;
 }
-footer p{
+footer .coffee-project{
   text-align: center;
+  margin:10px auto;
+}
+footer p{
   margin:10px auto;
 }
 .bottom-nav{
@@ -307,6 +330,14 @@ footer p{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+.bottom-nav ul{
+ width: 30%;
+ margin:0 3% 0 3%;
+}
+
+.bottom-nav ul h4{
+  margin:10px auto;
 }
 /* FOOTER ENDS */
 /* AUTH STARTS */

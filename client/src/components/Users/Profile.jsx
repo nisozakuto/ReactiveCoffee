@@ -17,6 +17,7 @@ export default class Profile extends Component {
     componentDidMount() {
         this.getData()
         this.ordersData()
+
     }
 
     getData() {
@@ -63,10 +64,8 @@ export default class Profile extends Component {
     //                             body: JSON.stringify({
     //                                 'user_id': this.state.usrid,
     //                                 //make sure there is only one open order
-
     //                             })
     //                         })
-
     //                 }
     //             }
     //             this.getData()
@@ -139,7 +138,10 @@ export default class Profile extends Component {
                                     {
                                         this.state.data.active_order ?
                                             (
-                                                <li key={this.state.data.active_order.id}>Order ID: {this.state.data.active_order.id}</li>
+                                                <>
+                                                    <li key={this.state.data.active_order.id} onClick={() => this.getCoffeeOrdersDetails(this.state.data.active_order.id)}>Order ID: {this.state.data.active_order.id}</li>
+
+                                                </>
                                             )
                                             :
                                             (
@@ -159,49 +161,52 @@ export default class Profile extends Component {
                                     {
                                         this.state.data.orders.map(order =>
                                             (
-                                                <li key={order.id} onClick={() => this.getCoffeeOrdersDetails(order.id)}>ID - {order.id}</li>
+                                                <li key={order.id} onClick={() => this.getCoffeeOrdersDetails(order.id)}>Order ID: {order.id}</li>
                                             ))
                                     }
                                 </ul>
                             </section>
                             <section className="order-details">
                                 <h4>Coffee Order</h4>
-                                {this.state.coffeeOrdersData ?
-                                    (
-                                        this.state.coffeeOrdersData.coffeeorder.map((coffeeorder) =>
-                                            (
-                                                <>
-                                                    {
-                                                        this.state.coffeeDetail ?
-                                                            (
-                                                                <div div div className="single-order">
-                                                                    <img src={this.state.coffeeDetail.coffee.short_url} width="200px" />
-                                                                    <p>Here: {this.state.coffeeDetail.coffee.name}</p>
-                                                                </div>
-                                                            )
-                                                            :
-                                                            (
-                                                                <p>Brewing coffee</p>
-                                                            )
-                                                    }
-                                                    <p onClick={() => this.getCoffeeDetails(coffeeorder.coffee_id)}>Ordered Coffee number: {coffeeorder.coffee_id}</p>
-                                                    <p>Order id: {coffeeorder.order_id} </p>
-                                                    <p>Quantity id: {coffeeorder.quantity} </p>
-                                                    <p>Size: {coffeeorder.size} </p>
-                                                </>
+                                <div className="orders-div">
+                                    {this.state.coffeeOrdersData ?
+                                        (
+                                            this.state.coffeeOrdersData.coffeeorder.map((coffeeorder) =>
+                                                (
+                                                    <div className="one-order">
+                                                        <div>
+                                                            <p>Order id: {coffeeorder.order_id} </p>
+                                                        </div>
+                                                        <div>
+                                                            {this.state.coffeeDetail ?
+
+                                                                <>
+                                                                    <img src={this.state.coffeeDetail.coffee.short_url} alt="" width="100px" />
+
+                                                                </>
+                                                                :
+                                                                <></>
+                                                            }
+                                                            <p onClick={() => { this.getCoffeeDetails(coffeeorder.coffee_id) }}>Ordered Coffee #: {coffeeorder.coffee_id}</p>
+                                                            <p>Quantity id: {coffeeorder.quantity} </p>
+                                                            <p>Size: {coffeeorder.size} </p>
+                                                        </div>
+                                                    </div>
+                                                )
                                             )
                                         )
-                                    )
-                                    :
-                                    <p>loading</p>
-                                }
+                                        :
+                                        <p>loading</p>
+                                    }
+                                </div>
+
                             </section>
                         </>
                     )
                     :
                     <p>Loading</p>
                 }
-                { !Auth.isUserAuthenticated() && <Redirect to="/login" />}
+                {!Auth.isUserAuthenticated() && <Redirect to="/login" />}
             </div >
         )
     }
