@@ -120,17 +120,13 @@ export default class Profile extends Component {
             })
     }
 
-    logout() {
-        //Get this to work
-    }
-
     render() {
         return (
             <div className="profile">
                 {this.state.data ?
                     (
                         <>
-                            <h4 id="logout">Logout</h4>
+                            <h4 id="logout" onClick={() => { this.props.logoutUser() }}>Logout</h4>
                             <h1 className="title">Welcome, {this.state.data.user.username}</h1>
                             <section className="active-orders">
                                 <h3>Your Active Orders</h3>
