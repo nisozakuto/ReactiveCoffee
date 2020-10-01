@@ -11,6 +11,8 @@ import CoffeeList from './components/Coffees/CoffeeList'
 import Details from './components/Coffees/Details';
 import SignupForm from './components/Users/SignUpForm'
 import About from './components/About'
+import Order from './components/Order'
+
 export default class App extends Component {
   constructor() {
     super()
@@ -26,12 +28,20 @@ export default class App extends Component {
       userId: null,
       loginUserName: null,
       loginUserPassword: null,
+      profileData: null,
+      ordersData: null,
+      coffeeOrdersData: null,
+      coffeeDetail: null,
     }
     this.handleOrderFormSubmit = this.handleOrderFormSubmit.bind(this)
+    this.editOrder = this.editOrder.bind(this)
+    this.viewOrder = this.viewOrder.bind(this)
+
   }
 
   componentDidMount() {
     this.getProfileInfo()
+    this.ordersData()
   }
 
   browse = (e, location) => {
@@ -50,6 +60,9 @@ export default class App extends Component {
     })
       .then(res => res.json())
       .then(res => {
+        this.setState({
+          profileData: res,
+        })
         if (res.active_order != null) {
           this.setState({
             activeOrder: res.active_order.id,
@@ -61,6 +74,53 @@ export default class App extends Component {
             userId: res.user.id,
           })
         }
+      })
+  }
+
+  ordersData() {
+    fetch('/orders', {
+      headers: {
+        token: Auth.getToken(),
+        'Authorization': `Token ${Auth.getToken()}`
+      }
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          ordersData: res
+        })
+      })
+  }
+
+  getCoffeeOrdersDetails = (e, order_id) => {
+    // e.preventDefault()
+    fetch(`/coffee_orders/${order_id}`, {
+      headers: {
+        token: Auth.getToken(),
+        'Authorization': `Token ${Auth.getToken()}`
+      }
+    })
+      .then(res => res.json())
+      .then((res) => {
+        this.setState({
+          coffeeOrdersData: res
+        })
+      })
+  }
+
+  getCoffeeDetails = (coffee_id) => {
+    console.log('coffee id', coffee_id)
+    fetch(`/coffees/${coffee_id}`, {
+      headers: {
+        token: Auth.getToken(),
+        'Authorization': `Token ${Auth.getToken()}`
+      }
+    })
+      .then(res => res.json())
+      .then((res) => {
+        this.setState({
+          coffeeDetail: res
+        })
       })
   }
 
@@ -214,17 +274,39 @@ export default class App extends Component {
   }
 
   deleteOrder = (order_id) => {
-    console.log("delete order", order_id)
+    this.setState({
+      fireRedirect: false,
+    })
+    console.log("delete user")
     fetch(`/orders/${order_id}`, {
       method: 'DELETE',
       headers: {
         token: Auth.getToken(),
         'Authorization': `Token ${Auth.getToken()}`
       }
-    }).then(this.setState({
+    }).then(res => {
+      console.log("here")
+      this.setState({
+        fireRedirect: true,
+        redirectPath: '/profile',
+      })
+    })
+  }
+
+  editOrder(order_id) {
+    console.log(order_id)
+    this.setState({
       fireRedirect: true,
-      redirectPath: `/profile`,
-    }))
+      redirectPath: `/orders/${order_id}`,
+    })
+  }
+
+  viewOrder(order_id) {
+    console.log(order_id)
+    this.setState({
+      fireRedirect: true,
+      redirectPath: `/orders/${order_id}`
+    })
   }
 
   render() {
@@ -235,10 +317,22 @@ export default class App extends Component {
           <Route exact path='/' render={() => (<Home browse={this.browse} />)} />
           <Route exact path="/login" render={() => <LoginForm handleLoginSubmit={this.handleLoginSubmit} />} />
           <Route exact path="/signup" render={() => <SignupForm handleSignupSubmit={this.handleSignupSubmit} />} />
-          <Route exact path="/profile" render={() => (<Profile active_coffee_order={this.active_coffee_order} createANewOrder={this.createANewOrder} logoutUser={this.logoutUser} state={this.state} deleteOrder={this.deleteOrder} />)} />
+          <Route exact path="/profile" render={() => (
+            <Profile
+              active_coffee_order={this.active_coffee_order}
+              createANewOrder={this.createANewOrder}
+              logoutUser={this.logoutUser}
+              state={this.state}
+              deleteOrder={this.deleteOrder}
+              editOrder={this.editOrder}
+              viewOrder={this.viewOrder}
+              profileData={this.state.profileData}
+              getCoffeeOrdersDetails={this.getCoffeeOrdersDetails}
+            />)} />
           <Route exact path='/coffees' render={() => (<CoffeeList handleSelectedCoffee={this.handleSelectedCoffee} />)} />
           <Route exact path='/coffees/:id' render={() => (<Details selectedCoffee={this.state.selectedCoffee} handleOrderFormSubmit={this.handleOrderFormSubmit} handleOrderCloseSubmit={this.handleOrderCloseSubmit} />)} />
           <Route exact path='/about' render={() => (<About />)} />
+          <Route exact path='/orders/:id' render={() => (<Order />)} />
           {this.state.fireRedirect && <Redirect push to={this.state.redirectPath} />}
         </div >
         <Footer />

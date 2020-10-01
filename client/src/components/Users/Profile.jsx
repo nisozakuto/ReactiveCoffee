@@ -14,95 +14,28 @@ export default class Profile extends Component {
     }
 
     componentDidMount() {
-        this.getData()
-        this.ordersData()
-    }
-
-    getData() {
-        fetch('/profile', {
-            headers: {
-                token: Auth.getToken(),
-                'Authorization': `Token ${Auth.getToken()}`
-            }
-        })
-            .then(res => res.json())
-            .then(res => {
-                this.setState({
-                    data: res,
-                })
-            })
-    }
-
-    ordersData() {
-        fetch('/orders', {
-            headers: {
-                token: Auth.getToken(),
-                'Authorization': `Token ${Auth.getToken()}`
-            }
-        })
-            .then(res => res.json())
-            .then(res => {
-                this.setState({
-                    ordersData: res
-                })
-            })
-    }
-
-    getCoffeeOrdersDetails(e, order_id) {
-        e.preventDefault()
-
-        fetch(`/coffee_orders/${order_id}`, {
-            headers: {
-                token: Auth.getToken(),
-                'Authorization': `Token ${Auth.getToken()}`
-            }
-        })
-            .then(res => res.json())
-            .then((res) => {
-                this.setState({
-                    coffeeOrdersData: res
-                })
-            })
-    }
-
-    getCoffeeDetails(coffee_id) {
-        fetch(`/coffees/${coffee_id}`, {
-            headers: {
-                token: Auth.getToken(),
-                'Authorization': `Token ${Auth.getToken()}`
-            }
-        })
-            .then(res => res.json())
-            .then((res) => {
-                this.setState({
-                    coffeeDetail: res
-                })
-            })
     }
 
     render() {
         return (
             <div className="profile">
-                {this.state.data ?
+                {this.props.profileData ?
                     (
                         <>
+
                             <h4 id="logout" onClick={() => { this.props.logoutUser() }}>Logout</h4>
-                            <h1 className="title">Welcome, {this.state.data.user.username}</h1>
+                            <h1 className="title">Welcome, {this.props.profileData.user.username}</h1>
                             <section className="active-orders">
                                 <h3>Your Active Orders</h3>
                                 <ul>
                                     {
-                                        this.state.data.active_order ?
+                                        this.props.profileData.active_order ?
                                             (
                                                 <div className="single-order-box">
                                                     <div className="single-order-box-info">
-                                                        <li key={this.state.data.active_order.id} onClick={() => this.getCoffeeOrdersDetails(this.state.data.active_order.id)}>Order ID: {this.state.data.active_order.id}</li>
-                                                        <form className="order-forms" onSubmit={(evt => this.props.editOrder(evt))}>
-                                                            <input type="submit" value="Edit Order" />
-                                                        </form>
-                                                        <form className="order-forms" onSubmit={(e) => this.getCoffeeOrdersDetails(e, this.state.data.active_order.id)}>
-                                                            <input type="submit" value="View Order" />
-                                                        </form>
+                                                        <h3>Order ID: {this.props.profileData.active_order.id}</h3>
+                                                        <li key={this.props.profileData.active_order.id} onClick={() => { this.props.editOrder(this.props.profileData.active_order.id) }}>Edit Order</li>
+                                                        <li className="order-forms" key={this.props.profileData.active_order.updated_at} onClick={() => { this.props.viewOrder(this.props.profileData.active_order.id) }}>View Order</li>
                                                     </div>
                                                 </div>
                                             )
@@ -122,22 +55,16 @@ export default class Profile extends Component {
                                 <h3>Past Orders</h3>
                                 <ul>
                                     {
-                                        this.state.data.orders.map(order =>
+                                        this.props.profileData.orders.map(order =>
                                             (
-                                                <div className="single-order-box">
+                                                <div className="single-order-box" >
                                                     <div className="single-order-box-info">
-                                                        <li key={order.id} onClick={() => this.getCoffeeOrdersDetails(order.id)}>Order ID: {order.id}</li>
-                                                        <form className="order-forms" onSubmit={(evt => this.props.editOrder(evt))}>
-                                                            <input type="submit" value="Edit Order" />
-                                                        </form>
-                                                        <form className="order-forms" onSubmit={(e) => this.getCoffeeOrdersDetails(e, order.id)}>
-                                                            <input type="submit" value="View Order" />
-                                                        </form>
+                                                        <h3>Order ID: {order.id}</h3>
+                                                        <li key={order.id} onClick={() => { this.props.editOrder(order.id) }}>Edit Order</li>
+                                                        <li className="order-forms" key={order.updated_at} onClick={() => { this.props.viewOrder(order.id) }}>View Order</li>
                                                     </div>
                                                     <div>
-                                                        <form className="delete-button" onSubmit={(() => this.props.deleteOrder(order.id))}>
-                                                            <input type="submit" value="Delete Order" />
-                                                        </form>
+                                                        <li className="delete-button" key={order.id} onClick={() => { this.props.deleteOrder(order.id) }}>Delete Order</li>
                                                     </div>
                                                 </div>
                                             ))
@@ -147,19 +74,19 @@ export default class Profile extends Component {
                             <section className="order-details">
                                 <h4>Coffee Order</h4>
                                 <div className="orders-div">
-                                    {this.state.coffeeOrdersData ?
+                                    {this.props.state.coffeeOrdersData ?
                                         (
-                                            this.state.coffeeOrdersData.coffeeorder.map((coffeeorder) =>
+                                            this.props.state.coffeeOrdersData.coffeeorder.map((coffeeorder) =>
                                                 (
                                                     <div className="one-order">
                                                         <div>
                                                             <p>Order id: {coffeeorder.order_id} </p>
                                                         </div>
                                                         <div>
-                                                            {this.state.coffeeDetail ?
+                                                            {this.props.state.coffeeDetail ?
 
                                                                 <>
-                                                                    <img src={this.state.coffeeDetail.coffee.short_url} alt="" width="100px" />
+                                                                    <img src={this.props.state.coffeeDetail.coffee.short_url} alt="" width="100px" />
                                                                 </>
                                                                 :
                                                                 <></>
@@ -181,7 +108,7 @@ export default class Profile extends Component {
                         </>
                     )
                     :
-                    <p>Loading</p>
+                    <p>No data</p>
                 }
                 { !Auth.isUserAuthenticated() && <Redirect to="/login" />}
             </div >
