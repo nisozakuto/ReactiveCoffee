@@ -145,6 +145,7 @@ h6 { font-size: .75em; }
 .container{
   background-color: rgba(241	,222	,179,0.1	);
   flex-grow: 1;
+  border-bottom: 1px solid gainsboro;
 }
 /* HOME START */
 .home-main{
@@ -213,6 +214,37 @@ section img{
   flex-wrap: wrap;
 }
 
+.details-main-section{
+  flex-direction: column;
+  padding-bottom: 40px;
+  align-items: center;
+}
+
+.details-main-form{
+  display: flex;
+  width: 250px;
+  flex-direction: column;
+}
+
+.details-main-form input{
+  margin: 5px 0 5px 0;
+}
+
+.details-main-form label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: right;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+.details-main-form input {
+  /* height: 20px; */
+  margin-left: 10px;
+  min-width: 150px;
+}
+
 .coffees{
   display: flex;
   flex-direction: column;
@@ -270,8 +302,7 @@ section img{
     font-size: 1.3em;
     color: white;
     font-weight: 600;
-    position: relative;
-    
+    position: relative;    
   }
 /* Add to cart END */
 
@@ -464,4 +495,20 @@ line-height: 1.2em;
   .bottom-nav ul{
     width: 80%;
   }
+
+  .details-main{
+    flex-direction: column;
+  }
+
+  /* COFFEE DETAILS START */
+  aside{
+    margin:30px auto;
+    
+  }
+  .details-main-section{
+    flex-direction: column;
+    padding-bottom: 40px;
+    align-items: center;
+  }
+  /* COFFEE DETAILS END */
 }

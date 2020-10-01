@@ -10,8 +10,8 @@ export default class Details extends Component {
             id: this.props.selectedCoffee.id,
             coffeeFlavor: this.props.selectedCoffee.flavor,
             coffeeCategory: this.props.selectedCoffee.category,
-            size: '',
-            quantity: '',
+            size: 8,
+            quantity: 1,
             order_id: '',
 
         }
@@ -53,10 +53,10 @@ export default class Details extends Component {
     render() {
         return (
             <main className="details-main">
-                <aside>
+                <aside className="details-main-aside">
                     lorem info
                 </aside>
-                <section>
+                <section className="details-main-section">
                     <div className="coffees" key={this.state.coffeeName}>
                         <img src={this.state.coffeeShort_url} width="250px" alt={this.state.coffeeName} />
                         <div className="coffee-info">
@@ -64,19 +64,27 @@ export default class Details extends Component {
                             <p>{this.state.coffeeFlavor}</p>
                         </div>
                     </div>
-                    <form onSubmit={(e) => this.props.handleOrderFormSubmit(e, this.state.id, this.state.size, this.state.quantity, this.state.order_id)} >
-                        < input
-                            type="number"
-                            name="size"
-                            placeholder="put the size"
-                            value={this.state.size}
-                            onChange={this.handleInputChange} />
+                    <form className="details-main-form" onSubmit={(e) => this.props.handleOrderFormSubmit(e, this.state.id, this.state.size, this.state.quantity, this.state.order_id)} >
+                        <label>
+                            Size (oz):
+                            < input
+                                type="number"
+                                name="size"
+                                placeholder="8 Oz"
+                                min="1" max="20"
+                                value={this.state.size}
+                                onChange={this.handleInputChange} />
+                        </label>
+                        <label>
+                            Quantity:
                         <input
-                            type="number"
-                            name="quantity"
-                            placeholder="put the quantity"
-                            value={this.state.quantity}
-                            onChange={this.handleInputChange} />
+                                type="number"
+                                name="quantity"
+                                placeholder="1"
+                                min="1" max="10"
+                                value={this.state.quantity}
+                                onChange={this.handleInputChange} />
+                        </label>
                         <input type="submit" id="add-to-cart" value="Add to Order" />
                     </ form >
                     <div>
