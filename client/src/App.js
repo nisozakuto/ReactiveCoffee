@@ -93,7 +93,6 @@ export default class App extends Component {
   }
 
   getCoffeeOrdersDetails = (e, order_id) => {
-    // e.preventDefault()
     fetch(`/coffee_orders/${order_id}`, {
       headers: {
         token: Auth.getToken(),
@@ -215,7 +214,6 @@ export default class App extends Component {
   }
 
   createANewOrder = () => {
-    console.log('new order asked to be created')
     fetch('/orders',
       {
         method: 'POST',
@@ -226,6 +224,13 @@ export default class App extends Component {
         },
         body: JSON.stringify({
           'user_id': this.state.userId,
+        })
+      })
+      .then(res => res.json())
+      .then(e => {
+        this.setState({
+          fireRedirect: true,
+          redirectPath: '/coffees'
         })
       })
   }
@@ -248,6 +253,7 @@ export default class App extends Component {
     })
       .then(res => res.json())
       .then(res => {
+        console.log(res)
         fetch(`/orders/${order_id}`,
           {
             method: 'PUT',
@@ -267,7 +273,7 @@ export default class App extends Component {
           .then(
             this.setState({
               fireRedirect: true,
-              redirectPath: '/profile',
+              redirectPath: '/profile'
             }))
           .catch(err => console.log(err))
       })
@@ -332,7 +338,7 @@ export default class App extends Component {
           <Route exact path='/coffees' render={() => (<CoffeeList handleSelectedCoffee={this.handleSelectedCoffee} />)} />
           <Route exact path='/coffees/:id' render={() => (<Details selectedCoffee={this.state.selectedCoffee} handleOrderFormSubmit={this.handleOrderFormSubmit} handleOrderCloseSubmit={this.handleOrderCloseSubmit} />)} />
           <Route exact path='/about' render={() => (<About />)} />
-          <Route exact path='/orders/:id' render={() => (<Order />)} />
+          <Route exact path='/orders/:id' render={() => (<Order selectedCoffee={this.state.selectedCoffee} />)} />
           {this.state.fireRedirect && <Redirect push to={this.state.redirectPath} />}
         </div >
         <Footer />
