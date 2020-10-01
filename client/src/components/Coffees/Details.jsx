@@ -19,13 +19,6 @@ export default class Details extends Component {
 
     }
     componentDidMount() {
-        // this.setState({
-        //     coffeeName: this.props.selectedCoffee.name,
-        //     coffeeShort_url: this.props.selectedCoffee.short_url,
-        //     id: this.props.selectedCoffee.id,
-        //     coffeeFlavor: this.props.selectedCoffee.flavor,
-        //     coffeeCategory: this.props.selectedCoffee.category,
-        // })
         this.getActiveOrder()
     }
 
@@ -36,8 +29,6 @@ export default class Details extends Component {
             [name]: value
         })
     }
-
-
 
     getActiveOrder() {
         fetch('/profile', {

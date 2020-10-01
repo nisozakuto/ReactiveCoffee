@@ -295,6 +295,29 @@ flex-direction: column;
   margin:30px;
 }
 
+.single-order-box{
+  border: 1px solid black;
+  margin:10px 0;
+
+}
+.single-order-box-info{
+  display: flex;
+  flex-direction: row;
+  padding: 2px;
+
+}
+.single-order-box form{
+
+}
+.delete-button{
+  background-color: #f6f6f6;
+
+}
+
+.order-forms{
+  margin-left: 40px;
+}
+
 #logout{
   display: flex;
   flex-direction: row;

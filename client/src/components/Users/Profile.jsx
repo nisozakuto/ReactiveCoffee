@@ -16,8 +16,6 @@ export default class Profile extends Component {
     componentDidMount() {
         this.getData()
         this.ordersData()
-        console.log("this.state.userId", this.state)
-        console.log("THIS PROPS", this.props)
     }
 
     getData() {
@@ -35,43 +33,6 @@ export default class Profile extends Component {
             })
     }
 
-    // createANewOrder() {
-    //     fetch('/profile', {
-    //         headers: {
-    //             token: Auth.getToken(),
-    //             'Authorization': `Token ${Auth.getToken()}`
-    //         }
-    //     })
-    //         .then(res => res.json())
-    //         .then(res => {
-    //             console.log("RES", res)
-    //             this.setState({
-    //                 usrid: res.user.id
-    //             })
-    //             console.log("usrid", this.state.usrid)
-    //             console.log("data", this.data)
-    //             if (this.state.data.active_order == null) {
-    //                 console.log("No orders here")
-    //                 if (Auth.isUserAuthenticated()) {
-    //                     fetch('/orders',
-    //                         {
-    //                             method: 'POST',
-    //                             headers: {
-    //                                 'Content-Type': 'application/json',
-    //                                 'token': Auth.getToken(),
-    //                                 'Authorization': `Token ${Auth.getToken()}`
-    //                             },
-    //                             body: JSON.stringify({
-    //                                 'user_id': this.state.usrid,
-    //                                 //make sure there is only one open order
-    //                             })
-    //                         })
-    //                 }
-    //             }
-    //             this.getData()
-    //         })
-    // }
-
     ordersData() {
         fetch('/orders', {
             headers: {
@@ -87,7 +48,9 @@ export default class Profile extends Component {
             })
     }
 
-    getCoffeeOrdersDetails(order_id) {
+    getCoffeeOrdersDetails(e, order_id) {
+        e.preventDefault()
+
         fetch(`/coffee_orders/${order_id}`, {
             headers: {
                 token: Auth.getToken(),
@@ -99,7 +62,6 @@ export default class Profile extends Component {
                 this.setState({
                     coffeeOrdersData: res
                 })
-                console.log("coffeeOrdersData", this.state.coffeeOrdersData)
             })
     }
 
@@ -112,11 +74,9 @@ export default class Profile extends Component {
         })
             .then(res => res.json())
             .then((res) => {
-                console.log("coffee detail", res)
                 this.setState({
                     coffeeDetail: res
                 })
-                console.log("coffeeDetail", this.state.coffeeDetail)
             })
     }
 
@@ -134,21 +94,26 @@ export default class Profile extends Component {
                                     {
                                         this.state.data.active_order ?
                                             (
-                                                <>
-                                                    <li key={this.state.data.active_order.id} onClick={() => this.getCoffeeOrdersDetails(this.state.data.active_order.id)}>Order ID: {this.state.data.active_order.id}</li>
-                                                    <form onSubmit={(evt => this.props.editOrder(evt))}>
-                                                        <input type="submit" value="Edit Order" />
-                                                    </form>
-                                                </>
+                                                <div className="single-order-box">
+                                                    <div className="single-order-box-info">
+                                                        <li key={this.state.data.active_order.id} onClick={() => this.getCoffeeOrdersDetails(this.state.data.active_order.id)}>Order ID: {this.state.data.active_order.id}</li>
+                                                        <form className="order-forms" onSubmit={(evt => this.props.editOrder(evt))}>
+                                                            <input type="submit" value="Edit Order" />
+                                                        </form>
+                                                        <form className="order-forms" onSubmit={(e) => this.getCoffeeOrdersDetails(e, this.state.data.active_order.id)}>
+                                                            <input type="submit" value="View Order" />
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             )
                                             :
                                             (
-                                                <>
+                                                <div className="single-order-box">
                                                     <h4>You do not have any open orders</h4>
                                                     <form onSubmit={(evt => this.props.createANewOrder(evt))}>
                                                         <input type="submit" value="Create a new order" />
                                                     </form>
-                                                </>
+                                                </div>
                                             )
                                     }
                                 </ul>
@@ -159,7 +124,22 @@ export default class Profile extends Component {
                                     {
                                         this.state.data.orders.map(order =>
                                             (
-                                                <li key={order.id} onClick={() => this.getCoffeeOrdersDetails(order.id)}>Order ID: {order.id}</li>
+                                                <div className="single-order-box">
+                                                    <div className="single-order-box-info">
+                                                        <li key={order.id} onClick={() => this.getCoffeeOrdersDetails(order.id)}>Order ID: {order.id}</li>
+                                                        <form className="order-forms" onSubmit={(evt => this.props.editOrder(evt))}>
+                                                            <input type="submit" value="Edit Order" />
+                                                        </form>
+                                                        <form className="order-forms" onSubmit={(e) => this.getCoffeeOrdersDetails(e, order.id)}>
+                                                            <input type="submit" value="View Order" />
+                                                        </form>
+                                                    </div>
+                                                    <div>
+                                                        <form className="delete-button" onSubmit={(() => this.props.deleteOrder(order.id))}>
+                                                            <input type="submit" value="Delete Order" />
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             ))
                                     }
                                 </ul>
@@ -180,7 +160,6 @@ export default class Profile extends Component {
 
                                                                 <>
                                                                     <img src={this.state.coffeeDetail.coffee.short_url} alt="" width="100px" />
-
                                                                 </>
                                                                 :
                                                                 <></>
@@ -204,7 +183,7 @@ export default class Profile extends Component {
                     :
                     <p>Loading</p>
                 }
-                {!Auth.isUserAuthenticated() && <Redirect to="/login" />}
+                { !Auth.isUserAuthenticated() && <Redirect to="/login" />}
             </div >
         )
     }
