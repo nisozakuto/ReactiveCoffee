@@ -101,9 +101,9 @@ export default class Profile extends Component {
                                                 <div className="single-order-box">
                                                     <div className="single-order-box-info">
                                                         <li key={this.state.data.active_order.id}>Order ID: {this.state.data.active_order.id}</li>
-                                                        <form className="order-forms" onSubmit={(evt => this.props.editOrder(evt, this.state.active_order))}>
+                                                        {/* <form className="order-forms" onSubmit={(evt => this.props.editOrder(evt, this.state.active_order))}>
                                                             <input type="submit" value="Edit Order" />
-                                                        </form>
+                                                        </form> */}
                                                         <form className="order-forms" onSubmit={(e) => this.getCoffeeOrdersDetails(e, this.state.data.active_order.id)}>
                                                             <input type="submit" value="View Order" />
                                                         </form>
@@ -188,9 +188,9 @@ export default class Profile extends Component {
                                                 <div className="single-order-box">
                                                     <div className="single-order-box-info">
                                                         <li key={order.id} onClick={() => this.getCoffeeOrdersDetails(order.id)}>Order ID: {order.id}</li>
-                                                        <form className="order-forms" onSubmit={(evt => this.props.editOrder(evt))}>
+                                                        {/* <form className="order-forms" onSubmit={(evt => this.props.editOrder(evt))}>
                                                             <input type="submit" value="Edit Order" />
-                                                        </form>
+                                                        </form> */}
                                                         <form className="order-forms" onSubmit={(e) => this.getCoffeeOrdersDetails(e, order.id)}>
                                                             <input type="submit" value="View Order" />
                                                         </form>
