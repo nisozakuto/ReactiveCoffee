@@ -13,7 +13,7 @@ export default class Order extends Component {
                             <p>{this.props.selectedCoffee.name}</p>
                             <p>{this.props.selectedCoffee.category}</p>
                             <p>{this.props.selectedCoffee.flavor}</p>
-                            <img src={this.props.selectedCoffee.short_url} />
+                            <img src={this.props.selectedCoffee.short_url} alt={this.props.selectedCoffee.name} />
 
                             <h1>Ny</h1>
                         </>

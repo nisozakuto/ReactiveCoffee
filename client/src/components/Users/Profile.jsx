@@ -87,8 +87,10 @@ export default class Profile extends Component {
                 {this.state.data ?
                     (
                         <>
-                            <h4 id="logout" onClick={() => { this.props.logoutUser() }}>Logout</h4>
-                            <h1 className="title">Welcome, {this.state.data.user.username}</h1>
+                            <div className="title-section">
+                                <h1 className="title">Welcome, {this.state.data.user.username}</h1>
+                                <h4 id="logout" onClick={() => { this.props.logoutUser() }}>Logout</h4>
+                            </div>
                             <section className="active-orders">
                                 <h3>Your Active Orders</h3>
                                 <ul>

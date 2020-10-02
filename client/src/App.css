@@ -351,9 +351,25 @@ flex-direction: column;
 }
 
 #logout{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  cursor: pointer;
+  width: min-content; 
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logout:hover{
+  background-color: #f6f6f6;
+}
+
+.title{
+  display: inline-flex;
+}
+
+.title-section{
+display:flex;
+flex-direction: row;
+justify-content: space-between;
 }
 
 .orders-div{

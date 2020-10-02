@@ -39,14 +39,12 @@ export default class Details extends Component {
         })
             .then(res => res.json())
             .then(res => {
-                {
-                    if (res.active_order)
-                        (
-                            this.setState({
-                                order_id: res.active_order.id
-                            })
-                        )
-                }
+                if (res.active_order)
+                    (
+                        this.setState({
+                            order_id: res.active_order.id
+                        })
+                    )
             })
     }
 
