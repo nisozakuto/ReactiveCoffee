@@ -11,6 +11,7 @@ export default class Profile extends Component {
             userId: null,
             coffeeOrdersData: null,
             coffeeDetail: null,
+            editOrder: null,
         }
     }
 
@@ -99,8 +100,8 @@ export default class Profile extends Component {
                                             (
                                                 <div className="single-order-box">
                                                     <div className="single-order-box-info">
-                                                        <li key={this.state.data.active_order.id} onClick={() => this.getCoffeeOrdersDetails(this.state.data.active_order.id)}>Order ID: {this.state.data.active_order.id}</li>
-                                                        <form className="order-forms" onSubmit={(evt => this.props.editOrder(evt))}>
+                                                        <li key={this.state.data.active_order.id}>Order ID: {this.state.data.active_order.id}</li>
+                                                        <form className="order-forms" onSubmit={(evt => this.props.editOrder(evt, this.state.active_order))}>
                                                             <input type="submit" value="Edit Order" />
                                                         </form>
                                                         <form className="order-forms" onSubmit={(e) => this.getCoffeeOrdersDetails(e, this.state.data.active_order.id)}>
@@ -133,12 +134,10 @@ export default class Profile extends Component {
                                                             <p>Order id: {coffeeorder.order_id} </p>
                                                         </div>
                                                         <div>
-
-                                                            <p onClick={() => { this.getCoffeeDetails(coffeeorder.coffee_id) }}>Ordered Coffee #: {coffeeorder.coffee_id}</p>
+                                                            <p className="coffeeID" onClick={() => { this.getCoffeeDetails(coffeeorder.coffee_id) }}>Ordered Coffee #: {coffeeorder.coffee_id} (see more)</p>
                                                             <p>Quantity id: {coffeeorder.quantity} </p>
                                                             <p>Size: {coffeeorder.size} </p>
                                                             {this.state.coffeeDetail ?
-
                                                                 <>
                                                                     <h3>Coffee name: {this.state.coffeeDetail.coffee.name}</h3>
                                                                     <img src={this.state.coffeeDetail.coffee.short_url} alt="" width="100px" />
@@ -163,7 +162,45 @@ export default class Profile extends Component {
                                     {
                                         this.state.data.orders.map(order =>
                                             (<>
-                                                <OrderHelper order={order} getCoffeeOrdersDetails={this.getCoffeeOrdersDetails} />
+                                                {/* <OrderHelper order={order} getCoffeeOrdersDetails={this.getCoffeeOrdersDetails} editOrder={this.props.editOrder}
+                                                    selectedOrder={this.selectedOrder}
+                                                    deleteOrder={this.deleteOrder}
+                                                /> */}
+                                                {/* <div div className="single-order-box">
+                                                    <div className="single-order-box-info">
+                                                        <li key={this.order.id}>Order ID: {this.order.id}</li>
+
+                                                        <form className="order-forms" onSubmit={((evt) => this.props.editOrder(evt, this.props.order.id))}>
+                                                            <input type="submit" value="Edit Order" />
+                                                        </form>
+
+                                                        <form className="order-forms" onSubmit={(e) => this.props.getCoffeeOrdersDetails(e, this.props.order.id)}>
+                                                            <input type="submit" value="View Order" />
+                                                        </form>
+                                                    </div>
+                                                    <div>
+                                                        <form className="delete-button" onSubmit={(() => this.props.deleteOrder(this.props.order.id))}>
+                                                            <input type="submit" value="Delete Order" />
+                                                        </form>
+                                                    </div>
+                                                </div> */}
+
+                                                <div className="single-order-box">
+                                                    <div className="single-order-box-info">
+                                                        <li key={order.id} onClick={() => this.getCoffeeOrdersDetails(order.id)}>Order ID: {order.id}</li>
+                                                        <form className="order-forms" onSubmit={(evt => this.props.editOrder(evt))}>
+                                                            <input type="submit" value="Edit Order" />
+                                                        </form>
+                                                        <form className="order-forms" onSubmit={(e) => this.getCoffeeOrdersDetails(e, order.id)}>
+                                                            <input type="submit" value="View Order" />
+                                                        </form>
+                                                    </div>
+                                                    <div>
+                                                        <form className="delete-button" onSubmit={(() => this.props.deleteOrder(order.id))}>
+                                                            <input type="submit" value="Delete Order" />
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </>
                                             ))
                                     }

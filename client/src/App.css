@@ -213,6 +213,12 @@ section img{
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+
+.coffeeID:hover{
+  background-color: #cacaca;
+  cursor: pointer;
+}
+
 .details-main-aside{
   max-width: 45%;
 }
@@ -375,6 +381,7 @@ justify-content: space-between;
 .orders-div{
   display: flex; 
   flex-direction: column;
+  margin: 10px 0;
 }
 
 .one-order{

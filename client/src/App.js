@@ -19,6 +19,7 @@ export default class App extends Component {
     this.state = {
       auth: Auth.isUserAuthenticated(),
       selectedCoffee: null,
+      selectedOrder: null,
       currentPage: null,
       fireRedirect: false,
       redirectPath: null,
@@ -34,9 +35,6 @@ export default class App extends Component {
       coffeeDetail: null,
     }
     this.handleOrderFormSubmit = this.handleOrderFormSubmit.bind(this)
-    this.editOrder = this.editOrder.bind(this)
-    this.viewOrder = this.viewOrder.bind(this)
-
   }
 
   componentDidMount() {
@@ -93,6 +91,7 @@ export default class App extends Component {
   }
 
   getCoffeeOrdersDetails = (e, order_id) => {
+    console.log('profile', order_id)
     fetch(`/coffee_orders/${order_id}`, {
       headers: {
         token: Auth.getToken(),
@@ -107,21 +106,21 @@ export default class App extends Component {
       })
   }
 
-  getCoffeeDetails = (coffee_id) => {
-    console.log('coffee id', coffee_id)
-    fetch(`/coffees/${coffee_id}`, {
-      headers: {
-        token: Auth.getToken(),
-        'Authorization': `Token ${Auth.getToken()}`
-      }
-    })
-      .then(res => res.json())
-      .then((res) => {
-        this.setState({
-          coffeeDetail: res
-        })
-      })
-  }
+  // getCoffeeDetails = (coffee_id) => {
+  //   console.log('coffee id', coffee_id)
+  //   fetch(`/coffees/${coffee_id}`, {
+  //     headers: {
+  //       token: Auth.getToken(),
+  //       'Authorization': `Token ${Auth.getToken()}`
+  //     }
+  //   })
+  //     .then(res => res.json())
+  //     .then((res) => {
+  //       this.setState({
+  //         coffeeDetail: res
+  //       })
+  //     })
+  // }
 
   handleSelectedCoffee = (id) => {
     fetch(`/coffees/${id}`, {
@@ -299,19 +298,21 @@ export default class App extends Component {
     })
   }
 
-  editOrder(order_id) {
-    console.log(order_id)
-    this.setState({
-      fireRedirect: true,
-      redirectPath: `/orders/${order_id}`,
-    })
-  }
-
   viewOrder(order_id) {
     console.log(order_id)
     this.setState({
       fireRedirect: true,
       redirectPath: `/orders/${order_id}`
+    })
+  }
+
+  editOrder = (e, order_id) => {
+    console.log(e)
+    console.log("edit order", order_id)
+    this.setState({
+      fireRedirect: true,
+      redirectPath: `/orders/${order_id}`,
+      selectedOrder: order_id
     })
   }
 
@@ -332,13 +333,19 @@ export default class App extends Component {
               deleteOrder={this.deleteOrder}
               editOrder={this.editOrder}
               viewOrder={this.viewOrder}
+              deleteOrder={this.deleteOrder}
               profileData={this.state.profileData}
               getCoffeeOrdersDetails={this.getCoffeeOrdersDetails}
+
             />)} />
           <Route exact path='/coffees' render={() => (<CoffeeList handleSelectedCoffee={this.handleSelectedCoffee} />)} />
           <Route exact path='/coffees/:id' render={() => (<Details selectedCoffee={this.state.selectedCoffee} handleOrderFormSubmit={this.handleOrderFormSubmit} handleOrderCloseSubmit={this.handleOrderCloseSubmit} />)} />
           <Route exact path='/about' render={() => (<About />)} />
-          <Route exact path='/orders/:id' render={() => (<Order selectedCoffee={this.state.selectedCoffee} />)} />
+          <Route exact path='/orders/:id' render={() => (<Order
+            selectedCoffee={this.state.selectedCoffee}
+            editOrder={this.editOrder}
+            selectedOrder={this.state.selectedOrder}
+          />)} />
           {this.state.fireRedirect && <Redirect push to={this.state.redirectPath} />}
         </div >
         <Footer />
