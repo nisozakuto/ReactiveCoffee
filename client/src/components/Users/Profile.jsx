@@ -49,8 +49,6 @@ export default class Profile extends Component {
     }
 
     getCoffeeOrdersDetails(e, order_id) {
-        e.preventDefault()
-
         fetch(`/coffee_orders/${order_id}`, {
             headers: {
                 token: Auth.getToken(),

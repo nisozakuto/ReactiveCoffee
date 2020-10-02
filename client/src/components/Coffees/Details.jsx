@@ -54,8 +54,9 @@ export default class Details extends Component {
         return (
             <main className="details-main">
                 <aside className="details-main-aside">
-                    lorem info
+                    Java caramelization, a aftertaste crema in cup crema, shop so, grinder, saucer strong, id cup spoon foam seasonal single shot. A grounds in strong, arabica beans eu, mocha extra, flavour seasonal spoon, barista, kopi-luwak saucer fair trade at robust. Sit at as, caffeine roast, qui, roast, black mug, americano, doppio carajillo mocha, extraction robusta cortado whipped filter. Single shot chicory, single origin a macchiato con panna, whipped cappuccino roast at americano, bar cream latte crema shop, flavour, ut instant pumpkin spice con panna robust espresso decaffeinated. Brewed iced half and half acerbic steamed, sweet half and half, latte seasonal decaffeinated instant extraction beans roast dripper, sweet fair trade caffeine, americano siphon caffeine eu kopi-luwak sweet. Skinny, instant, mazagran french press aftertaste extra sugar extraction decaffeinated single shot spoon kopi-luwak milk body, single origin seasonal, java ristretto doppio carajillo iced. Strong, dark, medium percolator arabica, lungo skinny, robusta, single shot lungo cup black arabica.
                 </aside>
+
                 <section className="details-main-section">
                     <div className="coffees" key={this.state.coffeeName}>
                         <img src={this.state.coffeeShort_url} width="250px" alt={this.state.coffeeName} />
