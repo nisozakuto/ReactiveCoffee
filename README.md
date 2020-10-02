@@ -1,19 +1,39 @@
 # Reactive - Coffee README
 
+Coffee order application built with 
+- POSTGRESQL, 
+- Ruby on Rails, 
+- React JS.
 
-- DB Schema
 
+### Description 
+This is a Coffee order application where customers can choose from different coffees and order one or more.
+The order should eventually go to the coffee shop or to the barista and be processed.
+
+### Heroku
+You can visit the live version on heroku [here](https://reactive-coffee-staging.herokuapp.com/)
+
+### DB Schema
 [DB-Designer Page](https://dbdesigner.page.link/H4oAA5PXJoeVHj8w9)
 
-- Wireframes
+### Wireframes
 [Link](https://www.figma.com/file/RbdjFNpElvuWHeMOC6t3Ol/Untitled?node-id=0%3A1)
 
+### User Stories
 
-- Project IV brainstorm [doc](https://docs.google.com/document/d/1xaDv3LKVff2i85TWstaBp6ud39p9JpvOxY54DPJYTbs/edit?usp=sharing)
+### HTTP Routes
 
-## Used resources
+### Specs
+
+### Setup
+
+### Contributers
+This is an open soure coffee order app, the creators of this app would love to see PRs.
+Feel free to create issues or own them to contribute.
+
+
+### Used resources
 - To seed data: [Faker](https://github.com/faker-ruby/faker/blob/master/doc/default/coffee.md)
-- Inspired by [Facebook](https://www.starbucks.com/menu)
 
 Useful resources for the development
 - https://dba.stackexchange.com/questions/1285/how-do-i-list-all-databases-and-tables-using-psql
