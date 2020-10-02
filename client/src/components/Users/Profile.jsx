@@ -121,20 +121,8 @@ export default class Profile extends Component {
                                     }
                                 </ul>
                             </section>
-                            <section className="past-orders">
-                                <h3>Past Orders</h3>
-                                <ul>
-                                    {
-                                        this.state.data.orders.map(order =>
-                                            (
-                                                <OrderHelper order={order} getCoffeeOrdersDetails={this.getCoffeeOrdersDetails} />
-
-                                            ))
-                                    }
-                                </ul>
-                            </section>
                             <section className="order-details">
-                                <h4>Coffee Order</h4>
+                                <h4>Order details</h4>
                                 <div className="orders-div">
                                     {this.state.coffeeOrdersData ?
                                         (
@@ -145,28 +133,44 @@ export default class Profile extends Component {
                                                             <p>Order id: {coffeeorder.order_id} </p>
                                                         </div>
                                                         <div>
+
+                                                            <p onClick={() => { this.getCoffeeDetails(coffeeorder.coffee_id) }}>Ordered Coffee #: {coffeeorder.coffee_id}</p>
+                                                            <p>Quantity id: {coffeeorder.quantity} </p>
+                                                            <p>Size: {coffeeorder.size} </p>
                                                             {this.state.coffeeDetail ?
 
                                                                 <>
+                                                                    <h3>Coffee name: {this.state.coffeeDetail.coffee.name}</h3>
                                                                     <img src={this.state.coffeeDetail.coffee.short_url} alt="" width="100px" />
                                                                 </>
                                                                 :
                                                                 <></>
                                                             }
-                                                            <p onClick={() => { this.getCoffeeDetails(coffeeorder.coffee_id) }}>Ordered Coffee #: {coffeeorder.coffee_id}</p>
-                                                            <p>Quantity id: {coffeeorder.quantity} </p>
-                                                            <p>Size: {coffeeorder.size} </p>
                                                         </div>
                                                     </div>
                                                 )
                                             )
                                         )
                                         :
-                                        <p>loading</p>
+                                        <p>Choose an order to see the details</p>
                                     }
                                 </div>
-
                             </section>
+
+                            <section className="past-orders">
+                                <h3>Past Orders</h3>
+                                <ul>
+                                    {
+                                        this.state.data.orders.map(order =>
+                                            (<>
+                                                <OrderHelper order={order} getCoffeeOrdersDetails={this.getCoffeeOrdersDetails} />
+                                            </>
+                                            ))
+                                    }
+
+                                </ul>
+                            </section>
+
                         </>
                     )
                     :
