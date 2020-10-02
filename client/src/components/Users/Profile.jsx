@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import Auth from '../../modules/Auth'
+import OrderHelper from './OrderHelper'
 export default class Profile extends Component {
     constructor(props) {
         super(props)
@@ -48,7 +49,9 @@ export default class Profile extends Component {
             })
     }
 
-    getCoffeeOrdersDetails(e, order_id) {
+    getCoffeeOrdersDetails = (e, order_id) => {
+        e.preventDefault()
+        console.log("called")
         fetch(`/coffee_orders/${order_id}`, {
             headers: {
                 token: Auth.getToken(),
@@ -122,22 +125,8 @@ export default class Profile extends Component {
                                     {
                                         this.state.data.orders.map(order =>
                                             (
-                                                <div className="single-order-box">
-                                                    <div className="single-order-box-info">
-                                                        <li key={order.id} onClick={() => this.getCoffeeOrdersDetails(order.id)}>Order ID: {order.id}</li>
-                                                        <form className="order-forms" onSubmit={(evt => this.props.editOrder(evt))}>
-                                                            <input type="submit" value="Edit Order" />
-                                                        </form>
-                                                        <form className="order-forms" onSubmit={(e) => this.getCoffeeOrdersDetails(e, order.id)}>
-                                                            <input type="submit" value="View Order" />
-                                                        </form>
-                                                    </div>
-                                                    <div>
-                                                        <form className="delete-button" onSubmit={(() => this.props.deleteOrder(order.id))}>
-                                                            <input type="submit" value="Delete Order" />
-                                                        </form>
-                                                    </div>
-                                                </div>
+                                                <OrderHelper order={order} getCoffeeOrdersDetails={this.getCoffeeOrdersDetails} />
+
                                             ))
                                     }
                                 </ul>
