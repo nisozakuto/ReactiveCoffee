@@ -1,14 +1,16 @@
-# Reactive - Coffee README
+# Reactive - Coffee README v0.1
 
 Coffee order application built with 
 - POSTGRESQL, 
 - Ruby on Rails, 
 - React JS.
 
-
 ### Description 
 This is a Coffee order application where customers can choose from different coffees and order one or more.
 The order should eventually go to the coffee shop or to the barista and be processed.
+
+The full plan is to allow users make more edits througout the website, payment acceptance integration, Watch the orders progress and pick up the coffee.
+On the coffee shop side, accept the order, process it and once it is ready, update it in the app.
 
 ### Heroku
 You can visit the live version on heroku [here](https://reactive-coffee-staging.herokuapp.com/)
@@ -46,7 +48,6 @@ Technologies use:
 - PSQL
 - User Auth
 - Pexel's API for homepage pictures
-
 
 ### Contributers
 This is an open soure coffee order app, the creators of this app would love to see PRs.
