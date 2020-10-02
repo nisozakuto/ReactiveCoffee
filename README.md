@@ -20,12 +20,33 @@ You can visit the live version on heroku [here](https://reactive-coffee-staging.
 [Link](https://www.figma.com/file/RbdjFNpElvuWHeMOC6t3Ol/Untitled?node-id=0%3A1)
 
 ### User Stories
+- Visitors can sign up to the app.
+- Visitors and Users can browse the coffees.
+- Users can log in to the app.
+- Users can order a coffee.
+- Users can delete their old orders. 
+- Users can visit their old orders and view them.
+
 
 ### HTTP Routes
+- POST /users
+- GET /profile
+- POST /login
+- POST /orders
+- GET /orders
+- POST /coffee_orders=
+- GET /coffee_orders
+- GET /coffees
+- DELETE /orders/:id
+- PUT /orders/
 
 ### Specs
+Technologies use: 
+- React JS
+- PSQL
+- User Auth
+- Pexel's API for homepage pictures
 
-### Setup
 
 ### Contributers
 This is an open soure coffee order app, the creators of this app would love to see PRs.
